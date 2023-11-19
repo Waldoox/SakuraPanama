@@ -2,7 +2,7 @@
 
 **Repo del Proyecto de Desarrollo 4**
 
-¡Gente, este es el lugar para darle a full al proyecto de desarrollo de software 4! cada uno tiene que echar sus archivos en las carpetas correctas, tranquilo.
+¡Gente, este es el lugar para darle a full al proyecto de desarrollo de software 4! cada uno tiene que guardar sus archivos en las carpetas correctas, tranquilo.
 
 Para que no se nos enrede el código, tiren cada cosa nueva en su propia rama. ¿Cómo? Antes de arrancar algo nuevo, creen una rama para esa funcionalidad. Así evitamos que nos choquemos y mantenemos la paz en el código.
 
