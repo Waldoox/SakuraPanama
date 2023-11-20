@@ -27,13 +27,12 @@ html{
     margin: 0 auto;
 }
 
-.bg-nav{
-    background-color: var(--primario);
-}
 
+/*Header*/
 /*Mobile*/
 header{
     display: flex;
+    justify-content: left;
     font-size: 1.3rem;
     font-family: var(--p-font);
 }
@@ -76,12 +75,7 @@ header{
     }
 }
 
-/*para que el footer quede al final cuando hace zoom a la pantalla*/
-body{
-	display: flex;
-    flex-direction: column;
-	min-height: 100vh;
-  }
+/*Footer*/
 
   footer {
 	margin-top: auto;
@@ -140,3 +134,36 @@ body{
 	color: #FFFFFF;
   }
 
+/*Nav*/
+
+.bg-nav{
+    background-color: var(--primario);
+}
+
+.nav-bar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.nav-bar a{
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 2rem;
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-bar a:hover{
+    background-color: var(--secundario);
+}
+
+@media ( min-width: 768px ){
+    .nav-bar{
+        flex-direction: row;
+    }
+     
+}
