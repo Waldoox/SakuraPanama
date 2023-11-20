@@ -27,13 +27,12 @@ html{
     margin: 0 auto;
 }
 
-.bg-nav{
-    background-color: var(--primario);
-}
 
+/*Header*/
 /*Mobile*/
 header{
     display: flex;
+    justify-content: left;
     font-size: 1.3rem;
     font-family: var(--p-font);
 }
@@ -76,12 +75,7 @@ header{
     }
 }
 
-/*para que el footer quede al final cuando hace zoom a la pantalla*/
-body{
-	display: flex;
-    flex-direction: column;
-	min-height: 100vh;
-  }
+/*Footer*/
 
   footer {
 	margin-top: auto;
@@ -140,3 +134,19 @@ body{
 	color: #FFFFFF;
   }
 
+/*Nav*/
+
+.bg-nav{
+    background-color: var(--primario);
+}
+
+.nav-bar{
+    padding: 1.5rem;
+}
+
+.nav-bar-items{
+    text-decoration: none;
+    color: var(--blanco);
+    font-family: var(--p-font);
+    font-size: 1rem;
+}
