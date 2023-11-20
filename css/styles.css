@@ -141,12 +141,29 @@ header{
 }
 
 .nav-bar{
-    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 
-.nav-bar-items{
-    text-decoration: none;
+.nav-bar a{
     color: var(--blanco);
-    font-family: var(--p-font);
-    font-size: 1rem;
+    text-decoration: none;
+    font-size: 2rem;
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-bar a:hover{
+    background-color: var(--secundario);
+}
+
+@media ( min-width: 768px ){
+    .nav-bar{
+        flex-direction: row;
+    }
+     
 }
