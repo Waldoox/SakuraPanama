@@ -1,0 +1,78 @@
+:root{
+    --blanco: #FFFFFF;
+    --oscuro: #444444;
+    --primario:#237C2C;
+    --secundario:#18561E;
+    --hueso: #F6F6F6;
+    --gris: #777777;
+    --title-font: 'Roboto', sans-serif;
+    --sub-font: 'Montserrat', sans-serif;
+    --p-font:'Raleway', sans-serif;
+}
+
+/*Globales*/
+html{
+    font-size: 62.5%;
+    box-sizing: border-box; 
+    scroll-snap-type: y mandatory;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+
+.container{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.bg-nav{
+    background-color: var(--primario);
+}
+
+/*Mobile*/
+header{
+    display: flex;
+    font-size: 1.3rem;
+    font-family: var(--p-font);
+}
+
+.header-logo{
+    width: 15%;
+    margin: 0 auto;
+}
+
+
+.header-p{
+    display: none;
+}
+
+.header-p-color{
+    color: var(--primario);
+}
+
+.hd-p-position{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 0.1rem;
+}
+
+/*PC y Tablet*/
+@media ( min-width: 768px ){
+    .header-logo{
+        width: 10%;  
+    }
+
+    .header-p{
+        display: block;
+    }
+
+    .header-logo{
+        width: 5%;
+        height: 5%;
+        margin: 1rem; 
+    }
+}
+
