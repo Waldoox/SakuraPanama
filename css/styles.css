@@ -133,7 +133,8 @@ header {
     margin-left: 0;
   }
   .content-text {
-    margin-left: 0;
+    margin-left: 10px;
+
   }
   .content-text h2 {
     margin-top: 0;
