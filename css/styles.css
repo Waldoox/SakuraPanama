@@ -265,6 +265,10 @@ footer .footer-container .copyright p {
   color: #FFFFFF;
 }
 
+  @media ( max-width: 767px ){
+       
+  }
+
 /*Nav*/
 
 .bg-nav {
