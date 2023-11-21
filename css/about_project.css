@@ -53,9 +53,42 @@
     }
     
     .about-pj-subt{
-        font-family: var(--sub-font);
+        font-family: var(--title-font);
         font-size: 2.5rem;
     }
 }
 
+.func-cards-title{
+    text-align: center;
+    font-family: var(--title-font);
+    font-size: 2rem;
+    margin: 6rem 0;
+}
+
+.func-cards{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.cards{
+    background-color: var(--secundario);
+    padding: 4rem;
+    border-radius: 2rem;
+    margin: 1rem 5rem 10rem 5rem;
+    
+}
+
+.cards h3{
+    font-family: var(--sub-font);
+    font-size: 1.6rem;
+    text-align: center;
+    color: var(--blanco);
+}
+
+.cards p{
+    font-family: var(--p-font);
+    font-size: 1.3rem;
+    color: var(--blanco);
+    line-height: 2;
+}
 
