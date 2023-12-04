@@ -3,6 +3,22 @@
     "development"
   ],
   "hints": {
+<<<<<<< Updated upstream
+=======
+    "axe/name-role-value": [
+      "default",
+      {
+        "button-name": "off",
+        "link-name": "off"
+      }
+    ],
+    "axe/forms": [
+      "default",
+      {
+        "label": "off"
+      }
+    ],
+>>>>>>> Stashed changes
     "compat-api/css": [
       "default",
       {
