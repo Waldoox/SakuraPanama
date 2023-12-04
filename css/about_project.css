@@ -1,0 +1,94 @@
+:root{
+    --blanco: #FFFFFF;
+    --oscuro: #444444;
+    --primario:#237C2C;
+    --secundario:#18561E;
+    --hueso: #F6F6F6;
+    --gris: #777777;
+    --title-font: 'Roboto', sans-serif;
+    --sub-font: 'Montserrat', sans-serif;
+    --p-font:'Raleway', sans-serif;
+}
+
+.about-pj{
+    margin: 4rem;
+}
+
+.about-pj div{
+    margin-bottom: 4rem;
+}
+
+.about-pj-title{
+    font-family: var(--title-font);
+    font-size: 2.5rem;
+}
+
+.about-pj-legend{
+    font-family: var(--p-font);
+    font-size: 1.3rem;
+    line-height: 2;
+}
+
+.about-pj-subt{
+    font-family: var(--sub-font);
+    font-size: 2rem;
+}
+
+@media ( min-width: 768px ){
+     .about-pj{
+        display: flex;
+        margin: 4rem auto;
+     }
+     .about-pj div{
+        margin: 0 2rem;
+    }
+     .about-pj-title{
+        font-family: var(--title-font);
+        font-size: 3rem;
+    }
+    
+    .about-pj-legend{
+        font-family: var(--p-font);
+        font-size: 1.5rem;
+    }
+    
+    .about-pj-subt{
+        font-family: var(--title-font);
+        font-size: 2.5rem;
+    }
+}
+
+.func-cards-title{
+    text-align: center;
+    font-family: var(--title-font);
+    font-size: 2rem;
+    margin: 6rem 0;
+}
+
+.func-cards{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.cards{
+    background-color: var(--secundario);
+    padding: 4rem;
+    border-radius: 2rem;
+    margin: 1rem 5rem 10rem 5rem;
+    
+}
+
+.cards h3{
+    font-family: var(--sub-font);
+    font-size: 1.6rem;
+    text-align: center;
+    color: var(--blanco);
+}
+
+.cards p{
+    font-family: var(--p-font);
+    font-size: 1.3rem;
+    color: var(--blanco);
+    line-height: 2;
+}
+

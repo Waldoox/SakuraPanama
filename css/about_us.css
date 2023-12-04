@@ -1,0 +1,135 @@
+:root {
+    --blanco: #FFFFFF;
+    --oscuro: #444444;
+    --primario: #237C2C;
+    --secundario: #18561E;
+    --hueso: #F6F6F6;
+    --gris: #777777;
+    --title-font: 'Roboto', sans-serif;
+    --sub-font: 'Montserrat', sans-serif;
+    --p-font: 'Raleway', sans-serif;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+  /*contenido*/
+.titulo{
+    color: #18561E;
+  }
+  .sub-titulo{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 300;
+    text-align: center;
+    margin-top: 25px;
+  }
+  .parrafo{
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+
+  /*Banner*/
+.container {
+    width: 100%;
+    overflow: hidden;
+     background-color: blue;
+  }
+  .content {
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  .content img {
+    width: 50%;
+    height: auto;
+    margin-right: 20px;
+    margin-left: 120px;
+  }
+  .content-text {
+    width: 50%;
+    margin-left: 120px;
+  }
+  .content-text h2 {
+    margin-top: 0;
+  }
+  .content-text p {
+    margin-top: 10px;
+  }
+  @media (min-width: 768px) {
+
+
+    .content {
+        display: flex;
+        border: 1px solid #ccc;
+      }
+
+    .content img {
+        margin-left: 0;
+      }
+    
+    .content-text {
+        margin-left: 0;
+      }
+
+      .content-text h2 {
+        margin-top: 0;
+      }
+}
+
+/*contenedor profesor */
+.container-prof {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+    max-width: 900px;
+    width: 70%;
+    align-items: center;
+    justify-content: center;
+  }
+  .grid-item {
+    padding: 10px;
+    text-align: center;
+    
+  }
+  @media (min-width: 768px) {
+    .container-prof{
+      margin-left: 0px;
+    }
+  }
+
+/*contenedor estudiante*/
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr; 
+    gap: 5px; 
+    width: 100%;
+  }
+  .columna-1 {
+   background-color: #237C2C;
+    grid-column: 1 / 2; 
+    color: var(--blanco);
+  }
+  .columna-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border: 1px solid #ccc;
+  }
+  .subcolumna {
+  
+    padding: 10px;
+    text-align: center;
+  }
+  .titulo-equipo{
+    text-align: center;
+    margin-top: 50px;
+  }
+  /*pc y tablet*/
+  @media (min-width: 768px) {
+    .columna-2 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
