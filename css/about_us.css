@@ -32,8 +32,9 @@
 
   /*Banner*/
 .container {
-    width: 80%;
+    width: 100%;
     overflow: hidden;
+     background-color: blue;
   }
   .content {
     align-items: center;
@@ -84,18 +85,18 @@
     gap: 20px;
     padding: 20px;
     max-width: 900px;
-    width: 100%;
+    width: 70%;
     align-items: center;
     justify-content: center;
   }
   .grid-item {
-    padding: 20px;
+    padding: 10px;
     text-align: center;
-    border: 1px solid #ccc;
+    
   }
   @media (min-width: 768px) {
     .container-prof{
-      margin-left: 250px;
+      margin-left: 0px;
     }
   }
 
@@ -104,6 +105,7 @@
     display: grid;
     grid-template-columns: 1fr 2fr; 
     gap: 5px; 
+    width: 100%;
   }
   .columna-1 {
    background-color: #237C2C;
