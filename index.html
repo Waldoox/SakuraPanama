@@ -20,13 +20,21 @@
 </head>
 <body>
     <header>
-        <a href="#"><img src="img/Logo FISC.png" alt="" class="logo-fisc"></a>
-        <strong class="texto-header"> Inicio</strong>
-        <img src="img/Icono-notificacion.svg" alt="" class="logo-notificacion">
-        <div class="perfil-main">
-            <strong>Iniciar Sesion</strong>
-            <img src="img/user.png" alt="">
+        <img onclick="hamburguer_nav()" id="hamburguer-nav" src="img/hamburguer-nav.png" alt="Menu de Navegacion">
+
+        <div class="main-head">
+            <div class="head-logo">
+                <a href="#"><img src="img/Logo FISC.png" alt="" class="logo-fisc"></a>
+                <strong class="texto-header"> Inicio</strong>
+                <img src="img/Icono-notificacion.svg" alt="" class="logo-notificacion">
+            </div>
+    
+            <div class="perfil-main">
+                <strong>Iniciar Sesion</strong>
+                <img src="img/user.png" alt="">
+            </div>
         </div>
+        
     </header>
 
     <div class="container">
@@ -38,51 +46,9 @@
                 <a href="service.html" class="nav-option">Servicio de Ayuda</a>
             </div>
         </nav>
-        <div class="content">
-            <section class = paginacion>
-                <div class="swiper">
-                    <input type="radio" name="btn" id="btn1" checked />
-                    <input type="radio" name="btn" id="btn2" />
-                    <input type="radio" name="btn" id="btn3" />
-                    <input type="radio" name="btn" id="btn4" />
-                    <input type="radio" name="btn" id="btn5" />
-                    <label for="btn1"></label>
-                    <label for="btn2"></label>
-                    <label for="btn3"></label>
-                    <label for="btn4"></label>
-                    <label for="btn5"></label>
-                    <ul>
-                        <li><img src="img/utp1.jpg" alt="" /></li>
-                        <li><img src="img/utp2.jpg" alt="" /></li>
-                        <li><img src="img/utp3.jpg" alt="" /></li>
-                        <li><img src="img/utp4.jpg" alt="" /></li>
-                        <li><img src="img/utp5.jpg" alt="" /></li>
-                    </ul>
-                </div>
-            </section>
         
-            <section class="seccion-nuestro">
-                <div class="nuestra-facultad">		
-                    <img src="img/Nuestra facultad.jpeg" alt="">
-                    <a href="">Nuestra Proyecto</a>
-                </div>
-        
-                <div class="nuestro-equipo">
-                    <img src="img/Nuestro equipo.jpeg" alt="">
-                    <a href="">Nuestro equipo</a>
-                </div>
-        
-                <div class="formulario">
-                    <a href="">Formulario de Proyecto</a>
-                    <a href="">Proyectos</a>
-                    <a href="">Requisitos de Proyecto</a>
-                </div>
-            </section>
-        </div>
-
+        <h1 style="display: flex; justify-content:center; align-items:center; width:100%">INICIO DE SESION</h1>
     </div>
-
-   
 
     <footer>
         <div class="footer-container">

@@ -22,7 +22,6 @@
     font-size: 2rem;
     font-weight: 300;
     text-align: center;
-    margin-top: 25px;
   }
   .parrafo{
     font-family: 'Raleway', sans-serif;
@@ -34,7 +33,6 @@
 .container {
     width: 100%;
     overflow: hidden;
-     background-color: blue;
   }
   .content {
     align-items: center;
@@ -49,7 +47,7 @@
   }
   .content-text {
     width: 50%;
-    margin-left: 120px;
+    margin: 2rem;
   }
   .content-text h2 {
     margin-top: 0;
@@ -94,11 +92,7 @@
     text-align: center;
     
   }
-  @media (min-width: 768px) {
-    .container-prof{
-      margin-left: 0px;
-    }
-  }
+ 
 
 /*contenedor estudiante*/
 .grid-container {

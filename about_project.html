@@ -15,19 +15,28 @@
 
     <title>Acerca del proyecto</title>
 </head >
+
 <body>
     <header>
-        <a href="#"><img src="img/Logo FISC.png" alt="" class="logo-fisc"></a>
-        <strong class="texto-header"> Acerca del Proyecto</strong>
-        <img src="img/Icono-notificacion.svg" alt="" class="logo-notificacion">
-        <div class="perfil-main">
-            <strong>Iniciar Sesion</strong>
-            <img src="img/user.png" alt="">
+        <img onclick="hamburguer_nav()" id="hamburguer-nav" src="img/hamburguer-nav.png" alt="Menu de Navegacion">
+
+        <div class="main-head">
+            <div class="head-logo">
+                <a href="#"><img src="img/Logo FISC.png" alt="" class="logo-fisc"></a>
+                <strong class="texto-header"> Acerca del proyecto</strong>
+                <img src="img/Icono-notificacion.svg" alt="" class="logo-notificacion">
+            </div>
+    
+            <div class="perfil-main">
+                <strong>Iniciar Sesion</strong>
+                <img src="img/user.png" alt="">
+            </div>
         </div>
+        
     </header>
 
     <div class="container">
-        <nav class="sidebar">
+        <nav class="sidebar" id="sidebar">
             <div class="nav-options">
                 <a href="index.html" class="nav-option">Inicio</a>
                 <a href="about_project.html" class="nav-option nav-option-selected">Acerca del Proyecto</a>
@@ -48,7 +57,7 @@
                 </div>
             </section>
         
-            <section">
+            <section>
                 <h2 class="func-cards-title">Funcionalidades</h2>
         
                 <div class="func-cards">
@@ -92,11 +101,11 @@
                     </p>
                 </div>
                 <div class="redes">
-                    <img src="img/facebook.png" alt="facebook">
-                    <img src="img/instagram.png" alt="instagram">
-                    <img src="img/youtube.png" alt="youtube">
-                    <img src="img/Linkedin.png" alt="linkedin">
-                    <img src="img/twitter.png" alt="twitter x">
+                    <img src="img/facebook.svg" alt="facebook">
+                    <img src="img/instagram.svg" alt="instagram">
+                    <img src="img/youtube.svg" alt="youtube">
+                    <img src="img/linkedin.svg" alt="linkedin">
+                    <img src="img/x.svg" alt="twitter x">
                 </div>
             </div>
             <div class="copyright">
@@ -104,5 +113,7 @@
             </div>
         </div>
     </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>

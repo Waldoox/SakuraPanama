@@ -34,7 +34,7 @@
     font-size: 2rem;
 }
 
-@media ( min-width: 768px ){
+@media ( min-width: 1068px ){
      .about-pj{
         display: flex;
         margin: 4rem auto;
@@ -92,3 +92,33 @@
     line-height: 2;
 }
 
+@media ( max-width: 1068px ){
+    .func-cards{
+        display: block;
+    }
+    
+    .about-pj-title{
+        font-size: 4rem;
+    }
+    
+    .about-pj-legend{
+        font-size: 2rem;
+    }
+    
+    .about-pj-subt{
+        font-size: 3rem;
+    }
+
+    .func-cards-title{
+        font-size: 2.8rem;
+
+    }
+
+    .cards h3{
+        font-size: 2rem;
+    }
+    
+    .cards p{
+        font-size: 1.8rem;
+    }
+}

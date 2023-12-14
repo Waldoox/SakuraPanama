@@ -49,8 +49,7 @@ font-size: 15px;
 /* contenido */
 
 .cont{
-    position: relative;
-    left: 20%;
+    margin: 4rem 15rem;
 }
 
 .indicacion{

@@ -35,9 +35,34 @@ header{
   align-items: center;
   background-color: #18561E;
   height: 100px;
+  width: 100%;
+ }
+
+ .main-head{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+ }
+
+ #hamburguer-nav{
+  width: 4%;
+  margin: 3rem 0 3rem 3rem;
+  display: none;
+ }
+
+ @media ( max-width: 1068px ){
+  #hamburguer-nav{
+    display: block;
+    cursor: pointer; ;
+   }
+   
+ }
+ 
+ .head-logo{
+  display: flex;
+  align-items: center;
  }
  .logo-notificacion{
-  margin-left: 60.5%;
  width: 38px;
  padding-left: 110px;
  }
@@ -53,7 +78,7 @@ header{
  padding-left: 40px;
  }
  .perfil-main{
-  margin-left: 1%;
+  margin: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,6 +88,13 @@ header{
   font-family: 'Monsterrat';
   font-size: 23px;
   padding-right: 10px;
+ }
+
+ @media ( max-width: 768px ){
+  .perfil-main strong{
+    font-size: 18px;
+  }
+      
  }
  .perfil-main img{
   width: 45px;
@@ -74,6 +106,7 @@ header{
 footer {
   margin-top: auto;
   font-size: 1.2rem;
+  
 }
 
 footer .footer-container {
@@ -139,15 +172,22 @@ footer .footer-container .copyright p {
   color: #FFFFFF;
 }
 
-  @media ( max-width: 767px ){
-       
+  @media ( max-width: 1068px ){
+    footer .footer-container .footer .contacto{
+      display: none;
+    }
   }
 
 /*Nav*/
-
+body{
+  display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 .container{
   display: flex;
   height: 100%;
+  flex: 1;
 }
 
 .sidebar{
@@ -161,7 +201,13 @@ footer .footer-container .copyright p {
     position: sticky;
     top: 0;
 }
-
+@media ( max-width: 1068px ){
+  .sidebar{
+    display: none;
+  }
+  
+     
+}
 .content{
 
     flex: 1;
