@@ -1,4 +1,4 @@
-# Semestral_PantallasEstaticas
+#Sakura Panamá
 
 **Repo del Proyecto de Desarrollo 4**
 
@@ -7,5 +7,6 @@
 Para que no se nos enrede el código, tiren cada cosa nueva en su propia rama. ¿Cómo? Antes de arrancar algo nuevo, creen una rama para esa funcionalidad. Así evitamos que nos choquemos y mantenemos la paz en el código.
 
 La clave es mantener la comunicación al 💯. Si tienen preguntas o se topan con algún problema, al chat directo. Estamos aquí para ayudarnos y hacer de este proyecto algo que suene bien.
+
 
 Atte: ChatGPT
