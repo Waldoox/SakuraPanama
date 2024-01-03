@@ -1,0 +1,78 @@
+*{
+    border: 0;
+    padding: 0%;
+    margin: 0;
+}
+/*MENU*/
+.bar{
+    background-color: #ef3620;
+    font-size: x-large;
+    width: 95%;
+   padding: 20px;
+}
+.nav-option{
+    color: white;
+   padding: 20px;
+    text-decoration: none;
+    border-radius: 10px;
+}
+.nav-option:hover{
+    background-color: #be1704;
+    border-radius: 10px;
+}
+
+/*Responsive*/
+@media screen and (min-width: 1024px){
+    .bar{
+        width: 100%;
+    }
+}
+
+/*BANNER*/
+/* Estilo del contenedor del banner */
+.banner {
+  
+    justify-content: center;
+    align-items: center;
+    background-color: #3498db; /* Color de fondo del banner */
+    padding: 20px; /* Espaciado interno del banner */
+    box-sizing: border-box; /* Incluye el relleno en el tamaño total del contenedor */
+    position: relative; /* Agrega posición relativa para manejar z-index */
+  }
+  
+  /* Estilo de la imagen principal del banner */
+  .banner img {
+    max-width: 100%; /* Ajusta el tamaño máximo de la imagen al contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    z-index: 1;
+    position: relative;
+  
+  }
+  
+  /* Estilo del contenido dentro del banner */
+,content {
+    text-align: center;
+    color: #fff; /* Color del texto */
+    margin-left: 20px; /* Espaciado izquierdo entre la imagen y el contenido */
+    z-index: 1; /* Añade z-index al contenido */
+    position: absolute;
+    margin-top: 0;
+  }
+  
+  /* Estilo del logo en el banner */
+  .banner img.logo {
+    max-width: 100px; /* Ajusta el tamaño máximo del logo según tus necesidades */
+  }
+  
+  /* Estilo del título en el banner */
+  .banner h2 {
+    font-size: 24px; /* Tamaño de la fuente del título */
+    margin: 10px 0; /* Espaciado superior e inferior del título */
+  }
+  
+  /* Estilo del párrafo en el banner */
+  .banner p {
+    font-size: 16px; /* Tamaño de la fuente del párrafo */
+    margin-bottom: 10px; /* Espaciado inferior del párrafo */
+  }
+  
