@@ -1,78 +1,221 @@
-*{
+* {
     border: 0;
-    padding: 0%;
+    padding: 0;
     margin: 0;
 }
+
 /*MENU*/
-.bar{
+.bar {
     background-color: #ef3620;
     font-size: x-large;
     width: 95%;
-   padding: 20px;
+    padding: 20px;
 }
-.nav-option{
+
+.nav-option {
     color: white;
-   padding: 20px;
+    padding: 20px;
     text-decoration: none;
     border-radius: 10px;
 }
-.nav-option:hover{
+
+.nav-option:hover {
     background-color: #be1704;
     border-radius: 10px;
 }
 
 /*Responsive*/
-@media screen and (min-width: 1024px){
-    .bar{
-        width: 100%;
+@media screen and (min-width: 1024px) {
+    .bar {
+        width: 97%;
     }
 }
 
 /*BANNER*/
-/* Estilo del contenedor del banner */
-.banner {
-  
-    justify-content: center;
-    align-items: center;
-    background-color: #3498db; /* Color de fondo del banner */
-    padding: 20px; /* Espaciado interno del banner */
-    box-sizing: border-box; /* Incluye el relleno en el tamaño total del contenedor */
-    position: relative; /* Agrega posición relativa para manejar z-index */
-  }
-  
-  /* Estilo de la imagen principal del banner */
-  .banner img {
-    max-width: 100%; /* Ajusta el tamaño máximo de la imagen al contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
-    z-index: 1;
+.img-banner {
     position: relative;
-  
-  }
-  
-  /* Estilo del contenido dentro del banner */
-,content {
-    text-align: center;
-    color: #fff; /* Color del texto */
-    margin-left: 20px; /* Espaciado izquierdo entre la imagen y el contenido */
-    z-index: 1; /* Añade z-index al contenido */
+    z-index: 1;
+    width: 100%;
+    opacity: 85%;
+    padding: 0;
+    margin: 0;
+}
+
+.content {
     position: absolute;
-    margin-top: 0;
-  }
-  
-  /* Estilo del logo en el banner */
-  .banner img.logo {
-    max-width: 100px; /* Ajusta el tamaño máximo del logo según tus necesidades */
-  }
-  
-  /* Estilo del título en el banner */
-  .banner h2 {
-    font-size: 24px; /* Tamaño de la fuente del título */
-    margin: 10px 0; /* Espaciado superior e inferior del título */
-  }
-  
-  /* Estilo del párrafo en el banner */
-  .banner p {
-    font-size: 16px; /* Tamaño de la fuente del párrafo */
-    margin-bottom: 10px; /* Espaciado inferior del párrafo */
-  }
-  
+    z-index: 2;
+    text-align: center;
+    align-items: center;
+    color: white;
+    font-size: x-large;
+
+    padding: 20px;
+    margin-left: 25%;
+}
+
+.logo {
+    width: 150px;
+}
+
+/*Responsive*/
+@media screen and (min-width: 1024px) {
+    .logo {
+        width: 300px;
+    }
+    .content{
+        margin-left: 30%;
+        font-size: xx-large;
+    }
+    
+}
+
+/*HISTORIA*/
+.cont {
+    padding: 20px;
+    background-color: #be1704;
+}
+
+.cont-h {
+    display: flex;
+    padding: 10px;
+}
+
+.historia {
+    color: white;
+    font-size: x-large;
+    text-align: center;
+    padding: 10px;
+}
+
+.cont-cuadrado {
+    background-color: #fdfc8b;
+    padding: 15px;
+    border-radius: 10px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+/*Responsive*/
+@media screen and (min-width: 1024px) {
+    .cont-h{
+        margin-left: 15%;
+    }
+}
+
+/*DESCRIPCION*/
+.hist {
+    width: 92%;
+    text-align: justify;
+    padding: 30px;
+    background-color: #fdfc8b;
+    font-size: 30px;
+    color: black;
+    font-weight: 500;
+}
+.cont-desc {
+    display: flex;
+    width: 100%;
+    height: 10%;
+}
+
+.pic {
+    width: 100%;
+}
+
+.esp1 {
+    width: 50%;
+}
+
+.esp2 {
+    width: 50%;
+    padding: 20px;
+    font-size: 25px;
+    text-align: justify;
+    font-weight: 400;
+}
+.c {
+    width: 100%;
+}
+/*Responsive*/
+@media screen and (min-width: 1024px) {
+    .hist{
+        width: 95%;
+    }
+    .esp2{
+        font-size: xx-large;
+        padding: 60px;
+    }
+}
+
+/*EQUIPO*/
+.cont-c {
+    display: flex;
+    padding: 20px;
+}
+
+.cont-cuatro {
+    background-color: #fdfc8b;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 10px;
+    text-align: center;
+    font-size: large;
+}
+/*Responsive*/
+@media screen and (min-width: 1024px) {
+    .cont-c{
+        margin-left: 20%;
+    }
+}
+
+/*FORMULARIO*/
+form,
+.k {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+}
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+button:hover {
+    background-color: #45a049;
+}
+/*Responsive*/
+@media screen and (min-width: 1024px) {
+    .k{
+        padding: 10px;
+        width: 65%;
+    }
+}
+
+/*PIE DE PAGINA*/
+.text {
+    font-size: large;
+    color: white;
+    text-align: center;
+}
+
+.redes {
+    padding: 5px;
+}
