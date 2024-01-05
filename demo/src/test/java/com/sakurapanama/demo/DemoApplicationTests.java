@@ -1,10 +1,10 @@
-package com.sakuraPanama.Semestral;
+package com.sakurapanama.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SemestralApplicationTests {
+class DemoApplicationTests {
 
 	@Test
 	void contextLoads() {

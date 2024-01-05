@@ -1,13 +1,13 @@
-package com.sakuraPanama.Semestral;
+package com.sakurapanama.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SemestralApplication {
+public class DemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SemestralApplication.class, args);
+		SpringApplication.run(DemoApplication.class, args);
 	}
 
 }
