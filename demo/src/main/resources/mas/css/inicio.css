@@ -1,0 +1,87 @@
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    overflow: hidden;
+}
+.fondito {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 83vh;
+
+    background-image: url(../../static/img/ban2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;  
+    opacity: 80%; 
+}
+
+.login-container {
+    background-color: #be1704 ;
+    color: white;
+    
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.login-container h2 {
+    text-align: center;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.formulario-c {
+    margin-bottom: 10px;
+}
+
+.formulario-c label {
+    font-weight: bold;
+    display: block;
+}
+
+.formulario-c input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.login-btn {
+    background-color: #ef3620;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: large;
+}
+
+.login-btn:hover {
+    background-color: #fdfc8b;
+    color: black;
+
+    font-weight: 500;
+}
+
+/*PIE*/
+.text {
+    font-size: medium;
+    color: white;
+    text-align: center;
+}
+
+.redes {
+    padding: 1px;
+}
+.bar {
+    background-color: #ef3620;
+    font-size: large;
+    width: 230vh;
+    height: 100vh;
+}
