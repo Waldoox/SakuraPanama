@@ -69,6 +69,11 @@ body{
     font-weight: 500;
 }
 
+.registro{
+    text-decoration: none;
+    color: #fff;
+}
+
 
 /*PIE*/
 .text {

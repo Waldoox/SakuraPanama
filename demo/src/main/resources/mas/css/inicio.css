@@ -69,6 +69,19 @@ body{
     font-weight: 500;
 }
 
+.registro{
+    text-decoration: none;
+    color: #fff;
+}
+
+.olvido{
+    color: #ccc;
+    text-align: center;
+}
+.olvido:hover{
+    color: #fdfc8b;
+}
+
 /*PIE*/
 .text {
     font-size: medium;
