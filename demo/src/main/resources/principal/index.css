@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.fondo{
+    background-image: url(./img/fondo.webp);
+    height: 300px;
+}
+.menu {
+    background-color: #ef3620;
+    padding: 1em;
+}
+
+.item {
+    color: #fff;
+    text-decoration: none;
+    padding: 1em 2em;
+    margin: 0 2em;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+.item:hover {
+   background-color: #be1704;
+}
+.logo{
+    width: 70px;
+}
+.user{
+    width: 50px;
+    float: right;
+    padding: 1em;
+}
+
+/*BUSCADOR*/
+.search-section{
+    text-align: center;
+}
+.search-box {
+    width: 30%;
+    padding: 1em;
+    border: 1px solid #888;
+    border-radius: 5px;
+    margin-top: 80px;
+    opacity: 90%;
+}
+.search-button {
+    padding: 1em 1em;
+    border: 1px solid #be1704;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #be1704;
+    color: #fff;
+    opacity: 90%;
+   
+}
+.country-select {
+    padding: 1em;
+    border: 1px solid #be1704;
+    border-radius: 5px;
+    opacity: 90%;
+}
+
+/*FILTRO*/
+.btn-filter{
+    width: 40px;
+    height: 40px; 
+}
+.b-f{
+    height: 90px;
+    width: 80px;
+}
+.filtro{
+    text-align: center;
+    margin-top: -50px;
+    background-color: aqua;
+}
+
+/*Secciones*/
+.titulo{
+    color: black;
+    text-decoration:underline #be1704;
+}
+.menu-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 1em;
+    padding: 1em;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/*PIE*/
+.bar {
+    background-color: #ef3620;
+    color: #fff;
+    bottom: 0;
+    width: 100%;
+}
+.text{
+    text-align: center;
+}
+.redes {
+    text-align: left;
+    padding: 5px;
+}
