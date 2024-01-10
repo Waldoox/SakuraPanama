@@ -1,6 +1,15 @@
 package com.sakurapanama.demo.auth;
 
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import com.sakurapanama.demo.jwt.JwtService;
+import com.sakurapanama.demo.models.Role;
+import com.sakurapanama.demo.models.UserRepo;
+import com.sakurapanama.demo.models.Usuario;
 
 import lombok.RequiredArgsConstructor;
 
@@ -8,12 +17,36 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class AuthService {
 
+    private final UserRepo userRepo;
+    private final JwtService jwtService;
+    private final PasswordEncoder passwordEncoder;
+    private final AuthenticationManager authenticationManager;
+
     public AuthResponse login(LoginRequest request) {
-        return null;
+        authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword()));
+        UserDetails user = userRepo.findByUsername(request.getUsername()).orElseThrow();
+        String token = jwtService.getToken(user);
+        return AuthResponse.builder()
+            .token(token)
+            .build();
     }
 
     public AuthResponse register(RegisterRequest request) {
-        return null;
+        Usuario user = Usuario.builder()
+            .username(request.getUsername())
+            .fname(request.getFname())
+            .lname (request.getLname())
+            .password(passwordEncoder.encode(request.getPassword()))
+            .eMail(request.getEMail())
+            .phone(request.getPhone())
+            .rol(Role.USER)
+            .build();
+
+        userRepo.save(user);
+
+        return AuthResponse.builder()
+            .token(jwtService.getToken(user))
+            .build();
     }
 
 }
