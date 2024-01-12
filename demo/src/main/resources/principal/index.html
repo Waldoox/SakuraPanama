@@ -12,15 +12,15 @@
 
     <nav class="menu">
         <img class="logo" src="img/logo.png" alt="">
-        <a class="item" href="#">Inicio</a>
-        <a class="item" href="#">Menú</a>
+        <a class="item" href="./index.html">Inicio</a>
+        <a class="item" href="../static/about_us.html">Acerca de Nosotros</a>
         <a class="item" href="#">Contacto</a>
         <a href="../inicio y registro/inicio.html"><img class="user" src="img/user.png" alt=""></a>
     </nav>
 
     <section class="fondo">
         <div class="search-section">
-          
+
             <select id="country" class="country-select">
                 <option value="argentina">Panamá</option>
                 <option value="mexico">Dorado</option>
@@ -45,15 +45,8 @@
     <section>
         <div class="menu-item">
             <h2 class="titulo">Restaurantes destacados</h2>
-            <section class="carousel-section">
-                <h2>Nuestros Platos Destacados</h2>
-                <div class="slick-carousel">
-                    <div><img src="imagen1.jpg" alt="Plato 1"></div>
-                    <div><img src="imagen2.jpg" alt="Plato 2"></div>
-                    <div><img src="imagen3.jpg" alt="Plato 3"></div>
-                    <!-- Agrega más imágenes según sea necesario -->
-                </div>
-            </section>
+
+           
         </div>
 
         <div class="menu-item">
@@ -64,23 +57,7 @@
 
         <!-- Puedes agregar más elementos de menú aquí -->
     </section>
-
-    <script>
-          $(document).ready(function(){
-            $('.slick-carousel').slick({
-                autoplay: true,
-                autoplaySpeed: 2000, // Cambia la velocidad del carrusel según sea necesario
-                dots: true, // Muestra los puntos de navegación
-                infinite: true,
-                slidesToShow: 3,
-                slidesToScroll: 1
-            });
-        });
-    </script>
-
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="movimiento.js"></script>
 
 </body>
 
