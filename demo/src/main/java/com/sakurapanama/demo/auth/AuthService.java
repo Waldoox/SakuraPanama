@@ -34,11 +34,11 @@ public class AuthService {
     public AuthResponse register(RegisterRequest request) {
         Usuario user = Usuario.builder()
             .username(request.getUsername())
-            .fname(request.getFname())
-            .lname (request.getLname())
+            .nombreusr(request.getNombreusr())
+            .apellidousr (request.getApellidousr())
             .password(passwordEncoder.encode(request.getPassword()))
-            .eMail(request.getEMail())
-            .phone(request.getPhone())
+            .correousr(request.getCorreousr())
+            .telefonousr(request.getTelefonousr())
             .rol(Role.USER)
             .build();
 

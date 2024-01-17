@@ -25,11 +25,11 @@ public class Usuario implements UserDetails {
     @Id
     @Column(nullable = false)
     private String username;
-    private String fname;
-    private String lname;
+    private String nombreusr;
+    private String apellidousr;
     private String password;
-    private String eMail;
-    private String phone;
+    private String correousr;
+    private String telefonousr;
     @Enumerated(EnumType.STRING)
     private Role rol;
 
