@@ -32,7 +32,7 @@ public class SecurityConfig {
               authRequest
                 .requestMatchers("/auth/**").permitAll()
                 .requestMatchers("/images/**", "/css/**", "/js/**", "/registro.html", "/index.html", "/inicio.html").permitAll()
-                .requestMatchers("/registro", "/inicio", "/index").permitAll()
+                .requestMatchers("/registro", "/inicio", "/index", "/lugares").permitAll()
                 )
             .sessionManagement(sessionManager->
                 sessionManager 
