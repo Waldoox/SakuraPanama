@@ -85,11 +85,27 @@ body {
 .menu-item {
     border: 1px solid #ddd;
     border-radius: 5px;
-    margin: 1em;
+    margin:  10px;
     padding: 1em;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
+.cont-cuadrado{
+    display: flex;
+
+}
+.cuadrado{
+    width: 250px;
+    height: 250px;
+padding: 5px;
+}
+.cuadrado img{
+    width: 250px;
+    height: 250px;
+
+}
+
 
 
 
