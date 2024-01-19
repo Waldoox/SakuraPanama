@@ -14,6 +14,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 public class Lugar {
+    public Lugar(String string) {
+        //TODO Auto-generated constructor stub
+    }
     @Id
     @GeneratedValue
    private int id_lugar;

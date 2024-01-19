@@ -1,4 +1,4 @@
-package com.sakurapanama.demo.services;
+package com.sakurapanama.demo.Services;
 
 import java.sql.Statement;
 import java.sql.Connection;
@@ -15,7 +15,6 @@ public class LugaresDB {
   public LugaresDB() {
     _cn = new Conexion().openDb();
   }
-
   public List<Lugar> ObtenerLugares() {
     try {
       Statement stmt = _cn.createStatement();
@@ -44,4 +43,7 @@ public class LugaresDB {
       int x = 1;
     }
     return null;
-  }}
+  }
+ 
+
+}
