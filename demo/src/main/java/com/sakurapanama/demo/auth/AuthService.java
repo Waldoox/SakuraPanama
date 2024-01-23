@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import com.sakurapanama.demo.jwt.JwtService;
 import com.sakurapanama.demo.models.Role;
 import com.sakurapanama.demo.models.Usuario;
-import com.sakurapanama.demo.services.UserRepo;
+import com.sakurapanama.demo.Services.UserRepo;
 
 import lombok.RequiredArgsConstructor;
 

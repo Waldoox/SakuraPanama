@@ -21,11 +21,11 @@ function imprimirLugares() {
 }
 
 function mapearLugar(lugar) {
-  return `section >
-  <div>
-  <img src="${lugar.lugar_img}" alt="Imagen del lugar">
-  </div>
-</section`;
+  return `<section>
+    <div>
+      <img src="${lugar.lugar_img}" alt="Imagen del lugar">
+    </div>
+  </section>`;
 }
 
 document.addEventListener("DOMContentLoaded", obtenerLugares);

@@ -1,4 +1,4 @@
-package com.sakurapanama.demo.services;
+package com.sakurapanama.demo.Services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
