@@ -10,12 +10,12 @@ function obtenerLugares() {
   });
 }
 
-
 function imprimirLugares() {
   let contenedor = document.getElementById("lugar");
   contenedor.innerHTML = "";
 
-  lugares.forEach(lugar => {
+  // Mostrar solo las primeras 5 imágenes
+  lugares.slice(0, 5).forEach(lugar => {
     contenedor.innerHTML += mapearLugar(lugar);
   });
 }

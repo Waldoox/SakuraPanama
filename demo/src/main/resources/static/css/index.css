@@ -92,11 +92,16 @@ body {
 }
 .c-restaurante{
     width: 100%;
-    display: flex;
 }
 .secciones{
-    width: 150px;
-    height: 150px;
+    width: 250px;
+    height: 250px;
+    display: flex;
+}
+.secciones img{
+    width: 250px;
+    height: 250px;
+    margin-right: 10px;
 }
 
 .cont-cuadrado{
