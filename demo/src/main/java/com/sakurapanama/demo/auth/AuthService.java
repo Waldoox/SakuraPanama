@@ -6,9 +6,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.sakurapanama.demo.Services.UserRepo;
 import com.sakurapanama.demo.jwt.JwtService;
 import com.sakurapanama.demo.models.Role;
-import com.sakurapanama.demo.models.UserRepo;
 import com.sakurapanama.demo.models.Usuario;
 
 import lombok.RequiredArgsConstructor;
@@ -32,7 +32,7 @@ public class AuthService {
     }
 
     public AuthResponse register(RegisterRequest request) {
-        Usuario user = Usuario.builder()
+        Usuario user = Usuario.builder() 
             .username(request.getUsername())
             .nombreusr(request.getNombreusr())
             .apellidousr (request.getApellidousr())

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sakurapanama.demo.models.Lugar;
-import com.sakurapanama.demo.services.LugaresDB;
+import com.sakurapanama.demo.Services.LugaresDB;
 
 
 @RestController
