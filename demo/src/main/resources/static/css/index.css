@@ -6,7 +6,7 @@ body {
 }
 
 .fondo{
-    background-image: url(./img/fondo.webp);
+    background-image: url(../img/fondo.webp);
     height: 300px;
 }
 .menu {
@@ -75,7 +75,6 @@ body {
 .filtro{
     text-align: center;
     margin-top: -50px;
-    background-color: aqua;
 }
 
 /*Secciones*/
@@ -90,6 +89,14 @@ body {
     padding: 1em;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.c-restaurante{
+    width: 100%;
+    display: flex;
+}
+.secciones{
+    width: 150px;
+    height: 150px;
 }
 
 /*PIE*/

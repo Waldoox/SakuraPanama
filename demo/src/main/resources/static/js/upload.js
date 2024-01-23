@@ -10,8 +10,9 @@ function obtenerLugares() {
   });
 }
 
+
 function imprimirLugares() {
-  let contenedor = document.getElementById("cuerpoTabla");
+  let contenedor = document.getElementById("lugar");
   contenedor.innerHTML = "";
 
   lugares.forEach(lugar => {
@@ -20,10 +21,11 @@ function imprimirLugares() {
 }
 
 function mapearLugar(lugar) {
-  return `<tr>
-    <td><img src="${lugar.lugar_img}" alt="Imagen del lugar"></td>
-  </tr>`;
+  return `section >
+  <div>
+  <img src="${lugar.lugar_img}" alt="Imagen del lugar">
+  </div>
+</section`;
 }
 
-// Llama a la función para obtener lugares al cargar la página, por ejemplo:
 document.addEventListener("DOMContentLoaded", obtenerLugares);

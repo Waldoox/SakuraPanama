@@ -22,9 +22,9 @@
         <div class="search-section">
           
             <select id="country" class="country-select">
-                <option value="argentina">Panamá</option>
-                <option value="mexico">Dorado</option>
-                <option value="espana">Condado del Rey</option>
+                <option >Panamá</option>
+                <option >Dorado</option>
+                <option >Condado del Rey</option>
                 <!-- Agrega más países según sea necesario -->
             </select>
 
@@ -45,43 +45,15 @@
     <section>
         <div class="menu-item">
             <h2 class="titulo">Restaurantes destacados</h2>
-            <section class="carousel-section">
-                <h2>Nuestros Platos Destacados</h2>
-                <div class="slick-carousel">
-                    <div><img src="imagen1.jpg" alt="Plato 1"></div>
-                    <div><img src="imagen2.jpg" alt="Plato 2"></div>
-                    <div><img src="imagen3.jpg" alt="Plato 3"></div>
-                    <!-- Agrega más imágenes según sea necesario -->
+            <section class="c-restaurante">
+                <div class="secciones" id="lugar">
+
                 </div>
+              
             </section>
         </div>
-
-        <div class="menu-item">
-            <h2>Plato 2</h2>
-            <p>Descripción del plato 2.</p>
-            <p>Precio: $12.99</p>
-        </div>
-
-        <!-- Puedes agregar más elementos de menú aquí -->
     </section>
-
-    <script>
-          $(document).ready(function(){
-            $('.slick-carousel').slick({
-                autoplay: true,
-                autoplaySpeed: 2000, // Cambia la velocidad del carrusel según sea necesario
-                dots: true, // Muestra los puntos de navegación
-                infinite: true,
-                slidesToShow: 3,
-                slidesToScroll: 1
-            });
-        });
-    </script>
-
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
+    
+    <script src="./js/upload.js"></script>
 </body>
-
 </html>

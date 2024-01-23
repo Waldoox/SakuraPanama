@@ -6,10 +6,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.sakurapanama.demo.Services.UserRepo;
 import com.sakurapanama.demo.jwt.JwtService;
 import com.sakurapanama.demo.models.Role;
 import com.sakurapanama.demo.models.Usuario;
+import com.sakurapanama.demo.services.UserRepo;
 
 import lombok.RequiredArgsConstructor;
 

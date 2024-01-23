@@ -1,4 +1,4 @@
-package com.sakurapanama.demo.Services;
+package com.sakurapanama.demo.services;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
