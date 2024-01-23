@@ -1,6 +1,9 @@
-package com.sakurapanama.demo.models;
+package com.sakurapanama.demo.Services;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.sakurapanama.demo.models.Usuario;
+
 import java.util.Optional;
 
 

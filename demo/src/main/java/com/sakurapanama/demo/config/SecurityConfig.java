@@ -31,8 +31,8 @@ public class SecurityConfig {
             .authorizeHttpRequests(authRequest ->
               authRequest
                 .requestMatchers("/auth/**").permitAll()
-                .requestMatchers("/images/**", "/css/**", "/js/**", "/registro.html", "/index.html", "/inicio.html").permitAll()
-                .requestMatchers("/registro", "/inicio", "/index", "/lugares").permitAll()
+                .requestMatchers("/img/**", "/css/**", "/js/**", "/registro.html", "/index.html", "/inicio.html", "/prueba.html").permitAll()
+                .requestMatchers("/registro", "/inicio", "/index", "/lugares", "/email/send", "/prueba").permitAll()
                 )
             .sessionManagement(sessionManager->
                 sessionManager 
