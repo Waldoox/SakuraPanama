@@ -47,3 +47,30 @@ function iniciarCarrusel() {
 }
 
 document.addEventListener("DOMContentLoaded", obtenerLugares);
+
+
+let currentIndex = 0;
+
+    function showSlide(index) {
+        const carousel = document.getElementById('lugar');
+        const totalItems = carousel.children.length;
+
+        if (index >= totalItems) {
+            currentIndex = 0;
+        } else if (index < 0) {
+            currentIndex = totalItems - 1;
+        } else {
+            currentIndex = index;
+        }
+
+        const translateValue = -currentIndex * 100 + '%';
+        carousel.style.transform = 'translateX(' + translateValue + ')';
+    }
+
+    function nextSlide() {
+        showSlide(currentIndex + 1);
+    }
+
+    function prevSlide() {
+        showSlide(currentIndex - 1);
+    }
