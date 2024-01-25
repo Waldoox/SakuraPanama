@@ -13,15 +13,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Lugar {
+public class Articulo {
+    //Esta es el modelo de la tabla, aqui pones los datos de la tabla de la BD
     @Id
     @GeneratedValue
-   private int id_lugar;
-   private String nombre_lugar;
-   private String direccion_lugar;
-   private String descripcion;
-   private String lugar_img;
-   private int id_provincia;
-   private int id_tipolocal;
-
+   private int id_artículo;
+   private String nombre;
+   private String descripción;
+   private double precio;
 }

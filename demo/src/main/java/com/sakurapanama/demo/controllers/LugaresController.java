@@ -13,6 +13,6 @@ import com.sakurapanama.demo.Services.LugaresDB;
 public class LugaresController {
 
   @GetMapping("/lugares")
-  public List<Lugar> ObtenerTodosProductos() {
+  public List<Lugar> ObtenerTodosLugares() {
     return new LugaresDB().ObtenerLugares();
   }}

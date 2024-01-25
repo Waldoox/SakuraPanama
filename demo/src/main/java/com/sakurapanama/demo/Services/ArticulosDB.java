@@ -6,6 +6,10 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.sakurapanama.demo.models.Articulo;
+
+//Esta clase es para las consultas a la base de datos, cada metodo puede ser una consulta diferente
+
 public class ArticulosDB {
     Connection _cn;
 
