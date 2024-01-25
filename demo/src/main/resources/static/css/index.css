@@ -98,11 +98,12 @@ body {
     width: 250px;
     height: 250px;
     display: flex;
+    padding: 5px;
 }
 .secciones img{
     width: 250px;
     height: 250px;
-    margin-right: 10px;
+    padding: 5px;
 }
 
 #prev, #next {
