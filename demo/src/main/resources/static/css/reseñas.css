@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.fondo {
+    background-image: url(./img/fondo.webp);
+    height: 300px;
+}
+
+.menu {
+    background-color: #ef3620;
+    padding: 1em;
+}
+
+.item {
+    color: #fff;
+    text-decoration: none;
+    padding: 1em 2em;
+    margin: 0 2em;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.item:hover {
+    background-color: #be1704;
+}
+
+.logo {
+    width: 70px;
+}
+
+.user {
+    width: 50px;
+    float: right;
+    padding: 1em;
+}
+
+
+/* contenido */
+
+.Nombre-restaurante {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+.restaurante{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.parallax {
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    background-color: black;
+}
+
+.parallax img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    object-fit: cover;
+}
+
+.cont-rest {
+    padding: 6rem;
+    background-color: black;
+    color: white;
+}
+
+
+/*footer*/
+
+footer{
+    background-color: #be1704;
+}

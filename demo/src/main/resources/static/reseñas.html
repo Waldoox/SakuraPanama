@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/demo/src/main/resources/static/css/reseñas.css">
+    <title>Play Store Ratings</title>
+</head>
+
+<body>
+
+    <header>
+        <nav class="menu">
+            <img class="logo" src="img/logo.png" alt="">
+            <a class="item" href="#">Inicio</a>
+            <a class="item" href="#">Menú</a>
+            <a class="item" href="#">Contacto</a>
+            <a href="../inicio y registro/inicio.html"><img class="user" src="img/user.png" alt=""></a>
+        </nav>
+    </header>
+
+    <div>
+        <h2 class="Nombre-restaurante"> BB.Q Chiken Panamá </h2>
+    </div>
+
+    <section class="parallax">
+        <div>
+            <img  src="/demo/src/main/resources/static/img/bbq-chicken.png" id="bbq">
+        </div>
+    </section>
+
+    <section class="cont-rest">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt unde officia, in eius culpa, laudantium eligendi fugit nobis, eos error asperiores dolorum explicabo dolorem fuga delectus neque atque dolore totam.
+        Quidem quae ratione facilis veritatis sapiente iste tempora culpa temporibus laborum asperiores? Ratione laboriosam fugit nemo culpa eligendi magni consequatur odio voluptatum, quasi cumque ex? Recusandae itaque fugit modi suscipit.
+        Modi eligendi inventore nisi at dolores suscipit. Laborum magni quis officiis possimus fuga reiciendis quia libero, cumque itaque laudantium facilis voluptatum impedit! Nobis qui repellat distinctio. Doloremque laudantium mollitia id.
+        Dolor unde itaque, laboriosam quam iure quibusdam cupiditate impedit numquam corrupti sapiente aperiam asperiores earum. Animi repellat nam quos sed! Dolorum nihil officiis sit nam non minus omnis, placeat qui?
+        Rem itaque dignissimos, excepturi cumque reiciendis id assumenda doloremque ullam tempora totam quaerat inventore nulla in voluptates quis eos officiis magnam, iste, placeat cupiditate! Qui, vel odit! Temporibus, molestiae ex.</p>
+
+    </section>
+
+    <section>
+        <div id="ratings">
+            <div class="star" data-rating="5">⭐</div>
+            <div class="star" data-rating="4">⭐</div>
+            <div class="star" data-rating="3">⭐</div>
+            <div class="star" data-rating="2">⭐</div>
+            <div class="star" data-rating="1">⭐</div>
+        </div>
+    
+        <div>
+            <input type="text" id="commentInput" placeholder="Escribe tu comentario">
+            <button onclick="addReview()">Añadir Comentario</button>
+        </div>
+    
+        <div id="reviews">
+            <!-- Aquí mostraríamos las opiniones de los usuarios -->
+        </div>
+    
+        <!-- Aqui mostramos lo de subir las imagenes de los usuarios-->
+        <div class=" form-file">
+            <div class=" form-file_action">
+                <label for="imagen" class="title">foto de publicación</label>
+    
+                <input type="file">
+            </div>
+            <div class="form-file_result" id="result-imagen">
+                <img id="img-result" alt="">
+            </div>
+        </div>
+    
+    </section>
+
+    <footer class="bar">
+        <a class="redes" href="https://www.instagram.com/"><img src="../static/img/instagram.png" alt=""></a>
+        <a class="redes" href="https://www.facebook.com/"> <img src="../static/img/facebook.png" alt=""></a>
+   
+        <p class="text">Copyright © 2024 All Rights Reserved</p>
+</footer>
+
+    <script src="/demo/src/main/resources/static/js/reseñas.js"></script>
+</body>
+
+</html>
