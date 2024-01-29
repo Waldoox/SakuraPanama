@@ -73,12 +73,89 @@ updateRatingsAndDisplay();
 //efecto parallax
 
 const bbq = document.querySelector("#bbq");
+const pollito = document.querySelector("#pollito");
+const bb = document.querySelector("#bb");
 
 window.addEventListener("scroll", () => {
     let scroll = window.scrollY;
 
-    bbq.style.bottom = scroll * 0.5 + "px";
+    bbq.style.bottom = scroll * -0.2 + "px";
+    bbq.style.boton = scroll * 0.5 + "px";
 
 })
+
+
+// menu recomendado
+
+var cantidadRespuestas = {};
+
+function sumarRespuesta() {
+    // Obtener la opción seleccionada
+    var opcionSeleccionada = document.querySelector('input[name="opcion"]:checked');
+
+    if (opcionSeleccionada) {
+        // Verificar si ya existe la opción en el objeto cantidadRespuestas
+        if (cantidadRespuestas[opcionSeleccionada.value] === undefined) {
+            cantidadRespuestas[opcionSeleccionada.value] = 1;
+        } else {
+            // Si ya existe, incrementar la cantidad
+            cantidadRespuestas[opcionSeleccionada.value]++;
+        }
+
+        // Mostrar la cantidad actualizada
+        mostrarResultados();
+    }
+}
+
+function agregarOpcion() {
+    // Obtener el valor del nuevo radio button desde el input
+    var nuevaOpcion = document.getElementById("nuevaOpcion").value.trim();
+
+    // Verificar que el valor no esté vacío
+    if (nuevaOpcion !== "") {
+        // Verificar si ya existe la opción en el objeto cantidadRespuestas
+        if (cantidadRespuestas[nuevaOpcion] === undefined) {
+            cantidadRespuestas[nuevaOpcion] = 1;
+        } else {
+            // Si ya existe, incrementar la cantidad
+            cantidadRespuestas[nuevaOpcion]++;
+        }
+
+        // Crear un nuevo radio button
+        var nuevoRadio = document.createElement("input");
+        nuevoRadio.type = "radio";
+        nuevoRadio.name = "opcion";
+        nuevoRadio.value = nuevaOpcion;
+        nuevoRadio.onclick = sumarRespuesta;
+
+        // Crear una etiqueta para el nuevo radio button
+        var nuevaLabel = document.createElement("label");
+        nuevaLabel.appendChild(nuevoRadio);
+        nuevaLabel.appendChild(document.createTextNode(" " + nuevaOpcion));
+
+        // Agregar el nuevo radio button al formulario
+        document.getElementById("encuestaForm").appendChild(nuevaLabel);
+
+        // Limpiar el campo de texto
+        document.getElementById("nuevaOpcion").value = "";
+
+        // Mostrar la cantidad actualizada
+        mostrarResultados();
+    } else {
+        alert("Por favor, introduce un nombre para la nueva opción.");
+    }
+}
+
+function mostrarResultados() {
+    // Crear un nuevo elemento para mostrar la cantidad de respuestas
+    var resultadosDiv = document.getElementById("resultados");
+    resultadosDiv.innerHTML = "<strong>Cantidad de Respuestas:</strong><br>";
+
+    // Iterar sobre las opciones y mostrar la cantidad
+    for (var opcion in cantidadRespuestas) {
+        resultadosDiv.innerHTML += opcion + ": " + cantidadRespuestas[opcion] + "<br>";
+    }
+}
+
 
 // sube la imagen a la pagina web del comentario de la gente 

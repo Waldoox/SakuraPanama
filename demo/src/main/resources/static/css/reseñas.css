@@ -41,12 +41,18 @@ body {
 
 /* contenido */
 
+
+
 .Nombre-restaurante {
     font-family: 'Times New Roman', Times, serif;
+    color: #f4f4f4;
     text-align: center;
+    background-color: #ef3620;
+    padding: 0.1px;
+    font-size: 1.5rem;
 }
 
-.restaurante{
+.restaurante {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -60,12 +66,13 @@ body {
     overflow: hidden;
     position: relative;
     background-color: black;
+    position: relative;
 }
 
 .parallax img {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 120%;
     bottom: 0;
     object-fit: cover;
 }
@@ -76,9 +83,114 @@ body {
     color: white;
 }
 
+.cont-rest h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.cont-rest p {
+    margin-bottom: 1rem;
+}
+
+
+/*Tabla de informacion*/
+
+.contenedor{
+    max-width: 800px; /* Ajusta el ancho máximo del contenedor según tus preferencias */
+    margin: 0 auto; /* Centra el contenedor en la página */
+    overflow: hidden; /* Contiene los elementos flotantes dentro del contenedor */
+  }
+
+
+.detalles {
+    max-width: 40%;
+    max-height: 5%;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f4f4f4;
+    margin-left: 35px;
+   
+}
+
+.subseccion {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    
+}
+
+.columna {
+    width: 48%;
+    /* Ajusta según sea necesario, ten en cuenta el espacio entre las columnas */
+    padding: 10px;
+}
+
+.columna-izquierda {
+    border-right: 1px solid #ccc;
+}
+
+.deta h2,
+h3 {
+    color: #333;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #ccc;
+    margin: 10px 0;
+}
+
+/* Servicios */
+
+.servi {
+    list-style: none;
+    padding: 4px;
+    margin-left: 10px;
+
+}
+
+.servi li::before {
+    content: "\2022";
+    padding-right: 1rem;
+    color: red;
+}
+
+/*imagen flotante*/
+
+.img-float{
+    float: left;
+    top: 1150px;
+    margin-left: 60%;
+    position: absolute;
+    bottom: 0;
+    object-fit: cover;
+    
+}
+
+
+
+/*menu del resturante*/
+
+
+.menu-ti{
+    color: #f4f4f4;
+}
+
+
+.menu{
+    color: #f4f4f4;
+}
+
+.menu-label{
+    color: #f4f4f4 ;
+}
 
 /*footer*/
 
-footer{
+footer {
     background-color: #be1704;
 }
