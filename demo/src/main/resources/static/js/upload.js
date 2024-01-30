@@ -1,94 +1,46 @@
 //LUGARES
 let baseUrl = "http://localhost:8080";
 let lugares = [];
-let articulos = [];
-let eventos = [];
 
-
-function obtenerLugares() {
-  // Modifica la URL para incluir el parámetro de filtrado por tipolocal
-  fetch(baseUrl + '/lugares?tipolocal=1').then(res => {
-    res.json().then(json => {
+function obtenerLugares(url, callback) {
+  fetch(baseUrl + url)
+    .then(res => res.json())
+    .then(json => {
       lugares = json;
-      imprimirLugares();
+      callback(); // Llamamos a la función de callback después de obtener los lugares
     });
-  });
 }
-function imprimirLugares() {
-  let contenedor = document.getElementById("lugar");
+
+function imprimirLugares(contenedorId) {
+  let contenedor = document.getElementById(contenedorId);
   contenedor.innerHTML = "";
 
-  let lugaresAleatorios = shuffleArray(lugares).slice(0, 7);
-
-  lugaresAleatorios.forEach(lugar => {
+  lugares.forEach(lugar => {
     contenedor.innerHTML += mapearLugar(lugar);
   });
-
 }
+
 function mapearLugar(lugar) {
-  return `<div class="secciones" id="lugar">
-    <img src="${lugar.lugar_img.id_tipolocal=1}" >
-  </div>`;
+  return `<section>
+    <div>
+      <img src="${lugar.lugar_img}" alt="Imagen del lugar">
+    </div>
+  </section>`;
 }
 
-
-//ARTICULOS
-function obtenerLugares() {
-  // Modifica la URL para incluir el parámetro de filtrado por tipolocal
-  fetch(baseUrl + '/lugares?tipolocal=2').then(res => {
-    res.json().then(json => {
-      articulos = json;
-      imprimirLugares();
-    });
-  });
-}
-function imprimirLugares() {
-  let contenedor = document.getElementById("lugar");
-  contenedor.innerHTML = "";
-
-  let lugaresAleatorios = shuffleArray(articulos).slice(0, 7);
-
-  lugaresAleatorios.forEach(lugar => {
-    contenedor.innerHTML += mapearLugar(lugar);
+document.addEventListener("DOMContentLoaded", function () {
+  obtenerLugares('/all', function () {
+    imprimirLugares('lugar');
   });
 
-}
-function mapearLugar(lugar) {
-  return `<div class="secciones" id="ariculo">
-    <img src="${lugar.lugar_img}" >
-  </div>`;
-}
-
-
-//EVENTOS
-function obtenerLugares() {
-  // Modifica la URL para incluir el parámetro de filtrado por tipolocal
-  fetch(baseUrl + '/lugares?tipolocal=3').then(res => {
-    res.json().then(json => {
-      eventos = json;
-      imprimirLugares();
-    });
-  });
-}
-function imprimirLugares() {
-  let contenedor = document.getElementById("lugar");
-  contenedor.innerHTML = "";
-
-  let lugaresAleatorios = shuffleArray(eventos).slice(0, 7);
-
-  lugaresAleatorios.forEach(lugar => {
-    contenedor.innerHTML += mapearLugar(lugar);
+  obtenerLugares('/tiendas', function () {
+    imprimirLugares('articulo');
   });
 
-}
-function mapearLugar(lugar) {
-  return `<div class="secciones" id="evento">
-    <img src="${lugar.lugar_img}" >
-  </div>`;
-}
-
-
-
+  obtenerLugares('/variedades', function () {
+    imprimirLugares('evento');
+  });
+});
 
 //-----------------------CARROUSEL----------------------------------------------------
 function shuffleArray(array) {
