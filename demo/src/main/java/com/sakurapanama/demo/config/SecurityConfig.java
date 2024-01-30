@@ -33,6 +33,7 @@ public class SecurityConfig {
                 .requestMatchers("/auth/**").permitAll()
                 .requestMatchers("/img/**", "/css/**", "/js/**", "/registro.html", "/index.html", "/inicio.html", "/prueba.html").permitAll()
                 .requestMatchers("/registro", "/inicio", "/index", "/lugares", "/email/send", "/prueba").permitAll()
+                .requestMatchers("/añadir_local.html").hasRole("ADMIN")
                 )
             .sessionManagement(sessionManager->
                 sessionManager 

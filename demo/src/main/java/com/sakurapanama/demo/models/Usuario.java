@@ -32,6 +32,7 @@ public class Usuario implements UserDetails {
     private String telefonousr;
     @Enumerated(EnumType.STRING)
     private Role rol;
+    private String perfilimg;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
