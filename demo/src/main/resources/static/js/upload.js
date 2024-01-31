@@ -7,7 +7,7 @@ function obtenerLugares(url, callback) {
     .then(res => res.json())
     .then(json => {
       lugares = json;
-      callback(); // Llamamos a la función de callback después de obtener los lugares
+      callback(); 
     });
 }
 
@@ -29,7 +29,7 @@ function mapearLugar(lugar) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  obtenerLugares('/all', function () {
+  obtenerLugares('/restaurantes', function () {
     imprimirLugares('lugar');
   });
 
