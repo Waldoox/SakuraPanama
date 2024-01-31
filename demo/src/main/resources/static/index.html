@@ -20,11 +20,11 @@
 
     <section class="fondo">
         <div class="search-section">
-          
+
             <select id="country" class="country-select">
-                <option >Panamá</option>
-                <option >Dorado</option>
-                <option >Condado del Rey</option>
+                <option>Panamá</option>
+                <option>Dorado</option>
+                <option>Condado del Rey</option>
                 <!-- Agrega más países según sea necesario -->
             </select>
 
@@ -43,17 +43,41 @@
     </section>
 
     <section>
+        <!-- Seccion Restaurante -->
         <div class="menu-item">
             <h2 class="titulo">Restaurantes destacados</h2>
             <section class="c-restaurante">
                 <div class="secciones" id="lugar">
 
                 </div>
-              
+
+            </section>
+            <button id="prev" onclick="prevSlide()">&#10094;</button>
+            <button id="next" onclick="nextSlide()">&#10095;</button>
+        </div>
+        <!-- Seccion Articulo -->
+        <div class="menu-item">
+            <h2 class="titulo">Deseas comprar algo?</h2>
+            <section class="c-restaurante">
+                <div class="secciones" id="articulo">
+
+                </div>
+
             </section>
         </div>
+        <!-- Seccion Evento -->
+        <div class="menu-item">
+            <h2 class="titulo">Más Eventos</h2>
+            <section class="c-restaurante">
+                <div class="secciones" id="evento">
+
+                </div>
+            </section>
+        </div>
+
     </section>
-    
+
     <script src="./js/upload.js"></script>
 </body>
+
 </html>
