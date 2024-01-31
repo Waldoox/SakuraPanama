@@ -44,4 +44,97 @@ public class LugaresDB {
       int x = 1;
     }
     return null;
-  }}
+  }
+
+  public List<Lugar> ObtenerRestaurantes() {
+    try {
+      Statement stmt = _cn.createStatement();
+      String query = "SELECT * FROM lugar WHERE id_tipolocal = 1";
+
+      List<Lugar> lugares = new ArrayList<>();
+      ResultSet result = stmt.executeQuery(query);
+      while (result.next()) {
+        Lugar producto = new Lugar(
+            result.getInt("id_lugar"),
+            result.getString("nombre_lugar"),
+            result.getString("direccion_lugar"),
+            result.getString("descripcion"),
+            result.getString("lugar_img"),
+            result.getInt("id_provincia"),
+            result.getInt("id_tipolocal"));
+
+        lugares.add(producto);
+      }
+
+      result.close();
+      stmt.close();
+      return lugares;
+
+    } catch (Exception e) {
+      int x = 1;
+    }
+    return null;
+  }
+
+  public List<Lugar> ObtenerTiendas() {
+    try {
+      Statement stmt = _cn.createStatement();
+      String query = "SELECT * FROM lugar WHERE id_tipolocal = 2";
+
+      List<Lugar> lugares = new ArrayList<>();
+      ResultSet result = stmt.executeQuery(query);
+      while (result.next()) {
+        Lugar producto = new Lugar(
+            result.getInt("id_lugar"),
+            result.getString("nombre_lugar"),
+            result.getString("direccion_lugar"),
+            result.getString("descripcion"),
+            result.getString("lugar_img"),
+            result.getInt("id_provincia"),
+            result.getInt("id_tipolocal"));
+
+        lugares.add(producto);
+      }
+
+      result.close();
+      stmt.close();
+      return lugares;
+
+    } catch (Exception e) {
+      int x = 1;
+    }
+    return null;
+  }
+
+  public List<Lugar> ObtenerVariedades() {
+    try {
+      Statement stmt = _cn.createStatement();
+      String query = "SELECT * FROM lugar WHERE id_tipolocal = 3";
+
+      List<Lugar> lugares = new ArrayList<>();
+      ResultSet result = stmt.executeQuery(query);
+      while (result.next()) {
+        Lugar producto = new Lugar(
+            result.getInt("id_lugar"),
+            result.getString("nombre_lugar"),
+            result.getString("direccion_lugar"),
+            result.getString("descripcion"),
+            result.getString("lugar_img"),
+            result.getInt("id_provincia"),
+            result.getInt("id_tipolocal"));
+
+        lugares.add(producto);
+      }
+
+      result.close();
+      stmt.close();
+      return lugares;
+
+    } catch (Exception e) {
+      int x = 1;
+    }
+    return null;
+  }
+
+
+}
