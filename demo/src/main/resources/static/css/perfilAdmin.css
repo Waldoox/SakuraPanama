@@ -13,72 +13,11 @@ body{
       flex-direction: column;
       min-height: 100vh;
   }
-  .container{
-    display: flex;
-    height: 100%;
-    flex: 1;
-  }
-  .contenedor{
-    display: flex;
-    height: 100%;
-    flex: 1;
-  }
-  .sidebar{
-      width: 260px;
-      background-color: #333;
-      color: white;
-      background-color: #be1704;
-      max-width: 100%;
-      padding: 40px 10px;
-      margin: 0;
-      position: sticky;
-      top: 0;
-  }
-  @media ( max-width: 1068px ){
-    .sidebar{
-      display: none;
-    }
-    
-       
-  }
-  .content{
-  
-      flex: 1;
-      padding: 20px;
-      flex-direction: column;
-  }
-  
-  .nav-options{
-    height: 100%;
-    padding: 0px 20px;
-   }
-  
-  .nav-option{
-    display: block;
-    text-decoration: none;
-    color: white;
-    font-family: var(--sub-font);
-    font-size: 1.5rem;
-    margin: 2rem 0;
-    padding: 2rem;
-    text-wrap: pretty;
-    border-radius: 0.3rem;
-  }
-  
-  .nav-option-selected{
-    background-color: teal;
-  }
-  
-  .nav-option:hover{
-    background-color: rebeccapurple;
-  }
-
-
 
   /*--------------  PERFIL DEL ADMIN -----------------*/
 main {
   width: 70%;
-  margin-top: 2%;
+margin-left: 10%;
   display: flex;
   justify-content: space-between;
   padding: 20px;
@@ -92,9 +31,9 @@ main {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border: 1px solid #ccc;
   border-radius: 8px;
+  margin-top: 15%;
 }
 .profile-info form {
-  margin-bottom: 20px;
   padding: 5%;
 }
 .profile-info img {
@@ -242,7 +181,7 @@ main {
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   
   main {
-    width: 100%;
+    width: 90%;
     margin-left: 50px;
 
 }
@@ -260,4 +199,27 @@ main {
       width: (100% );
       margin-right: 5px;
   }
+}
+
+/*PESTAÑAS*/
+.tabs {
+  display: flex;
+  overflow: hidden;
+  margin-left: 40px;
+
+}
+.tab-button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px 4px 0 0; /* Bordes redondeados solo arriba */
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 2px; /* Espacio entre pestañas */
+  transition: background-color 0.3s;
+}
+
+.tab-button:hover {
+  background-color: #45a049;
 }
