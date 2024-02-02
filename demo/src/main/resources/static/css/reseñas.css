@@ -166,11 +166,18 @@ hr {
     height: 35%;
     margin-top: 5%;
     padding: auto;
-    background-color: #EEEDEB ;
-    border-radius: 25px 60px 25px 60px;
+    border: 1px solid #ccc;
+    background-color: #f4f4f4 ;
+    border-radius: 25px 40px 25px 40px;
     left: 25px;
     align-items: center;
 
+}
+
+.menu{
+    margin-top: 5%;
+    background-color: #f4f4f4 ;
+   
 }
 
 /*menu del resturante*/
@@ -192,6 +199,14 @@ hr {
 
 
 /*calificación*/
+
+
+
+
+
+
+/*subida de imagen*/
+
 
 
 
