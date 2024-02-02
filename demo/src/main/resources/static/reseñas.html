@@ -22,7 +22,6 @@
     </header>
     <br>
 
-
     <section class="Nombre-restaurante">
         <h2> BB.Q Chiken Panamá </h2>
     </section>
@@ -31,7 +30,7 @@
         <img src="/demo/src/main/resources/static/img/bbq-chicken.png" id="bbq">
     </section>
 
-    <section class="contendor">
+    <section class="contenedor">
         <section class="detalles" id="Deta">
             <h2 class="deta">Detalles de la Sección</h2>
 
@@ -94,52 +93,38 @@
             </div>
         </section>
 
+        <section class="menu-rest">
 
-        <div class="img-float" id="pollito">
-            <img src="/demo/src/main/resources/static/img/pollo.png" alt="">
-        </div>
+            <h2 class="menu-ti"> Menu de Resturate  </h2>
 
-    </section>
+            <form id="encuestaForm" class="menu  menu-rest">
+                <p>Danos tu Opinión de los platos </p>
 
+                <label class="menu-label">
+                    <input type="radio" name="opcion" value="campoTexto" onclick="sumarRespuesta()"> Pollo Frito 
+                </label>
+                <label class="menu-label">
+                    <input type="radio" name="opcion" value="menuDesplegable" onclick="sumarRespuesta()"> 
+                    Hamburguesa de Pollo
+                </label>
+                <label class="menu-label">
+                    <input type="radio" name="opcion" value="boton" onclick="sumarRespuesta()"> Pollo en salsa Especial
+                </label>
 
-    <section class="parallax" id="bb">
+                <div class="menu-label">
+                    <label for="nuevaOpcion">Agrega un nuevo plato Favorito: </label>
+                    <input type="text" id="nuevaOpcion" placeholder="Nombre de la opción">
+                    <button type="button" onclick="agregarOpcion()">Agregar</button>
+                </div>
+            </form>
 
-        <!--<h2 class="menu-ti"> Menu Recomendado </h2>
-
-       <form id="menu">
-        <label class="menu-label">
-            <input type="radio"> Menu destacado
-
-        </label>
-
-       </form>-->
-
-
-        <h2 class="menu-ti">Encuesta Simple</h2>
-
-        <form id="encuestaForm" class="menu">
-            <p>Pregunta: ¿Cuál de estos elementos prefieres?</p>
-
-            <label class="menu-label">
-                <input type="radio" name="opcion" value="campoTexto" onclick="sumarRespuesta()"> Campo de Texto
-            </label>
-            <label class="menu-label">
-                <input type="radio" name="opcion" value="menuDesplegable" onclick="sumarRespuesta()"> Menú Desplegable
-            </label>
-            <label class="menu-label">
-                <input type="radio" name="opcion" value="boton" onclick="sumarRespuesta()"> Botón
-            </label>
-
-            <div class="menu-label">
-                <label for="nuevaOpcion">Agregar otra opción: </label>
-                <input type="text" id="nuevaOpcion" placeholder="Nombre de la opción">
-                <button type="button" onclick="agregarOpcion()">Agregar</button>
+            <div id="resultados" class="menu-label">
+                <!-- Aquí se mostrarán los resultados -->
             </div>
-        </form>
 
-        <div id="resultados" class="menu-label">
-            <!-- Aquí se mostrarán los resultados -->
-        </div>
+
+        </section>
+
 
 
     </section>
@@ -162,6 +147,8 @@
             <!-- Aquí mostraríamos las opiniones de los usuarios -->
         </div>
 
+
+        
         <!-- Aqui mostramos lo de subir las imagenes de los usuarios-->
         <div class=" form-file">
             <div class=" form-file_action">

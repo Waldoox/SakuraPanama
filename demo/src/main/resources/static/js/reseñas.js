@@ -149,7 +149,7 @@ function agregarOpcion() {
 function mostrarResultados() {
     // Crear un nuevo elemento para mostrar la cantidad de respuestas
     var resultadosDiv = document.getElementById("resultados");
-    resultadosDiv.innerHTML = "<strong>Cantidad de Respuestas:</strong><br>";
+    resultadosDiv.innerHTML = "<strong>Platos Preferidos de los Clientes: </strong><br>";
 
     // Iterar sobre las opciones y mostrar la cantidad
     for (var opcion in cantidadRespuestas) {

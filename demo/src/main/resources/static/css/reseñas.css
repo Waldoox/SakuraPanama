@@ -95,24 +95,6 @@ body {
 
 /*Tabla de informacion*/
 
-.contenedor{
-    max-width: 800px; /* Ajusta el ancho máximo del contenedor según tus preferencias */
-    margin: 0 auto; /* Centra el contenedor en la página */
-    overflow: hidden; /* Contiene los elementos flotantes dentro del contenedor */
-  }
-
-
-.detalles {
-    max-width: 40%;
-    max-height: 5%;
-    margin: 50px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f4f4f4;
-    margin-left: 35px;
-   
-}
 
 .subseccion {
     margin-bottom: 20px;
@@ -159,35 +141,59 @@ hr {
     color: red;
 }
 
-/*imagen flotante*/
+/*contenedor*/
 
-.img-float{
-    float: left;
-    top: 1150px;
-    margin-left: 60%;
-    position: absolute;
-    bottom: 0;
-    object-fit: cover;
-    
+.contenedor{
+    display: flex;
+    width: auto;
+    height: auto;
 }
 
+.detalles {
+    max-width: 40%;
+    max-height: 25%;
+    margin: 50px auto;
+    padding: 40px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f4f4f4;
+    margin-left: 35px;
+   
+}
 
+.menu-rest{
+    width: 50%;
+    height: 35%;
+    margin-top: 5%;
+    padding: auto;
+    background-color: #EEEDEB ;
+    border-radius: 25px 60px 25px 60px;
+    left: 25px;
+    align-items: center;
+
+}
 
 /*menu del resturante*/
 
 
 .menu-ti{
-    color: #f4f4f4;
+    color: black;
 }
 
 
 .menu{
-    color: #f4f4f4;
+    color: black;
+    align-items:center ;
 }
 
 .menu-label{
-    color: #f4f4f4 ;
+    color: black ;
 }
+
+
+/*calificación*/
+
+
 
 /*footer*/
 
