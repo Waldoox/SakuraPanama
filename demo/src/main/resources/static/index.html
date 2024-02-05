@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
     <link rel="stylesheet" href="css/index.css">
+    <!-- En el <head> -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
 </head>
 
 <body>
@@ -52,8 +58,8 @@
                 </div>
 
             </section>
-            <button id="prev" onclick="prevSlide()">&#10094;</button>
-            <button id="next" onclick="nextSlide()">&#10095;</button>
+            <button class="prev" onclick="prevRestauranteSlide()">&#10094;</button>
+  <button class="next" onclick="nextRestauranteSlide()">&#10095;</button>
         </div>
         <!-- Seccion Articulo -->
         <div class="menu-item">
@@ -64,6 +70,8 @@
                 </div>
 
             </section>
+            <button class="prev" onclick="prevTiendaSlide()">&#10094;</button>
+  <button class="next" onclick="nextTiendaSlide()">&#10095;</button>
         </div>
         <!-- Seccion Evento -->
         <div class="menu-item">
@@ -73,6 +81,8 @@
 
                 </div>
             </section>
+            <button class="prev" onclick="prevEventoSlide()">&#10094;</button>
+            <button class="next" onclick="nextEventoSlide()">&#10095;</button>
         </div>
 
     </section>

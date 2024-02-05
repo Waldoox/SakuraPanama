@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/busqueda.css">
+</head>
+
+<body>
+    <nav class="menu">
+        <img class="logo" src="img/logo.png" alt="">
+        <a class="item" href="#">Inicio</a>
+        <a class="item" href="#">Menú</a>
+        <a class="item" href="#">Contacto</a>
+        <a href="../inicio y registro/inicio.html"><img class="user" src="img/user.png" alt=""></a>
+    </nav>
+
+    <main>
+
+        <section class="perfil-section">
+            <aside>
+                <div class="profile-info">
+
+                    <h2>Filtros</h2>
+                   
+                    <div class="seccion">
+                        <h4>Cocina</h4>
+                        <label class="option">
+                            <input type="checkbox" name="Cocina" value="china"> Comida China
+                        </label class="option">
+                        <label class="option">
+                            <input type="checkbox" name="Cocina" value="japon"> Comida Japonés
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" name="Cocina" value="corea"> Comida Coreana
+                        </label>
+                    </div>
+                    <div class="seccion">
+                        <h4>Tipo de Establecimiento</h4>
+                        <label class="option">
+                            <input type="checkbox" name="local" value="restaurante"> Restaurante
+                        </label class="option">
+                        <label class="option">
+                            <input type="checkbox" name="local" value="variedad"> Variedades
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" name="local" value="evento"> Eventos
+                        </label>
+                    </div>
+                    <div class="seccion">
+                        <h4>Provincia</h4>
+                        <label class="option">
+                            <input type="checkbox" name="provincia" value="panama"> Panamá
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" name="provincia" value="colon"> Colón
+                        </label>
+                    </div>
+                    <button type="button" onclick="applyFilters()">Aplicar Filtros</button>
+                </div>
+            </aside>
+        </section>
+
+
+        <section class="local-section">
+            <div class="local-form" id="locales-container">
+
+
+            </div>
+        </section>
+    </main>
+
+  <script src="js/busqueda.js"></script>
+</body>
+</html>
