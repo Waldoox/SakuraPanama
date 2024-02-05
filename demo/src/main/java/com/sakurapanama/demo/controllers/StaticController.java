@@ -29,4 +29,8 @@ public class StaticController {
         return "prueba.html";
     }
 
+    @GetMapping("/busqueda")
+    public String busqueda(){
+        return "busqueda.html";
+    }
 }

@@ -6,33 +6,47 @@ body {
 }
 
 .fondo{
-    background-image: url(../img/fondo.webp);
+    background-image: url(../img/fondo.jpg);
     height: 300px;
 }
+
 .menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background-color: #ef3620;
     padding: 1em;
+}
+
+.logo {
+    width: 70px;
 }
 
 .item {
     color: #fff;
     text-decoration: none;
-    padding: 1em 2em;
-    margin: 0 2em;
+    padding: 1em 1.5em;
+    margin: 0 1em;
     border-radius: 10px;
     transition: background-color 0.3s;
 }
+
 .item:hover {
-   background-color: #be1704;
+    background-color: #be1704;
 }
-.logo{
-    width: 70px;
-}
-.user{
+
+.user {
     width: 50px;
-    float: right;
     padding: 1em;
 }
+
+/* Clearfix to fix the float */
+.menu::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 
 /*BUSCADOR*/
 .search-section{
@@ -78,23 +92,27 @@ body {
 }
 
 /*Secciones*/
-.titulo{
+.titulo {
     color: black;
-    text-decoration:underline #be1704;
+    text-decoration: underline #be1704;
 }
+
 .menu-item {
+    position: relative; /* Added relative positioning */
     border: 1px solid #ddd;
     border-radius: 5px;
-    margin:  10px;
+    margin: 10px;
     padding: 1em;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-.c-restaurante{
+
+.c-restaurante {
     width: 100%;
     overflow: hidden;
 }
-.secciones{
+
+.secciones {
     width: 250px;
     height: 250px;
     display: flex;
@@ -106,33 +124,7 @@ body {
     padding: 5px;
 }
 
-#prev, #next {
-    top: 50%;
-    font-size: 24px;
-    cursor: pointer;
-    color: #fff;
-    background-color: #333;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-#prev {
-    left: 10px;
-}
-
-#next {
-    right: 10px;
-}
-
-#prev {
-    left: 10px;
-}
-
-#next {
-    right: 10px;
-}
-
+c
 
 /*PIE*/
 .bar {
@@ -148,6 +140,8 @@ body {
     text-align: left;
     padding: 5px;
 }
+
+
 
 
 
