@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/busqueda.css">
-    <link rel="stylesheet" href="css/perfilAdmin.css">
 </head>
+
 <body>
     <nav class="menu">
         <img class="logo" src="img/logo.png" alt="">
@@ -21,116 +22,56 @@
         <section class="perfil-section">
             <aside>
                 <div class="profile-info">
-                    <div class="filter-column">
-                        <h2>Filtros</h2>
-                    
-                        <form id="filter-form">
-                            <label>
-                                <input type="checkbox" name="promociones" value="descuentos"> Descuentos
-                            </label>
-                            <label>
-                                <input type="checkbox" name="promociones" value="ofertas"> Ofertas
-                            </label>
-                    
-                            <label>
-                                <input type="checkbox" name="precios" value="economico"> Económico
-                            </label>
-                            <label>
-                                <input type="checkbox" name="precios" value="moderado"> Moderado
-                            </label>
-                            <label>
-                                <input type="checkbox" name="precios" value="caro"> Caro
-                            </label>
-                    
-                            <label>
-                                <input type="checkbox" name="cocina" value="italiana"> Italiana
-                            </label>
-                            <label>
-                                <input type="checkbox" name="cocina" value="mexicana"> Mexicana
-                            </label>
-                            <label>
-                                <input type="checkbox" name="cocina" value="asiatica"> Asiática
-                            </label>
-                    
-                            <button type="button" onclick="applyFilters()">Aplicar Filtros</button>
-                        </form>
+
+                    <h2>Filtros</h2>
+                   
+                    <div class="seccion">
+                        <h4>Cocina</h4>
+                        <label class="option">
+                            <input type="checkbox" name="Cocina" value="china"> Comida China
+                        </label class="option">
+                        <label class="option">
+                            <input type="checkbox" name="Cocina" value="japon"> Comida Japonés
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" name="Cocina" value="corea"> Comida Coreana
+                        </label>
                     </div>
+                    <div class="seccion">
+                        <h4>Tipo de Establecimiento</h4>
+                        <label class="option">
+                            <input type="checkbox" name="local" value="restaurante"> Restaurante
+                        </label class="option">
+                        <label class="option">
+                            <input type="checkbox" name="local" value="variedad"> Variedades
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" name="local" value="evento"> Eventos
+                        </label>
+                    </div>
+                    <div class="seccion">
+                        <h4>Provincia</h4>
+                        <label class="option">
+                            <input type="checkbox" name="provincia" value="panama"> Panamá
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" name="provincia" value="colon"> Colón
+                        </label>
+                    </div>
+                    <button type="button" onclick="applyFilters()">Aplicar Filtros</button>
                 </div>
             </aside>
         </section>
 
 
-        <section class="agregar-local-section">
-            <div class="local-form">
-               
-                
+        <section class="local-section">
+            <div class="local-form" id="locales-container">
+
+
             </div>
         </section>
     </main>
-   
-  
 
-
-<div class="info-column" id="locales-container">
-    <!-- Aquí se mostrarán los locales filtrados -->
-</div>
-
-<script>
-    function applyFilters() {
-        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-        const selectedFilters = {};
-
-        checkboxes.forEach(checkbox => {
-            selectedFilters[checkbox.name] = checkbox.checked;
-        });
-
-        // Lógica para filtrar locales según las opciones seleccionadas
-        const filteredLocales = filterLocales(selectedFilters);
-
-        // Muestra los locales filtrados en la segunda columna
-        displayFilteredLocales(filteredLocales);
-    }
-
-    function filterLocales(selectedFilters) {
-        // Implementa tu lógica de filtrado aquí, por ejemplo, desde un conjunto de locales existentes
-        // Devuelve un array con los locales que cumplen con los criterios de filtrado
-        const locales = [
-            { nombre: 'Local 1', promocion: 'descuentos', precio: 'economico', tipoCocina: 'italiana' },
-            { nombre: 'Local 2', promocion: 'ofertas', precio: 'moderado', tipoCocina: 'mexicana' },
-            // Agrega más locales según sea necesario
-        ];
-
-        return locales.filter(local => {
-            return (
-                (!selectedFilters.promociones || local.promocion === 'descuentos' || local.promocion === 'ofertas') &&
-                (!selectedFilters.precios || local.precio === 'economico' || local.precio === 'moderado' || local.precio === 'caro') &&
-                (!selectedFilters.cocina || local.tipoCocina === 'italiana' || local.tipoCocina === 'mexicana' || local.tipoCocina === 'asiatica')
-            );
-        });
-    }
-
-    function displayFilteredLocales(filteredLocales) {
-        const localesContainer = document.getElementById('locales-container');
-        localesContainer.innerHTML = '';
-
-        filteredLocales.forEach(local => {
-            const localeElement = document.createElement('div');
-            localeElement.classList.add('locale');
-
-            localeElement.innerHTML = `
-                <img src="local_image.jpg" alt="${local.nombre}">
-                <div class="locale-info">
-                    <h3>${local.nombre}</h3>
-                    <p>Dirección del local</p>
-                </div>
-            `;
-
-            localesContainer.appendChild(localeElement);
-        });
-    }
-</script>
-
-   
-    
+  <script src="js/busqueda.js"></script>
 </body>
 </html>
