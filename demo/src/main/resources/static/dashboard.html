@@ -15,108 +15,91 @@
     <link rel="stylesheet" href="css/perfilAdmin.css">
   </head>
   <body>
-    <div class="grid-container">
+
 
       <!-- Header -->
-      <header class="header">
-        <div class="menu-icon" onclick="openSidebar()">
-          <span class="material-icons-outlined">menu</span>
+      <header class="headerbg">
+        <div class="contenedor header-dpy">
+            <img src="img/logo.png" alt="" class="h-img">
+
+            <img src="img/user.png" alt="" class="h-img"> <!-- Cambiar por la imagen sacada de la BD -->
         </div>
-        <div class="header-right">
-          <span class="material-icons-outlined">notifications</span>
-          <span class="material-icons-outlined">email</span>
-          <span class="material-icons-outlined">account_circle</span>
-        </div>
-      </header>
+        
+    </header>
       <!-- End Header -->
 
-      <!-- Sidebar -->
-      <aside id="sidebar">
-        <div class="sidebar-title">
-          <div class="sidebar-brand">
-            <span class="material-icons-outlined">shopping_cart</span> titulo
-          </div>
-          <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
-        </div>
-
-        <ul class="sidebar-list">
-          <li class="sidebar-list-item">
-            <a href="perfilAdmin.html" target="_self">
-              <span class="material-icons-outlined">person</span> Perfil
-            </a>
-          </li>
-          <li class="sidebar-list-item">
-            <a href="dashboard.html" target="_self">
-              <span class="material-icons-outlined">dashboard</span> Dashboard
-            </a>
-          </li>
-          <li class="sidebar-list-item">
-            <a href="añadir_local.html" target="_self">
-              <span class="material-icons-outlined">add_location_alt</span> Añadir local
-            </a>
-        </ul>
-      </aside>
-      <!-- End Sidebar -->
 
       <!-- Main -->
-      <main class="main-container">
-        <div class="main-title">
-          <h2>DASHBOARD</h2>
+
+      <main class="contenedor contenedor-dpy">
+
+        <div class="tabs">
+            <a href="perfilAdmin.html" ><button class="tab-button">Perfil</button></a>
+            <a href="dashboard.html" ><button class="tab-button">Dashboard</button></a>
         </div>
 
-        <div class="main-cards">
+        <div class="perfil-section">
+            <aside >
+                <div class="profile-info">
+                    <form id="profile-form">
+                        <img src="./img/comida.png" alt="Avatar" id="avatar-img">
+                        <br>
+                        <input type="file" id="avatar-input" accept="image/*" style="display: none">
+                        <button type="button" onclick="document.getElementById('avatar-input').click()">Cambiar
+                            Imagen</button>
+                    </form>
+                    <div class="personal">
+                        <h2>Nombre del Rol</h2>
+                        <p>Email: admin@example.com</p>
+                    </div>
+                </div>
+            </aside>
 
-          <div class="card">
-            <div class="card-inner">
-              <h3>ejemplo1</h3>
-              <span class="material-icons-outlined">inventory_2</span>
-            </div>
-            <h1>249</h1>
-          </div>
 
-          <div class="card">
-            <div class="card-inner">
-              <h3>ejemplo2</h3>
-              <span class="material-icons-outlined">category</span>
-            </div>
-            <h1>25</h1>
-          </div>
-
-          <div class="card">
-            <div class="card-inner">
-              <h3>ejemplo3</h3>
-              <span class="material-icons-outlined">groups</span>
-            </div>
-            <h1>1500</h1>
-          </div>
-
-          <div class="card">
-            <div class="card-inner">
-              <h3>ejemplo4</h3>
-              <span class="material-icons-outlined">notification_important</span>
-            </div>
-            <h1>56</h1>
-          </div>
-
+            <section class="dashboard-section">
+              <div class="main-title">
+                <h2>DASHBOARD</h2>
+              </div>
+      
+              <div class="main-cards">
+      
+      
+                <div class="card">
+                  <div class="card-inner">
+                    <h3>ejemplo3</h3>
+                    <span class="material-icons-outlined">groups</span>
+                  </div>
+                  <h1>1500</h1>
+                </div>
+      
+                <div class="card">
+                  <div class="card-inner">
+                    <h3>ejemplo4</h3>
+                    <span class="material-icons-outlined">notification_important</span>
+                  </div>
+                  <h1>56</h1>
+                </div>
+      
+              </div>
+      
+              <div class="charts">
+      
+                <div class="charts-card">
+                  <h2 class="chart-title">Top 5 Restaurantes</h2>
+                  <div id="bar-chart"></div>
+                </div>
+      
+                <div class="charts-card">
+                  <h2 class="chart-title">Purchase and Sales Orders</h2>
+                  <div id="area-chart"></div>
+                </div>
+      
+              </div>
+            </section>
         </div>
-
-        <div class="charts">
-
-          <div class="charts-card">
-            <h2 class="chart-title">Top 5 Restaurantes</h2>
-            <div id="bar-chart"></div>
-          </div>
-
-          <div class="charts-card">
-            <h2 class="chart-title">Purchase and Sales Orders</h2>
-            <div id="area-chart"></div>
-          </div>
-
-        </div>
-      </main>
+            
+    </main>
       <!-- End Main -->
-
-    </div>
 
     <!-- Scripts -->
     <!-- ApexCharts -->

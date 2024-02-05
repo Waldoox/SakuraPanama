@@ -12,10 +12,24 @@
 
 <body>
 
-    <main>
+    <header class="headerbg">
+        <div class="contenedor header-dpy">
+            <img src="img/logo.png" alt="" class="h-img">
 
-        <section class="perfil-section">
-            <aside>
+            <img src="img/user.png" alt="" class="h-img"> <!-- Cambiar por la imagen sacada de la BD -->
+        </div>
+        
+    </header>
+
+    <main class="contenedor contenedor-dpy">
+
+        <div class="tabs">
+            <a href="perfilAdmin.html" ><button class="tab-button">Perfil</button></a>
+            <a href="dashboard.html" ><button class="tab-button">Dashboard</button></a>
+        </div>
+
+        <div class="perfil-section">
+            <aside >
                 <div class="profile-info">
                     <form id="profile-form">
                         <img src="./img/comida.png" alt="Avatar" id="avatar-img">
@@ -28,67 +42,62 @@
                         <h2>Nombre del Rol</h2>
                         <p>Email: admin@example.com</p>
                     </div>
-                    <div class="contador">
-                        <p>Locales añadidos: <span id="cantidad-locales">0</span></p>
-                    </div>
                 </div>
             </aside>
-        </section>
 
 
-        <section class="agregar-local-section">
-            <div class="tabs agregar-local-section">
-                <a href="perfilAdmin.html" ><button class="tab-button">Perfil</button></a>
-                <a href="dashboard.html" ><button class="tab-button">Dashboard</button></a>
-            </div>
-            <div class="local-form">
-                <div class="columna-1">
-                    <h2>Agregar Nuevo Local</h2>
-                    <form action="#">
-                        <label for="nombre">Nombre del Local:</label>
+            <section class="agregar-local-section">
+            
+                <div class="local-form">
+                    <div class="columna-1">
+                        <h2>Agregar Nuevo Local</h2>
+                        <form action="#">
+                            <label for="nombre">Nombre del Local:</label>
 
-                        <input type="text" id="nombre" name="nombre" required>
+                            <input type="text" id="nombre" name="nombre" required>
 
-                        <label for="tipo">Tipo de Local:</label>
+                            <label for="tipo">Tipo de Local:</label>
 
-                        <select id="tipo" name="tipo" required>
-                            <option value="restaurante">Restaurante</option>
-                            <option value="tienda">Comercio</option>
-                            <option value="tienda">Evento</option>
-                        </select>
+                            <select id="tipo" name="tipo" required>
+                                <option value="restaurante">Restaurante</option>
+                                <option value="tienda">Comercio</option>
+                                <option value="tienda">Evento</option>
+                            </select>
 
-                        <label for="direccion">Dirección:</label>
+                            <label for="direccion">Dirección:</label>
 
-                        <input type="text" id="direccion" name="direccion" required>
-                    </form>
-                </div>
+                            <input type="text" id="direccion" name="direccion" required>
+                        </form>
+                    </div>
 
-                <div class="columna-2">
-                    <div class="imagen-section">
-                        <label for="imagen">Imagen del Local:</label>
-                        <div id="local_img">
-                            <img src="" alt="">
+                    <div class="columna-2">
+                        <div class="imagen-section">
+                            <label for="imagen">Imagen del Local:</label>
+                            <div id="local_img">
+                                <img src="" alt="">
+                            </div>
+                            <button type="button" onclick="document.getElementById('avatar-input').click()">Subir
+                                Imagen</button>
                         </div>
-                        <button type="button" onclick="document.getElementById('avatar-input').click()">Subir
-                            Imagen</button>
+
+                        <div class="provincia-section">
+                            <label for="provincia">Provincia:</label>
+
+                            <input type="text" id="provincia" name="provincia" required>
+                        </div>
                     </div>
 
-                    <div class="provincia-section">
-                        <label for="provincia">Provincia:</label>
+                    <div class="fila-descripcion">
+                        <label for="descripcion">Descripción:</label>
 
-                        <input type="text" id="provincia" name="provincia" required>
+                        <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
                     </div>
+
+                    <button type="submit">Agregar Local</button>
                 </div>
-
-                <div class="fila-descripcion">
-                    <label for="descripcion">Descripción:</label>
-
-                    <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
-                </div>
-
-                <button type="submit">Agregar Local</button>
-            </div>
-        </section>
+            </section>
+        </div>
+            
     </main>
 
     </div>
