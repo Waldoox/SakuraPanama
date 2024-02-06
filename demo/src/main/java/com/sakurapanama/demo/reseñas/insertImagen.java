@@ -1,53 +1,96 @@
-import java.io.IOException;
-import java.io.InputStream;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
+// Array para almacenar los platos de comida predefinidos
+let platos = [
+  { nombre: "Pizza", votos: 0 },
+  { nombre: "Hamburguesa", votos: 0 },
+  { nombre: "Sushi", votos: 0 }
+];
 
-@WebServlet("/SubirImagen")
-public class SubirImagen extends HttpServlet {
-    private static final long serialVersionUID = 1L;
+// Array para almacenar los platos de comida personalizados por el usuario
+let platosPersonalizados = [];
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        // Configuración de la base de datos PostgreSQL
-        String URL = "jdbc:postgresql://monorail.proxy.rlwy.net_postgres:25736/luis";
-        String dbUser = "postgres";
-        String dbPassword = "14FDAgB*BaCADCDb*6*3ffgf4A2f4-ff";
+// Función para mostrar los platos en el menú
+function mostrarMenu() {
+  const menuDiv = document.getElementById('menu');
+  menuDiv.innerHTML = ''; // Limpiamos el contenido anterior
 
-        try {
-            // Cargar el controlador JDBC
-            Class.forName("org.postgresql.Driver");
+  // Mostramos los platos predefinidos
+  platos.forEach(plato => {
+    const platoDiv = crearPlatoDiv(plato);
+    menuDiv.appendChild(platoDiv);
+  });
 
-            // Establecer conexión con la base de datos
-            Connection connection = DriverManager.getConnection(URL, dbUser, dbPassword);
-
-            // Obtener la imagen desde el formulario
-            Part filePart = request.getPart("image");
-            String fileName = filePart.getSubmittedFileName();
-            InputStream inputStream = filePart.getInputStream();
-
-            // Insertar la imagen en la base de datos
-            String sql = "INSERT INTO imagenes (nombre, datos) VALUES (?, ?)";
-            try (PreparedStatement statement = connection.prepareStatement(sql)) {
-                statement.setString(1, fileName);
-                statement.setBinaryStream(2, inputStream);
-                statement.executeUpdate();
-            }
-
-            // Cerrar conexión
-            connection.close();
-
-            response.sendRedirect("index.html"); // Redirigir al formulario después de la carga exitosa
-        } catch (Exception e) {
-            e.printStackTrace();
-            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Error al subir la imagen y guardar en la base de datos.");
-        }
-    }
+  // Mostramos los platos personalizados
+  platosPersonalizados.forEach(plato => {
+    const platoDiv = crearPlatoDiv(plato);
+    const botonEliminar = document.createElement('button');
+    botonEliminar.textContent = 'Eliminar';
+    botonEliminar.onclick = () => {
+      eliminarPlatoPersonalizado(plato);
+    };
+    platoDiv.appendChild(botonEliminar);
+    menuDiv.appendChild(platoDiv); // Agregar debajo de los platos predefinidos
+  });
 }
+
+// Función para crear un div para mostrar un plato
+function crearPlatoDiv(plato) {
+  const platoDiv = document.createElement('div');
+  platoDiv.innerHTML = `${plato.nombre} - Votos: ${plato.votos}`;
+  const botonVotar = document.createElement('button');
+  botonVotar.textContent = 'Votar';
+  botonVotar.onclick = () => {
+    votarPorPlato(plato);
+  };
+  platoDiv.appendChild(botonVotar);
+  return platoDiv;
+}
+
+// Función para votar por un plato
+function votarPorPlato(plato) {
+  plato.votos++;
+  mostrarMenu(); // Actualizamos el menú después de votar
+  guardarPlatosPersonalizados(); // Guardamos los platos personalizados actualizados
+}
+
+// Función para agregar un nuevo plato
+function agregarPlato() {
+  const nuevoPlatoInput = document.getElementById('nuevoPlato');
+  const nuevoPlatoNombre = nuevoPlatoInput.value;
+  if (nuevoPlatoNombre.trim() !== '') {
+    const nuevoPlato = { nombre: nuevoPlatoNombre, votos: 0 };
+    platosPersonalizados.push(nuevoPlato);
+    mostrarMenu(); // Actualizamos el menú después de agregar un nuevo plato personalizado
+    guardarPlatosPersonalizados(); // Guardamos los platos personalizados actualizados
+    nuevoPlatoInput.value = ''; // Limpiamos el input
+  }
+}
+
+// Función para eliminar un plato personalizado
+function eliminarPlatoPersonalizado(plato) {
+  const index = platosPersonalizados.indexOf(plato);
+  if (index !== -1) {
+    platosPersonalizados.splice(index, 1);
+    mostrarMenu(); // Actualizamos el menú después de eliminar el plato personalizado
+    guardarPlatosPersonalizados(); // Guardamos los platos personalizados actualizados
+  }
+}
+
+// Función para guardar los platos personalizados en el almacenamiento local
+function guardarPlatosPersonalizados() {
+  localStorage.setItem('platosPersonalizados', JSON.stringify(platosPersonalizados));
+}
+
+// Función para cargar los platos personalizados desde el almacenamiento local
+function cargarPlatosPersonalizados() {
+  const platosPersonalizadosString = localStorage.getItem('platosPersonalizados');
+  if (platosPersonalizadosString) {
+    platosPersonalizados = JSON.parse(platosPersonalizadosString);
+    mostrarMenu(); // Mostramos los platos personalizados al cargar la página
+  }
+}
+
+// Asignamos la función agregarPlato al evento click del botón
+document.getElementById('agregarPlatoBtn').addEventListener('click', agregarPlato);
+
+// Cargamos los platos personalizados al cargar la página
+cargarPlatosPersonalizados();
