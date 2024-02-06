@@ -95,9 +95,11 @@ button:hover {
 }
 
 /*Local*/
-
 .local-section {
     flex-basis: 80%;
+    justify-content: space-between;
+    align-items: center;
+  
 }
 
 .local-form {
@@ -105,27 +107,14 @@ button:hover {
     margin: 0 auto;
     border: 1px solid #ccc;
     padding: 20px;
-    display: block;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-.info-column {
-    padding: 20px;
-}
-
-.locale {
-    display: flex;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-}
-
-.locale img {
-    width: 100px;
+.local-form img{
+    width: 120px;
     height: 100px;
-    margin-right: 10px;
+    margin-right: 10px; 
 }
-
-.locale-info {
-    flex: 1;
+.local-form h3{
+    text-align: left;
 }
