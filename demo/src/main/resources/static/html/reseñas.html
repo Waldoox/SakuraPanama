@@ -97,31 +97,24 @@
 
         <section class="menu-rest">
 
-            <h2 class="menu-ti"> Menu de Resturate </h2>
+            <h2 class="menu-ti">Menu de Comida</h2>
 
-            <form id="encuestaForm" class="menu">
-                <p>Danos tu Opinión de los platos </p>
+            <div class="menu" id="menu">
+                <!-- Aquí se mostrarán los platos de comida -->
 
-                <label class="menu-label">
-                    <input type="radio" name="opcion" value="campoTexto" onclick="sumarRespuesta()"> Pollo Frito
-                </label>
-                <label class="menu-label">
-                    <input type="radio" name="opcion" value="menuDesplegable" onclick="sumarRespuesta()">
-                    Hamburguesa de Pollo
-                </label>
-                <label class="menu-label">
-                    <input type="radio" name="opcion" value="boton" onclick="sumarRespuesta()"> Pollo en salsa Especial
-                </label>
+            </div>
 
-                <div class="menu-label">
-                    <label for="nuevaOpcion">Agrega un nuevo plato Favorito: </label>
-                    <input type="text" id="nuevaOpcion" placeholder="Nombre de la opción">
-                    <button type="button" onclick="agregarOpcion()">Agregar</button>
-                </div>
-            </form>
+            <h3 class="subtitulo">Agregar Nuevo Plato</h3>
 
-            <div id="resultados" class="menu-label">
-                <!-- Aquí se mostrarán los resultados -->
+            <div class="menu-import">
+
+                <input class="input-menu" type="text" id="nuevoPlato" placeholder="Nombre del plato">
+                <button  class="button-menu" id="agregarPlatoBtn">Agregar Plato</button>
+
+            </div>
+
+            <div id="platosPersonalizados">
+                <!-- Aquí se mostrarán los platos personalizados -->
             </div>
 
         </section>
@@ -131,6 +124,22 @@
     </section>
 
     <section class="sesion-usuario">
+
+        <section class="imagenes">
+
+            <h2> Fotos Del Local </h2>
+
+            <input type="file" id="inputFile" accept="image/*">
+            <button onclick="subirImagen()">Subir Imagen</button>
+            <button onclick="limpiarCarrusel()">Limpiar Carrusel</button>
+        
+            <div id="carrusel">
+        
+            </div>
+    
+
+        </section>
+
         <section>
             <div id="ratings">
                 <i class="bi bi-star-fill star st" data-rating="1"></i>
@@ -154,51 +163,9 @@
 
         <!-- Aqui mostramos lo de subir las imagenes de los usuarios-->
 
-        <div class="form-file">
-            <div class="form-file__action">
-                <label for="image" class="title">Foto de publicación</label>
-
-                <input type="file" name="image" id="image" />
-            </div>
-            <div class="form-file__result" id="result-image">
-                <img id="img-result" alt="" />
-            </div>
-        </div>
-
-        <div class="form-group">
-            <button type="submit" class="form-button">Publicar</button>
-        </div>
-
+       
     </section>
 
-    <h1>Carrusel de Imágenes</h1>
-
-    <input type="file" id="inputFile" accept="image/*">
-    <button onclick="subirImagen()">Subir Imagen</button>
-    <button onclick="limpiarCarrusel()">Limpiar Carrusel</button>
-
-    <div id="carrusel">
-
-    </div>
-
-
-
-
-    <h1>Menu de Comida</h1>
-
-    <div id="menu">
-        <!-- Aquí se mostrarán los platos de comida -->
-        
-    </div>
-
-    <h2>Agregar Nuevo Plato</h2>
-    <input type="text" id="nuevoPlato" placeholder="Nombre del plato">
-    <button id="agregarPlatoBtn">Agregar Plato</button>
-
-    <h2>Platos Personalizados</h2>
-    <div id="platosPersonalizados">
-        <!-- Aquí se mostrarán los platos personalizados -->
-    </div>
 
 
     <footer class="bar">

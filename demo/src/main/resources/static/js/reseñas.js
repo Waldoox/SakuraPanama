@@ -96,145 +96,6 @@ window.addEventListener("scroll", () => {
 })
 
 
-// menu recomendado
-
-var cantidadRespuestas = {};
-
-function sumarRespuesta() {
-    // Obtener la opción seleccionada
-    var opcionSeleccionada = document.querySelector('input[name="opcion"]:checked');
-
-    if (opcionSeleccionada) {
-        // Verificar si ya existe la opción en el objeto cantidadRespuestas
-        if (cantidadRespuestas[opcionSeleccionada.value] === undefined) {
-            cantidadRespuestas[opcionSeleccionada.value] = 1;
-        } else {
-            // Si ya existe, incrementar la cantidad
-            cantidadRespuestas[opcionSeleccionada.value]++;
-        }
-
-        // Mostrar la cantidad actualizada
-        mostrarResultados();
-    }
-}
-
-function agregarOpcion() {
-    // Obtener el valor del nuevo radio button desde el input
-    var nuevaOpcion = document.getElementById("nuevaOpcion").value.trim();
-
-    // Verificar que el valor no esté vacío
-    if (nuevaOpcion !== "") {
-        // Verificar si ya existe la opción en el objeto cantidadRespuestas
-        if (cantidadRespuestas[nuevaOpcion] === undefined) {
-            cantidadRespuestas[nuevaOpcion] = 1;
-        } else {
-            // Si ya existe, incrementar la cantidad
-            cantidadRespuestas[nuevaOpcion]++;
-        }
-
-        // Crear un nuevo radio button
-        var nuevoRadio = document.createElement("input");
-        nuevoRadio.type = "radio";
-        nuevoRadio.name = "opcion";
-        nuevoRadio.value = nuevaOpcion;
-        nuevoRadio.onclick = sumarRespuesta;
-
-        // Crear una etiqueta para el nuevo radio button
-        var nuevaLabel = document.createElement("label");
-        nuevaLabel.appendChild(nuevoRadio);
-        nuevaLabel.appendChild(document.createTextNode(" " + nuevaOpcion));
-
-        // Agregar el nuevo radio button al formulario
-        document.getElementById("encuestaForm").appendChild(nuevaLabel);
-
-        // Limpiar el campo de texto
-        document.getElementById("nuevaOpcion").value = "";
-
-        // Mostrar la cantidad actualizada
-        mostrarResultados();
-    } else {
-        alert("Por favor, introduce un nombre para la nueva opción.");
-    }
-}
-
-function mostrarResultados() {
-    // Crear un nuevo elemento para mostrar la cantidad de respuestas
-    var resultadosDiv = document.getElementById("resultados");
-    resultadosDiv.innerHTML = "<strong>Platos Preferidos de los Clientes: </strong><br>";
-
-    // Iterar sobre las opciones y mostrar la cantidad
-    for (var opcion in cantidadRespuestas) {
-        resultadosDiv.innerHTML += opcion + ": " + cantidadRespuestas[opcion] + "<br>";
-    }
-}
-
-/*
-// sube la imagen a la pagina web del comentario de la gente 
-
-const $fileInput = document.getElementById('image');
-const $dropZone = document.getElementById('result-image');
-const $img = document.getElementById('img-result');
-
-// Función para cargar y mostrar la imagen seleccionada
-const showImagePreview = (file) => {
-    const fileReader = new FileReader();
-    fileReader.onload = function() {
-        $img.setAttribute('src', this.result);
-    };
-    fileReader.readAsDataURL(file);
-};
-
-// Evento para manejar la selección de archivos
-$fileInput.addEventListener('change', (e) => {
-    const file = e.target.files[0];
-    showImagePreview(file);
-});
-
-// Eventos para manejar el arrastre y suelta de archivos
-$dropZone.addEventListener('dragover', (e) => {
-    e.preventDefault();
-    $dropZone.classList.add('form-file__result--active');
-});
-
-$dropZone.addEventListener('dragleave', (e) => {
-    e.preventDefault();
-    $dropZone.classList.remove('form-file__result--active');
-});
-
-$dropZone.addEventListener('drop', (e) => {
-    e.preventDefault();
-    $fileInput.files = e.dataTransfer.files;
-    const file = $fileInput.files[0];
-    showImagePreview(file);
-});
-
-// Evento para subir la imagen al servidor
-const uploadImage = (file) => {
-    const formData = new FormData();
-    formData.append('file', file);
-
-    fetch('/images/upload', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => {
-        if (response.ok) {
-            console.log('File uploaded successfully');
-            return response.json();
-        }
-        throw new Error('File upload failed');
-    })
-    .then(data => {
-        console.log(data);
-        // Aquí puedes realizar alguna acción adicional si lo deseas
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-};
-
-*/
-
 // funcion de subir imagen y que suba al carruzel 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -288,8 +149,7 @@ function limpiarCarrusel() {
 }
 
 
-//funcion de menu tambien se puede
-// Array para almacenar los platos de comida predefinidos
+//funcion de menu tambien se puede// Array para almacenar los platos de comida predefinidos
 let platos = [
   { nombre: "Pizza", votos: 0 },
   { nombre: "Hamburguesa", votos: 0 },
@@ -302,9 +162,9 @@ let platosPersonalizados = [];
 // Función para mostrar los platos en el menú
 function mostrarMenu() {
   const menuDiv = document.getElementById('menu');
-  menuDiv.innerHTML = ''; // Limpiamos el contenido anterior
+  menuDiv.innerHTML = ''; 
+  
 
-  // Mostramos los platos predefinidos
   platos.forEach(plato => {
     const platoDiv = crearPlatoDiv(plato);
     menuDiv.appendChild(platoDiv);
@@ -319,7 +179,7 @@ function mostrarMenu() {
       eliminarPlatoPersonalizado(plato);
     };
     platoDiv.appendChild(botonEliminar);
-    menuDiv.appendChild(platoDiv); // Agregar debajo de los platos predefinidos
+    menuDiv.appendChild(platoDiv); 
   });
 }
 
@@ -340,7 +200,7 @@ function crearPlatoDiv(plato) {
 function votarPorPlato(plato) {
   plato.votos++;
   mostrarMenu(); // Actualizamos el menú después de votar
-  guardarPlatosPersonalizados(); // Guardamos los platos personalizados actualizados
+  guardarPlatos(); // Guardamos los platos actualizados
 }
 
 // Función para agregar un nuevo plato
@@ -350,9 +210,9 @@ function agregarPlato() {
   if (nuevoPlatoNombre.trim() !== '') {
     const nuevoPlato = { nombre: nuevoPlatoNombre, votos: 0 };
     platosPersonalizados.push(nuevoPlato);
-    mostrarMenu(); // Actualizamos el menú después de agregar un nuevo plato personalizado
-    guardarPlatosPersonalizados(); // Guardamos los platos personalizados actualizados
-    nuevoPlatoInput.value = ''; // Limpiamos el input
+    mostrarMenu();
+    guardarPlatos(); 
+    nuevoPlatoInput.value = ''; 
   }
 }
 
@@ -361,27 +221,32 @@ function eliminarPlatoPersonalizado(plato) {
   const index = platosPersonalizados.indexOf(plato);
   if (index !== -1) {
     platosPersonalizados.splice(index, 1);
-    mostrarMenu(); // Actualizamos el menú después de eliminar el plato personalizado
-    guardarPlatosPersonalizados(); // Guardamos los platos personalizados actualizados
+    mostrarMenu(); 
+    guardarPlatos(); 
   }
 }
 
-// Función para guardar los platos personalizados en el almacenamiento local
-function guardarPlatosPersonalizados() {
+// Función para guardar los platos en el almacenamiento local
+function guardarPlatos() {
+  localStorage.setItem('platos', JSON.stringify(platos));
   localStorage.setItem('platosPersonalizados', JSON.stringify(platosPersonalizados));
 }
 
-// Función para cargar los platos personalizados desde el almacenamiento local
-function cargarPlatosPersonalizados() {
+// Función para cargar los platos desde el almacenamiento local
+function cargarPlatos() {
+  const platosString = localStorage.getItem('platos');
   const platosPersonalizadosString = localStorage.getItem('platosPersonalizados');
+  if (platosString) {
+    platos = JSON.parse(platosString);
+  }
   if (platosPersonalizadosString) {
     platosPersonalizados = JSON.parse(platosPersonalizadosString);
-    mostrarMenu(); // Mostramos los platos personalizados al cargar la página
   }
+  mostrarMenu(); // Mostramos los platos al cargar la página
 }
 
 // Asignamos la función agregarPlato al evento click del botón
 document.getElementById('agregarPlatoBtn').addEventListener('click', agregarPlato);
 
-// Cargamos los platos personalizados al cargar la página
-cargarPlatosPersonalizados();
+// Cargamos los platos al cargar la página
+cargarPlatos();
