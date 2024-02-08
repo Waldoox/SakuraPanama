@@ -31,8 +31,9 @@ public class SecurityConfig {
             .authorizeHttpRequests(authRequest ->
               authRequest
                 .requestMatchers("/auth/**").permitAll()
-                .requestMatchers("/img/**", "/css/**", "/js/**", "/registro.html", "/index.html", "/inicio.html", "/prueba.html", "/busqueda.html").permitAll()
-                .requestMatchers("/registro", "/inicio", "/index", "/all","/tiendas","/variedades","/restaurantes", "/email/send", "/prueba", "/busqueda").permitAll()
+                .requestMatchers("/img/**", "/css/**", "/js/**", "/*.html").permitAll()
+                .requestMatchers("/registro", "/inicio", "/index", "/all","/tiendas","/variedades","/restaurantes", "/email/send",  "/busqueda").permitAll()
+                .requestMatchers("/perfilAdmin", "/añadirLugar", "/dashboard").hasRole("ADMIN")
                 )
             .sessionManagement(sessionManager->
                 sessionManager 

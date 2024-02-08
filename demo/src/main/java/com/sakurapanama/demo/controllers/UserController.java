@@ -9,7 +9,7 @@ import com.sakurapanama.demo.models.Usuario;
 public class UserController {
     
     @GetMapping("/profile-data")
-  public Usuario obtenerTodosProductos(String username) {
+  public Usuario obtenerPerfil(String username) {
     return new UserDB().ObtenerPerfil(username);
   } 
 }

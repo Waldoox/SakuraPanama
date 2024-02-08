@@ -15,7 +15,7 @@ function registrarUsuario() {
         telefonousr: phone
     };
 
-    fetch('/auth/login', {
+    fetch('/auth/register', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -79,4 +79,20 @@ function login() {
     .catch(error => {
         console.error('Error al iniciar sesión:', error);
     });
+}
+
+function cambiarAuth() {
+    var slider = document.getElementById("auth-slider");
+    var loginForm = document.getElementById("login-form");
+    var registerContainer = document.getElementById("register-form");
+
+    registerContainer.style.display="none"
+
+    if (slider.checked) {
+        loginForm.style.display = "none";
+        registerContainer.style.display = "block";
+    } else {
+        loginForm.style.display = "block";
+        registerContainer.style.display = "none";
+    }
 }

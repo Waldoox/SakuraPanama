@@ -1,32 +1,33 @@
 body{
-    font-family: Arial, sans-serif;
-    margin: 0;
-    overflow: hidden;
+  overflow: hidden;
 }
-.fondito {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 83vh;
 
+.fondito {
+    height: 75rem;
     background-image: url(../../static/img/ban2.jpg);
     background-repeat: no-repeat;
     background-size: cover;  
-    opacity: 80%; 
+    background-position: center;
 }
 
-.login-container {
-    background-color: #be1704 ;
+.auth {
+    background-color: #DB0B25 ;
     color: white;
-    
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 35rem;
 }
 
-.login-container h2 {
+#register-form{
+  display: none;
+}
+
+#title{
+  text-align: center;
+}
+
+.auth h2 {
     text-align: center;
 }
 
@@ -37,7 +38,7 @@ body{
 }
 
 .formulario-c {
-    margin-bottom: 10px;
+    margin: 2.2rem;
 }
 
 .formulario-c label {
@@ -54,13 +55,18 @@ body{
 }
 
 .login-btn {
-    background-color: #ef3620;
+    background-color: #DB0B25;
     color: #fff;
     padding: 10px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
     font-size: large;
+    width: 100%;
+    margin: 1rem 0;
+    -webkit-box-shadow: 0px 0px 23px -3px rgba(0,0,0,0.64);
+    -moz-box-shadow: 0px 0px 23px -3px rgba(0,0,0,0.64);
+    box-shadow: 0px 0px 23px -3px rgba(0,0,0,0.64);
 }
 
 .login-btn:hover {
@@ -83,26 +89,7 @@ body{
     color: #fdfc8b;
 }
 
-/*PIE*/
-.text {
-    font-size: medium;
-    color: white;
-    text-align: center;
-}
 
-.redes {
-    padding: 1px;
-}
-.bar {
-    background-color: #ef3620;
-    font-size: large;
-    width: 230vh;
-    height: 100vh;
-}
-
-.displayno{
-    display: none;
-}
 .switch {
     position: relative;
     display: inline-block;
@@ -142,7 +129,7 @@ body{
   }
   
   input:checked + .slider {
-    background-color: #be1704;
+    background-color: #DB0B25;
   }
   
   input:focus + .slider {
@@ -172,4 +159,28 @@ body{
 
   .auth-text{
     font-size: 1rem;
+  }
+
+  .shadowbg{
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+  }
+
+  .auth-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .auth-options{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+  }
+
+  .auth-options h2 {
+    padding: 0.5rem;
+
   }

@@ -24,9 +24,9 @@ public class StaticController {
         return "index.html";
     }
 
-    @GetMapping("/prueba")
-    public String prueba(){
-        return "prueba.html";
+    @GetMapping("/perfilAdmin")
+    public String perfilAdmin(){
+        return "perfilAdmin.html";
     }
 
     @GetMapping("/busqueda")

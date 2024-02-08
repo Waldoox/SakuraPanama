@@ -131,3 +131,41 @@ function iniciarCarrusel() {
   console.log('Inicializando el carrusel');
   $('.carousel').slick();
 }
+
+function redireccionPerfil() {
+  const perfilLink = document.getElementById("perfil-link");
+  const logoutLink = document.getElementById("logout-link");
+  const token = localStorage.getItem("token");
+  if (token) {
+      // Decodificar el token para obtener el rol del usuario
+      const decodedToken = decodeToken(token);
+      const rol = decodedToken.rol;
+
+      // Redireccionar según el rol del usuario
+      if (rol === "ADMIN") {
+          perfilLink.href = "/perfilAdmin";
+      } else if (rol === "USER") {
+          perfilLink.href = "/perfil";
+      }
+      
+  } else {
+      
+      window.location.href = "/inicio";
+  }
+};
+
+
+function decodeToken(token) {
+  const tokenParts = token.split(".");
+  const payload = JSON.parse(atob(tokenParts[1]));
+  return payload;
+}
+
+function logout() {
+  const logoutLink = document.getElementById("logout-link");
+  
+  logoutLink.addEventListener("click", function() {
+      localStorage.removeItem("token");
+      window.location.href = "/index";
+  });
+}

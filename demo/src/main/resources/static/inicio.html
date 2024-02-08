@@ -5,36 +5,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio de Sesión</title>
-    <link rel="stylesheet" href="css/inicio.css" .css">
+    <link rel="stylesheet" href="css/inicio.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+    <header>
+        <nav class="navbar-bg">
+            <div class="navbar contenedor">
+                <a href="" class="item-img"><img src="./img/logo.png" alt="" class="head-logo"></a>
+                <a href="" class="items">Inicio</a>
+                <a href="" class="items">Sobre Nosotros</a>
+                <a href="" class="item-img"><img src="./img/user.png" alt="" class="user"></a>      
+            </div>
+                 
+        </nav>
+    </header>
+    
+    
     <section class="fondito">
-        <div class="login-container">
-            <h2>Acceso</h2>
-            <form class="formulario" action="#" method="post">
-                <div class="formulario-c">
-                    <label for="username">Usuario:</label>
-                    <input type="text" name="username" id="username" required>
+        <div class="shadowbg auth-container">
+            <div class="auth">
+                <h1 id="title">Acceder</h1>
+                <div class="auth-options">
+                    <h2>Iniciar Sesión</h2>
+                    <label class="switch">
+                        <input type="checkbox" id="auth-slider" onchange="cambiarAuth()">
+                        <span class="slider round"></span>
+                    </label>
+                    <h2>Registrarse</h2>
                 </div>
-                <div class="formulario-c">
-                    <label for="password">Contraseña:</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
+                
+                <form class="formulario" action="#" method="post" id="login-form">
+                    <div class="formulario-c">
+                        <label for="username">Usuario:</label>
+                        <input type="text" name="username" id="username" required>
+                    </div>
+                    <div class="formulario-c">
+                        <label for="password">Contraseña:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+    
+                    <a class="olvido" href="#">Olvidaste tu contraseña</a>
+                    
+                    <button type="button" class="login-btn" onclick="login()">Iniciar Sesión</button>
+                </form>
+            
 
-                <a class="olvido" href="#">Olvidaste tu contraseña</a>
-
-                <button type="button" class="login-btn" onclick="login()">Iniciar Sesión</button>
-                <button  class="login-btn"><a class="login-btn" href="registro.html">No tengo una cuenta</a></button>
-            </form>
+            
+                <form class="formulario" action="#" method="post" id="register-form">
+                    <div class="formulario-c">
+                        <label for="email">Usuario:</label>
+                        <input type="text" name="user" id="username" required>
+                    </div>
+                    <div class="formulario-c">
+                        <label for="email">Nombre:</label>
+                        <input type="text" name="user" id="fname" required>
+                    </div>
+                    <div class="formulario-c">
+                        <label for="email">Apellido:</label>
+                        <input type="text" name="user" id="lname" required>
+                    </div>
+                    <div class="formulario-c">
+                        <label for="email">Correo:</label>
+                        <input type="email" name="email" id="eMail" required>
+                    </div>
+                    <div class="formulario-c">
+                        <label for="email">Telefono:</label>
+                        <input type="text" name="user" id="phone">
+                    </div>
+                    <div class="formulario-c">
+                        <label for="password">Contraseña:</label>
+                        <input type="password" id="password-reg" name="password" required>
+                    </div>
+                    <button type="button" class="login-btn" onclick="registrarUsuario()">Registrarse</button>
+                </form>
+            </div>
         </div>
     </section>
 
-    <footer class="bar">
-            <a class="redes" href="https://www.instagram.com/"><img src="../static/img/instagram.png" alt=""></a>
-            <a class="redes" href="https://www.facebook.com/"> <img src="../static/img/facebook.png" alt=""></a>
-       
-            <p class="text">Copyright © 2024 All Rights Reserved</p>
+    <footer class="cont-footer">
+        <div class="footer">
+            <div class="cont-info">
+                <p>Campus Victor Levi Sasso, Vía Centenario, Panamá</p>
+                <br>
+                <p>Sakura@gmail.com</p>
+                <br>
+                <p>Tel: 222-2222</p>
+            </div>
+            <div class="cont-redes">
+                <a href="#"><img src="img/facebook.png" class="redes" alt=""></a>
+                <a href=""><img src="img/instagram.png" class="redes" alt=""></a>
+            </div>
+        </div>
+            
+            <p class="copyrigth">&copy; 2023 Sakura Panamá. Todos los derechos reservados.</p>
     </footer>
 
     <script src="js/Auth.js"></script>
