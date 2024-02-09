@@ -109,7 +109,7 @@
             <div class="menu-import">
 
                 <input class="input-menu" type="text" id="nuevoPlato" placeholder="Nombre del plato">
-                <button  class="button-menu" id="agregarPlatoBtn">Agregar Plato</button>
+                <button class="button-menu" id="agregarPlatoBtn">Agregar Plato</button>
 
             </div>
 
@@ -117,29 +117,41 @@
                 <!-- Aquí se mostrarán los platos personalizados -->
             </div>
 
+
+
         </section>
 
+        <div class="class-img">
+
+            <h2 class="class-tit"> Sube tu Favorita </h2>
+
+            <div class="menu-img">
+                <input class="fil" type="file" id="inputFile" accept="image/*">
+                <label for="inputFile" class="custom-file-label">Seleccionar Archivo</label>
+            </div>
+
+            <div class="class-Botones">
+                <button class="c1" onclick="subirImagen()">Subir Imagen</button>
+                <button class="c2" onclick="limpiarCarrusel()">Limpiar Carrusel</button>
+            </div>
+
+        </div>
 
 
     </section>
 
     <section class="sesion-usuario">
 
+        <h2 class="imagenes-h2"> FOTOS DEL LOCAL </h2>
+
         <section class="imagenes">
-
-            <h2> Fotos Del Local </h2>
-
-            <input type="file" id="inputFile" accept="image/*">
-            <button onclick="subirImagen()">Subir Imagen</button>
-            <button onclick="limpiarCarrusel()">Limpiar Carrusel</button>
-        
             <div id="carrusel">
-        
             </div>
-    
-
+            <button class="prev" id="prev">&#10094;</button>
+            <button class="next" id="next">&#10095;</button>
         </section>
 
+        <br><br><br><br>
         <section>
             <div id="ratings">
                 <i class="bi bi-star-fill star st" data-rating="1"></i>
@@ -163,7 +175,7 @@
 
         <!-- Aqui mostramos lo de subir las imagenes de los usuarios-->
 
-       
+
     </section>
 
 

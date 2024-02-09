@@ -96,6 +96,11 @@ window.addEventListener("scroll", () => {
 })
 
 
+//efecto carrusel
+
+
+
+
 // funcion de subir imagen y que suba al carruzel 
 
 document.addEventListener('DOMContentLoaded', function() {
