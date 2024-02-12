@@ -36,35 +36,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /*FILTRO*/ 
 function filtrarLugares() {
-    // Obtener los valores seleccionados de los checkboxes
-    let tipoEstablecimientoFiltros = obtenerValoresCheckboxes('local');
-    let provinciaFiltros = obtenerValoresCheckboxes('provincia');
-
-    // Realizar solicitud a la API con los filtros seleccionados
-    fetch('/api/locales?tipoEstablecimiento=' + tipoEstablecimientoFiltros.join(',') + '&provincia=' + provinciaFiltros.join(','))
-        .then(response => response.json())
-        .then(data => {
-            mostrarResultados(data);
-        })
-        .catch(error => {
-            console.error('Error al filtrar lugares:', error);
-        });
-}
-
-function obtenerValoresCheckboxes(nombre) {
-    let checkboxes = document.querySelectorAll('input[name="' + nombre + '"]:checked');
-    let valores = [];
-    checkboxes.forEach(checkbox => {
-        valores.push(checkbox.value);
+    var checkboxesLocal = document.querySelectorAll('input[name="local"]:checked');
+    var checkboxesProvincia = document.querySelectorAll('input[name="provincia"]:checked');
+    
+    var valoresLocal = [];
+    checkboxesLocal.forEach(function(checkbox) {
+        valoresLocal.push(checkbox.value);
     });
-    return valores;
-}
 
-function mostrarResultados(data) {
-    let contenedor = document.getElementById('locales');
-    contenedor.innerHTML = "";
-
-    data.forEach(lugar => {
-        contenedor.innerHTML += `<div>${lugar.nombre}, ${lugar.direccion}</div>`;
+    var valoresProvincia = [];
+    checkboxesProvincia.forEach(function(checkbox) {
+        valoresProvincia.push(checkbox.value);
+    });
+    
+    // Enviar los valores al servidor
+    fetch('/filtrar', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            local: valoresLocal,
+            provincia: valoresProvincia
+        }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Manejar la respuesta del servidor, por ejemplo, mostrar los resultados en la página
+        console.log(data);
+    })
+    .catch((error) => {
+        console.error('Error:', error);
     });
 }

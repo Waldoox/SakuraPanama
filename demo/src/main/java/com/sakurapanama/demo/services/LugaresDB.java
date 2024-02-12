@@ -2,9 +2,14 @@ package com.sakurapanama.demo.Services;
 
 import java.sql.Statement;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.sakurapanama.demo.models.Lugar;
 
@@ -135,6 +140,42 @@ public class LugaresDB {
     }
     return null;
   }
+  
+  public class FiltroRestuarante {
+  
+    public List<Lugar> filtrarLugares(boolean restaurante, boolean variedades, boolean eventos) {
+      StringBuilder sql = new StringBuilder("SELECT * FROM lugares WHERE 1=1");
 
+      if (restaurante) {
+        sql.append("tipo = resturante");
+        if(variedades || eventos){
+          sql.append("OR");
+        }
+      }
 
+      if(variedades){
+        sql.append("tipo = variedades");
+        if (eventos) {
+          sql.append("OR");
+        }
+      }
+
+      if (eventos) {
+      sql.append("tipo = eventos");
+      }
+    
+      // Ejecutar la consulta SQL y mapear los resultados a objetos Lugar
+      List<Lugar> lugares =  new ArrayList<>();
+      while (rs.next) {
+        
+      }
+
+      //ver como hacer la conexion 
+      
+    
+      return lugares;
+    }
+    
+  }
 }
+  
