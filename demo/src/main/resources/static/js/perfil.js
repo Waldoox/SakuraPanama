@@ -7,7 +7,7 @@ document.getElementById('preview-img').style.display = 'none'; // Ocultar la ima
 
       reader.onload = function(e) {
         document.getElementById('preview-img').src = e.target.result;
-        document.getElementById('preview-img').style.display = 'block'; // Mostrar la imagen después de cargarla
+        document.getElementById('preview-img').style.display = 'block'; // Vista Previa
       }
 
       reader.readAsDataURL(input.files[0]); // Convertir imagen a Base64
@@ -15,7 +15,7 @@ document.getElementById('preview-img').style.display = 'none'; // Ocultar la ima
   });
 
   function agregarLugar() {
-    // Obtener los valores del formulario
+
     let nombre = document.getElementById('nombre').value;
     let tipo = document.getElementById('tipo').value;
     let direccion = document.getElementById('direccion').value;
@@ -23,7 +23,6 @@ document.getElementById('preview-img').style.display = 'none'; // Ocultar la ima
     let descripcion = document.getElementById('descripcion').value;
     let imagenBase64 = document.getElementById('preview-img').src;
     
-    // Crear el objeto de datos del lugar
     let lugar = {
       nombre_lugar: nombre,
       direccion_lugar: direccion,

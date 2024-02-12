@@ -131,11 +131,10 @@ function iniciarCarrusel() {
   console.log('Inicializando el carrusel');
   $('.carousel').slick();
 }
-
 function redireccionPerfil() {
   const perfilLink = document.getElementById("perfil-link");
-  const logoutLink = document.getElementById("logout-link");
-  const token = localStorage.getItem("token");
+  const token = localStorage.getItem("jwtToken");
+
   if (token) {
       // Decodificar el token para obtener el rol del usuario
       const decodedToken = decodeToken(token);
@@ -149,11 +148,9 @@ function redireccionPerfil() {
       }
       
   } else {
-      
       window.location.href = "/inicio";
   }
-};
-
+}
 
 function decodeToken(token) {
   const tokenParts = token.split(".");
@@ -165,7 +162,7 @@ function logout() {
   const logoutLink = document.getElementById("logout-link");
   
   logoutLink.addEventListener("click", function() {
-      localStorage.removeItem("token");
+      localStorage.removeItem("jwtToken");
       window.location.href = "/index";
   });
 }

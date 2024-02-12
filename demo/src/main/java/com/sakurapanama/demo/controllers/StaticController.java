@@ -33,4 +33,8 @@ public class StaticController {
     public String busqueda(){
         return "busqueda.html";
     }
+    @GetMapping("/perfil")
+    public String perfilUsuario(){
+        return "perfilUsuario.html";
+    }
 }

@@ -1,10 +1,11 @@
 function registrarUsuario() {
-    var username = document.getElementById('username').value;
-    var password = document.getElementById('password').value;
+    var username = document.getElementById('username-reg').value;
+    var password = document.getElementById('password-reg').value;
     var fname = document.getElementById('fname').value;
     var lname = document.getElementById('lname').value;
     var eMail = document.getElementById('eMail').value;
     var phone = document.getElementById('phone').value;
+    var rol = 'USER'
 
     var datosUsuario = {
         username: username,
@@ -12,7 +13,8 @@ function registrarUsuario() {
         nombreusr: fname,
         apellidousr: lname,
         correousr: eMail,
-        telefonousr: phone
+        telefonousr: phone,
+        rol: rol
     };
 
     fetch('/auth/register', {
@@ -32,7 +34,7 @@ function registrarUsuario() {
         console.log(data);
 
         if (data.token) {
-            sessionStorage.setItem('jwtToken', data.token);
+            localStorage.setItem('jwtToken', data.token);
             window.location.href = '/index';
         } else {
             console.error('No se recibió un token en la respuesta del servidor');
@@ -45,8 +47,8 @@ function registrarUsuario() {
 }
 
 function login() {
-    var username = document.getElementById('username').value;
-    var password = document.getElementById('password').value;
+    var username = document.getElementById('username-login').value;
+    var password = document.getElementById('password-login').value;
 
     var datosUsuario = {
         username: username,
@@ -70,7 +72,7 @@ function login() {
         console.log(data);
 
         if (data.token) {
-            sessionStorage.setItem('jwtToken', data.token);
+            localStorage.setItem('jwtToken', data.token);
             window.location.href = '/index';
         } else {
             console.error('No se recibió un token en la respuesta del servidor');
