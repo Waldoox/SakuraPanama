@@ -122,17 +122,29 @@ async function subirImagen(file) {
   formData.append('file', file);
 
   try {
-      const response = await fetch('/subir-imagen', {
-          method: 'POST',
-          body: formData
-      });
-      const data = await response.text();
-      alert(data); // Muestra un mensaje de éxito
-      mostrarImagenesGuardadas(); // Actualiza las imágenes mostradas después de subir una nueva
+    const base64Image = await getBase64(file); // Convertir la imagen a Base64
+    formData.append('base64Image', base64Image);
+
+    const response = await fetch('/subir-imagen', {
+      method: 'POST',
+      body: formData
+    });
+    const data = await response.text();
+    alert(data); // Muestra un mensaje de éxito
+    mostrarImagenesGuardadas(); // Actualiza las imágenes mostradas después de subir una nueva
   } catch (error) {
-      console.error('Error al subir la imagen:', error);
-      alert('Error al subir la imagen. Por favor, inténtalo de nuevo.');
+    console.error('Error al subir la imagen:', error);
+    alert('Error al subir la imagen. Por favor, inténtalo de nuevo.');
   }
+}
+
+function getBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result.split(',')[1]); // Devuelve el contenido base64 sin la metadata
+    reader.onerror = error => reject(error);
+  });
 }
 
 function mostrarImagenesGuardadas() {
@@ -140,27 +152,26 @@ function mostrarImagenesGuardadas() {
   carrusel.innerHTML = ''; // Limpiar el carrusel antes de agregar las imágenes
 
   fetch('/imagenes')
-      .then(response => response.json())
-      .then(data => {
-          data.forEach(imagen => {
-              const imageElement = document.createElement('img');
-              imageElement.src = imagen.imagenurl;
-              carrusel.appendChild(imageElement);
-          });
-      })
-      .catch(error => console.error('Error al obtener las imágenes:', error));
+    .then(response => response.json())
+    .then(data => {
+      data.forEach(imagen => {
+        const imageElement = document.createElement('img');
+        imageElement.src = imagen.imagenurl;
+        carrusel.appendChild(imageElement);
+      });
+    })
+    .catch(error => console.error('Error al obtener las imágenes:', error));
 }
 
 function limpiarCarrusel() {
   fetch('/eliminar-imagen')
-      .then(response => response.text())
-      .then(data => {
-          alert(data); // Muestra un mensaje de éxito
-          document.getElementById('carrusel').innerHTML = ''; // Limpiar el carrusel después de eliminar las imágenes
-      })
-      .catch(error => console.error('Error al limpiar el carrusel:', error));
+    .then(response => response.text())
+    .then(data => {
+      alert(data); // Muestra un mensaje de éxito
+      document.getElementById('carrusel').innerHTML = ''; // Limpiar el carrusel después de eliminar las imágenes
+    })
+    .catch(error => console.error('Error al limpiar el carrusel:', error));
 }
-
 
 
 //funcion de menu tambien se puede// Array para almacenar los platos de comida predefinidos
@@ -268,3 +279,69 @@ cargarPlatos();
 
 
 //pruba
+
+document.addEventListener('DOMContentLoaded', function () {
+  mostrarImagenesGuardadas();
+});
+
+async function subirImagen(file, idLugar) {
+  const formData = new FormData();
+  formData.append('file', file);
+
+  try {
+    const response = await fetch(`/api/resenas/subir-imagen/${idLugar}`, {
+      method: 'POST',
+      body: formData
+    });
+    const data = await response.text();
+    alert(data); // Muestra un mensaje de éxito
+    mostrarImagenesGuardadas(); // Actualiza las imágenes mostradas después de subir una nueva
+  } catch (error) {
+    console.error('Error al subir la imagen:', error);
+    alert('Error al subir la imagen. Por favor, inténtalo de nuevo.');
+  }
+}
+
+function addReview(idLugar) {
+  const commentInput = document.getElementById('commentInput');
+  const commentText = commentInput.value.trim();
+  const selectedRating = getSelectedRating();
+
+  if (commentText === '' || selectedRating === 0) {
+    alert('Por favor, completa el comentario y la puntuación.');
+    return;
+  }
+
+  const fileInput = document.getElementById('inputFile');
+  const file = fileInput.files[0];
+
+  const formData = new FormData();
+  formData.append('file', file);
+
+  const review = {
+    comment: commentText,
+    rating: selectedRating
+  };
+
+  // Subir la imagen y luego agregar la reseña
+  subirImagen(file, idLugar).then(() => {
+    fetch(`/api/resenas/${idLugar}/agregar-resena`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(review)
+    })
+    .then(response => {
+      if (response.ok) {
+        alert('La reseña se ha agregado correctamente.');
+      } else {
+        alert('Ha ocurrido un error al agregar la reseña. Por favor, inténtalo de nuevo más tarde.');
+      }
+    })
+    .catch(error => {
+      console.error('Error al agregar la reseña:', error);
+      alert('Ha ocurrido un error al agregar la reseña. Por favor, inténtalo de nuevo más tarde.');
+    });
+  });
+}
