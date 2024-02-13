@@ -2,7 +2,9 @@ package com.sakurapanama.demo.models;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.sakurapanama.demo.services.Resena;
+// Importa la clase Resena correcta desde el paquete models
+import com.sakurapanama.demo.services.*;
 
-public interface reseñaRep extends JpaRepository<Resena, Integer> {
+// Cambia el nombre de la interfaz a ResenaRepository
+public interface reseñaRep extends JpaRepository<resena, Integer> {
 }

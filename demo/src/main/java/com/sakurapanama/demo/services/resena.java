@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.*;
 
 @Entity
-public class Resena {
+public class resena {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -19,10 +19,10 @@ public class Resena {
     /**
      * Constructor vacío necesario para JPA.
      */
-    public Resena() {
+    public resena() {
     }
 
-    public Resena(int puntuacion, String comentario, String imagenUrl, String username, int idLugar) {
+    public resena(int puntuacion, String comentario, String imagenUrl, String username, int idLugar) {
         this.puntuacion = puntuacion;
         this.comentario = comentario;
         this.fecha = new Date();
