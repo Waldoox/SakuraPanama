@@ -1,21 +1,22 @@
 package com.sakurapanama.demo.Services;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+
 import com.sakurapanama.demo.models.Resena;
+import org.springframework.stereotype.Service;
 
-public class ResenaDB {
-
+@Service
+public class ResenaDB{
     Connection _cn;
 
     public ResenaDB() {
     _cn = new Conexion().openDb();
     }
 
-
-    public boolean añadirReseña(Resena resena) {
-        String query = "INSERT INTO lugar (nombre_lugar, direccion_lugar, descripcion, lugar_img, id_provincia, id_tipolocal) VALUES (?, ?, ?, ?, ?, ?)";
+    public boolean añadirResena(Resena resena) {
+        String query = "INSERT INTO reseña (puntuacion, comentario, fecha, imagenurl, username, id_lugar) VALUES (?, ?, ?, ?, ?, ?)";
 
         try {
             PreparedStatement stmt = _cn.prepareStatement(query);
@@ -34,15 +35,39 @@ public class ResenaDB {
         }
     }
 
-
-
-
-
-
-
-
-
-   /*String query = "SELECT * FROM resenas WHERE id_lugar = 3";
-PreparedStatement statement = connection.prepareStatement(query);
-statement.setInt(1, idLugar); */ 
+    public List<Resena> listarReseñasPorLugar(int idLugar) {
+        if (_cn != null) {
+            try {
+                String query = "SELECT * FROM resenas WHERE id_lugar = ?";
+                PreparedStatement statement = _cn.prepareStatement(query);
+                statement.setInt(1, idLugar);
+                ResultSet resultSet = statement.executeQuery();
+    
+                List<Resena> resenas = new ArrayList<>();
+                while (resultSet.next()) {
+                    Resena resena = new Resena(
+                        resultSet.getInt("id_resena"),
+                        resultSet.getInt("puntuación"),
+                        resultSet.getString("id_usuario"),  
+                        resultSet.getDate("fecha"),
+                        resultSet.getString("imagenurl"),
+                        resultSet.getString("username"),
+                        resultSet.getInt("id_lugar"));
+                    resenas.add(resena);
+                }
+    
+                resultSet.close();
+                statement.close();
+                return resenas;
+            } catch (Exception e) {
+                e.printStackTrace();
+                return null;
+            }
+        } else {
+            System.err.println("No se pudo establecer conexión con la base de datos.");
+            return null;
+        }
+    }
 }
+
+
