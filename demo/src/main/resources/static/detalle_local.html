@@ -28,29 +28,47 @@
                 </div>
                 <div class="col-info">
                     <h1>Nombre del local</h1>
-                    <h2>Tipo de local</h2>
+                    <h2 class="subtitle">Tipo de local</h2>
 
-                    <h3>Direccion</h3>
-                    <h3>Provincia</h3>
+                    <h3 class="local-info">Direccion</h3>
+                    <h3 class="local-info">Provincia</h3>
 
-                    <h3>Descripcion</h3>
+                    <h3 class="local-info">Descripcion</h3>
                 </div>
             </div>
-            <div>
-                    <div id="ratings">
-                        <i class="bi bi-star-fill star st" data-rating="1"></i>
-                        <i class="bi bi-star-fill star st" data-rating="2"></i>
-                        <i class="bi bi-star-fill star st" data-rating="3"></i>
-                        <i class="bi bi-star-fill star st" data-rating="4"></i>
-                        <i class="bi bi-star-fill star st" data-rating="5"></i>
+
+            <div class="reseña">
+                <h2>Califica *el Local*</h2>
+                <div class="rating">
+                    <input type="radio" id="star5" name="rating" value="5">
+                    <label for="star5">&#9733;</label>
+                    <input type="radio" id="star4" name="rating" value="4">
+                    <label for="star4">&#9733;</label>
+                    <input type="radio" id="star3" name="rating" value="3">
+                    <label for="star3">&#9733;</label>
+                    <input type="radio" id="star2" name="rating" value="2">
+                    <label for="star2">&#9733;</label>
+                    <input type="radio" id="star1" name="rating" value="1">
+                    <label for="star1">&#9733;</label>
+                  </div>
         
+                    <div id="comment-section">
+                        <div class="comment-img">
+                            <label for="" class="review-labels">Sube tu foto</label>
+                            <label for="avatar-input" id="image-label">
+                                <div id="local_img" class="image-preview">
+                                    <img id="preview-img" src="" alt="">
+                                </div>
+                            </label>
+                            <input type="file" id="avatar-input" style="display: none;" accept="image/*">
+                        </div>
+                        <div class="comment">
+                            <label for="" class="review-labels">Comentario</label>
+                            <textarea name="" id="commentInput"></textarea>
+                        </div>    
                     </div>
-        
-                    <div>
-                        <textarea name="" id="commentInput" cols="30" rows="10"></textarea>
-                        <button><input type="file" id="inputFile" accept="image/*"></button>
-                        <button onclick="addReview()">Añadir Comentario</button>
-                    </div>
+                    
+                    <button onclick="addReview()">Añadir Comentario</button>
         
                     <div id="reviews">
                         <!-- Aquí mostraríamos las opiniones de los usuarios -->
@@ -76,5 +94,7 @@
             
             <p class="copyrigth">&copy; 2023 Sakura Panamá. Todos los derechos reservados.</p>
     </footer>
+
+    <script src="js/reseña.js"></script>
 </body>
 </html>
