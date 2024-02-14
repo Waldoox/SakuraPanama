@@ -1,0 +1,26 @@
+.border-content{
+    border: 1px solid #ccc;
+    width: 100%;
+    height: 100%;
+}
+
+.main-content{
+    margin:4rem;
+}
+
+.local-details{
+    display: flex;
+}
+
+#local-img{
+    width:100%;
+    padding: 2rem;
+}
+
+.col-img{
+    flex: 3;
+}
+.col-info{
+    flex: 1;
+    padding: 2rem;
+}
