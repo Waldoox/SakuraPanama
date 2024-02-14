@@ -1,40 +1,91 @@
 package com.sakurapanama.demo.services;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.util.Date;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import com.sakurapanama.demo.services.Resena;
-import com.sakurapanama.demo.models.reseñaRep;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
+import com.sakurapanama.demo.models.Resena;
+import com.sakurapanama.demo.models.Usuario;
+import com.sakurapanama.demo.models.Lugar;
 
-@Service
-public class resenaDB {
-    
-    @Autowired
-    private reseñaRep resenaRepository;
+public class ResenaDB implements resenaRep {
+    private Connection connection;
 
-    @Autowired
-    private conexion conexion;
+    public ResenaDB() {
+        // Aquí deberías instanciar tu conexión a la base de datos, por ejemplo:
+        // connection = new Conexion().establecer_conexion();
+    }
 
-    public void insertarResena(int puntuacion, String comentario, String imagenUrl, String username, int idLugar) {
-        try (Connection connection = conexion.openDb()) {
-            String sql = "INSERT INTO resena (puntuacion, comentario, fecha, imagenurl, username, id_lugar) VALUES (?, ?, ?, ?, ?, ?)";
-            try (PreparedStatement statement = connection.prepareStatement(sql)) {
-                statement.setInt(1, puntuacion);
-                statement.setString(2, comentario);
-                statement.setDate(3, new java.sql.Date(new Date().getTime())); // Se convierte la fecha de Java a SQL
-                statement.setString(4, imagenUrl);
-                statement.setString(5, username);
-                statement.setInt(6, idLugar);
-                statement.executeUpdate();
-            }
+    @Override
+    public void insertarReseña(Resena reseña) {
+        try {
+            // Aquí debes implementar la lógica para insertar una reseña en la base de datos
         } catch (SQLException e) {
             e.printStackTrace();
+            // Manejo de errores
         }
     }
 
-    
+    @Override
+    public List<Resena> listarReseñasPorLugar(int idLugar) {
+        List<Resena> reseñas = new ArrayList<>();
+        try {
+            // Aquí debes implementar la lógica para obtener las reseñas de la base de datos
+        } catch (SQLException e) {
+            e.printStackTrace();
+            // Manejo de errores
+        }
+        return reseñas;
+    }
 }
+
+
+/*public class ResenaDB {
+    Connection _cn;
+
+    public ResenaDB() {
+        _cn = new conexion().establecer_conexion();
+    }
+
+    public void adicionar(String username){
+        Resena resena = new Resena;
+        String query = "Inser into reseña(puntuacion,comentario,imagenurl,username,id_lugar) values('"+getpuntuacion()+"','"+getcomentario()+"','"+getimagenurl()+"','"+setusername()+"','"+setid_lugar()+"')";
+    }
+
+
+
+
+    public Resena MostrarResult(String username){
+        try{
+            String query = "Select username,comentario,puntuacion,imagenurl from resena where id_lugar = 3";
+            Statement stmt = _cn.createStatement();
+            ResultSet result = stmt.executeQuery(query);
+
+            if(result.next()){
+                Resena resena = Resena.builder()
+                .username(result.getString("username"))
+                .comentario(result.getString("comentario"))
+                .puntuacion(result.getInt("puntuacion"))
+                .imagenurl(result.getString("imagenurl"))
+                .build();
+
+                result.close();
+                stmt.close();
+                return resena;
+
+            }else{
+                result.close();
+                stmt.close();
+                return null;
+
+            }
+        } catch(Exception e){
+            int x = 1;
+            return null;
+
+        }
+
+          
+
+    }
+}*/

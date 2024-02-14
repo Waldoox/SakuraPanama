@@ -1,4 +1,4 @@
-package com.sakurapanama.demo.services;
+package com.sakurapanama.demo;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

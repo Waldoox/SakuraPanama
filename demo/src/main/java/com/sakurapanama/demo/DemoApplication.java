@@ -1,4 +1,4 @@
-package com.sakurapanama.demo.services;
+package com.sakurapanama.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
