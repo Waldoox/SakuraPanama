@@ -14,6 +14,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/perfilAdmin.css">
+    <link rel="stylesheet" href="css/dashboard.css">
   </head>
   <body>
 
@@ -70,31 +71,48 @@
       
                 <div class="card">
                   <div class="card-inner">
-                    <h3>ejemplo3</h3>
-                    <span class="material-icons-outlined">groups</span>
+                    <h3>Restaurantes</h3>
+                    <span class="material-icons-outlined">restaurant</span>
                   </div>
-                  <h1>1500</h1>
+                  <h1 id="restaurantesCantidad"></h1>
                 </div>
       
                 <div class="card">
                   <div class="card-inner">
-                    <h3>ejemplo4</h3>
-                    <span class="material-icons-outlined">notification_important</span>
+                    <h3>Tiendas</h3>
+                    <span class="material-icons-outlined">store</span>
                   </div>
-                  <h1>56</h1>
+                  <h1 id="tiendasCantidad"></h1>
                 </div>
+      
+                <div class="card">
+                  <div class="card-inner">
+                    <h3>Eventos Registrados</h3>
+                    <span class="material-icons-outlined">event</span>
+                  </div>
+                  <h1 id="variedadesCantidad"></h1>
+                </div>
+      
+                <div class="card">
+                  <div class="card-inner">
+                    <h3>Total</h3>
+                    <span class="material-icons-outlined">groups</span>
+                  </div>
+                  <h1 id="totalCantidad"></h1>
+                </div>
+      
       
               </div>
       
               <div class="charts">
-      
+
                 <div class="charts-card">
-                  <h2 class="chart-title">Top 5 Restaurantes</h2>
+                  <h2 class="chart-title">Gráfica de Barra</h2>
                   <div id="bar-chart"></div>
                 </div>
       
                 <div class="charts-card">
-                  <h2 class="chart-title">Purchase and Sales Orders</h2>
+                  <h2 class="chart-title">Gráfica de Área</h2>
                   <div id="area-chart"></div>
                 </div>
       
@@ -126,5 +144,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
     <!-- Custom JS -->
     <script src="js/grafica.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          const totalCantidad = localStorage.getItem('totalCantidad');
+          document.getElementById('totalCantidad').innerText = totalCantidad;
+
+          const restaurantesCantidad = localStorage.getItem('/restaurantes');
+          const tiendasCantidad = localStorage.getItem('/tiendas');
+          const variedadesCantidad = localStorage.getItem('/variedades');
+
+          document.getElementById('restaurantesCantidad').innerText = restaurantesCantidad;
+          document.getElementById('tiendasCantidad').innerText =  tiendasCantidad;
+          document.getElementById('variedadesCantidad').innerText =  variedadesCantidad;
+    });
+
+
+    </script>
   </body>
 </html>

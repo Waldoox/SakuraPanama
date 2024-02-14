@@ -33,6 +33,6 @@ function mapearLugar(lugar) {
 }
 
 // Llamada inicial para obtener lugares
-obtenerLugares('/lugares', () => {
+obtenerLugares('/all', () => {
   imprimirLugares('locales-container');
 });

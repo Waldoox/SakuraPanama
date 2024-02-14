@@ -11,8 +11,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import com.sakurapanama.demo.jwt.JwtAuthFilter;
-import com.sakurapanama.demo.models.Role;
-import com.sakurapanama.demo.models.Usuario;
+
 
 import lombok.RequiredArgsConstructor;
 
@@ -23,7 +22,6 @@ public class SecurityConfig {
 
     private final JwtAuthFilter jwtAuthenticationFilter;
     private final AuthenticationProvider authProvider;
-    private final UserDetails user;
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception
@@ -36,9 +34,8 @@ public class SecurityConfig {
               authRequest
                 .requestMatchers("/auth/**").permitAll()
                 .requestMatchers("/img/**", "/css/**", "/js/**", "/*.html").permitAll()
-                .requestMatchers("/registro", "/inicio", "/index", "/all","/tiendas","/variedades","/restaurantes", "/email/send",  "/busqueda").permitAll()
-                .requestMatchers("/perfilAdmin", "/añadirLugar", "/dashboard").hasRole("ADMIN")
-                .requestMatchers("/perfil").hasAuthority(user.getAuthorities().toString())
+                .requestMatchers("/registro", "/inicio", "/index", "/all","/tiendas","/variedades","/restaurantes", "/busqueda", "/perfilAdmin", "/dashboard").permitAll()
+                
                 )
             .sessionManagement(sessionManager->
                 sessionManager 

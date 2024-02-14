@@ -1,12 +1,18 @@
 //LUGARES
 let baseUrl = "http://localhost:8080";
 let lugares = [];
+let totalCantidad = 0;
 
 function obtenerLugares(url, callback) {
   fetch(baseUrl + url)
     .then(res => res.json())
     .then(json => {
       lugares = json;
+      totalCantidad += lugares.length;
+      localStorage.setItem('totalCantidad', totalCantidad);
+
+      // guardar la cantidad de cada tipo
+      localStorage.setItem(url, lugares.length);
       callback(); 
     });
 }

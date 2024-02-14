@@ -1,21 +1,8 @@
-// SIDEBAR 
-
-let sidebarOpen = false;
-const sidebar = document.getElementById('sidebar');
-
-function openSidebar() {
-  if (!sidebarOpen) {
-    sidebar.classList.add('sidebar-responsive');
-    sidebarOpen = true;
-  }
-}
-
-function closeSidebar() {
-  if (sidebarOpen) {
-    sidebar.classList.remove('sidebar-responsive');
-    sidebarOpen = false;
-  }
-}
+document.addEventListener("DOMContentLoaded", function () {
+  const totalCantidad = localStorage.getItem('totalCantidad');
+  const restaurantesCantidad = localStorage.getItem('/restaurantes');
+  const tiendasCantidad = localStorage.getItem('/tiendas');
+  const variedadesCantidad = localStorage.getItem('/variedades');
 
 // ---------- grafica ----------
 
@@ -23,8 +10,8 @@ function closeSidebar() {
 const barChartOptions = {
   series: [
     {
-      data: [10, 8, 6, 4, 2],
-      name: 'Restaurante',
+      data: [restaurantesCantidad, tiendasCantidad, variedadesCantidad, totalCantidad],
+      name: 'Registro',
     },
   ],
   chart: {
@@ -35,7 +22,7 @@ const barChartOptions = {
       show: false,
     },
   },
-  colors: ['#2962ff', '#d50000', '#2e7d32', '#ff6d00', '#583cb3'],
+  colors: ['#2962ff', '#d50000', '#2e7d32', '#ff6d00'],
   plotOptions: {
     bar: {
       distributed: true,
@@ -81,7 +68,7 @@ const barChartOptions = {
     theme: 'dark',
   },
   xaxis: {
-    categories: ['ejemplo1', 'ejemplo2', 'ejemplo3', 'ejemplo4', 'ejemplo5'],
+    categories: ['Restaurante', 'Tienda', 'Evento', 'Total'],
     title: {
       style: {
         color: '#f5f7ff',
@@ -103,7 +90,7 @@ const barChartOptions = {
   },
   yaxis: {
     title: {
-      text: 'Count',
+      text: 'Cantidad de Registro',
       style: {
         color: '#f5f7ff',
       },
@@ -124,23 +111,20 @@ const barChartOptions = {
   },
 };
 
-const barChart = new ApexCharts(
-  document.querySelector('#bar-chart'),
-  barChartOptions
-);
-barChart.render();
+
+    const barChart = new ApexCharts(
+      document.querySelector('#bar-chart'),
+      barChartOptions
+    );
+    barChart.render();
 
 // grafica de area
 const areaChartOptions = {
   series: [
     {
-      name: 'Purchase Orders',
-      data: [31, 40, 28, 51, 42, 109, 100],
-    },
-    {
-      name: 'Sales Orders',
-      data: [11, 32, 45, 32, 34, 52, 41],
-    },
+      name: 'Registro',
+      data: [restaurantesCantidad, tiendasCantidad, variedadesCantidad, totalCantidad],
+    }
   ],
   chart: {
     type: 'area',
@@ -151,8 +135,8 @@ const areaChartOptions = {
       show: false,
     },
   },
-  colors: ['#00ab57', '#d50000'],
-  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+  colors: ['#00ab57'],
+  labels: ['Restaurante', 'Tienda', 'Evento', 'Total'],
   dataLabels: {
     enabled: false,
   },
@@ -213,7 +197,7 @@ const areaChartOptions = {
   yaxis: [
     {
       title: {
-        text: 'Purchase Orders',
+        text: 'Cantidad de Registro',
         style: {
           color: '#f5f7ff',
         },
@@ -227,7 +211,7 @@ const areaChartOptions = {
     {
       opposite: true,
       title: {
-        text: 'Sales Orders',
+        text: '',
         style: {
           color: '#f5f7ff',
         },
@@ -251,3 +235,5 @@ const areaChart = new ApexCharts(
   areaChartOptions
 );
 areaChart.render();
+
+});

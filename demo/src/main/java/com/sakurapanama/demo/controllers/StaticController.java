@@ -29,6 +29,12 @@ public class StaticController {
         return "perfilAdmin.html";
     }
 
+    @GetMapping("/dashboard")
+    public String dashboard(){
+        return "dashboard.html";
+    }
+
+
     @GetMapping("/busqueda")
     public String busqueda(){
         return "busqueda.html";
