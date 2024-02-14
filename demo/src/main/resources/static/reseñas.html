@@ -193,6 +193,33 @@
         <div id="reviews">
           <!-- Aquí mostraríamos las opiniones de los usuarios -->
         </div>
+
+        <div class="class-img">
+            <h2 class="class-tit">Sube tu Favorita</h2>
+            <div class="menu-img">
+                <input class="fil" type="file" id="inputFile" accept="image/*" onchange="subirImagen(this.files[0])">
+                <label for="inputFile" class="custom-file-label">Seleccionar Archivo</label>
+            </div>
+            <div class="class-Botones">
+                <button class="c1" onclick="subirImagen()">Subir Imagen</button>
+                <button class="c2" onclick="limpiarCarrusel()">Limpiar Carrusel</button>
+            </div>
+        </div>
+
+
+        
+        <h2 class="imagenes-h2">FOTOS DEL LOCAL</h2>
+
+        <section class="imagenes">
+            <div id="carrusel"></div>
+            <button class="prev" id="prev">&#10094;</button>
+            <button class="next" id="next">&#10095;</button>
+        </section>
+
+
+
+
+
       </section>
 
 

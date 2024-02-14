@@ -18,9 +18,22 @@ public class ReseñaController {
     }
 
     @PostMapping
-    public void insertarReseña(@RequestBody Resena reseña) {
-        resenaRep.insertarReseña(reseña);
+    public Resena insertarReseña(@RequestParam("imageFile") MultipartFile imageFile, @RequestBody Review review) {
+        if (!imageFile.isEmpty()) {
+            try {
+                byte[] imageBytes = imageFile.getBytes();
+                byte[] processedImageBytes = processImage(imageBytes);
+                String imageUrl = imageService.saveImage(processedImageBytes);
+                review.setImageUrl(imageUrl);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return reviewService.insertarReseña(Resena);
+
     }
+
 
     @GetMapping("/{idLugar}")
     public List<Resena> listarReseñasPorLugar(@PathVariable int idLugar) {

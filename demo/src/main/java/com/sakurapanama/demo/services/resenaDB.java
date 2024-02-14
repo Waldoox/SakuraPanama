@@ -8,84 +8,74 @@ import com.sakurapanama.demo.models.Resena;
 import com.sakurapanama.demo.models.Usuario;
 import com.sakurapanama.demo.models.Lugar;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class ResenaDB implements resenaRep {
     private Connection connection;
 
     public ResenaDB() {
-        // Aquí deberías instanciar tu conexión a la base de datos, por ejemplo:
-        // connection = new Conexion().establecer_conexion();
+        connection = new Conexion().establecer_conexion();
+        if (connection == null) {
+            System.err.println("Error al establecer la conexión a la base de datos.");
+        }
     }
 
     @Override
     public void insertarReseña(Resena reseña) {
-        try {
-            // Aquí debes implementar la lógica para insertar una reseña en la base de datos
-        } catch (SQLException e) {
-            e.printStackTrace();
-            // Manejo de errores
+        if (connection != null) {
+            try {
+               
+                String query = "INSERT INTO resenas (puntuacion, comentario, imagen_url, username, id_lugar) VALUES (?, ?, ?, ?, ?)";
+                PreparedStatement statement = connection.prepareStatement(query);
+          
+                statement.setInt(1, puntuacion);
+                statement.setString(2, comentario);
+                statement.setString(3, imagenUrl);
+                statement.setString(4, username);
+                statement.setInt(5, idLugar);
+
+                int filasAfectadas = statement.executeUpdate();
+
+                if (filasAfectadas > 0) {
+                    System.out.println("Reseña insertada correctamente.");
+                } else {
+                    System.out.println("No se pudo insertar la reseña.");
+                }
+            } catch (SQLException e) {
+                System.err.println("Error al insertar la reseña: " + e.getMessage());
+            }
+        } else {
+            System.err.println("No se pudo establecer conexión con la base de datos.");
         }
     }
 
     @Override
-    public List<Resena> listarReseñasPorLugar(int idLugar) {
-        List<Resena> reseñas = new ArrayList<>();
-        try {
-            // Aquí debes implementar la lógica para obtener las reseñas de la base de datos
-        } catch (SQLException e) {
-            e.printStackTrace();
-            // Manejo de errores
+    public void listarReseñasPorLugar(int idLugar) {
+        if (connection != null) {
+            try {
+                String query = "SELECT * FROM resenas WHERE id_lugar = 3";
+                PreparedStatement statement = connection.prepareStatement(query);
+                statement.setInt(1, idLugar);
+
+                ResultSet resultSet = statement.executeQuery();
+                while (resultSet.next()) {
+                    int puntuacion = resultSet.getInt("puntuacion");
+                    String comentario = resultSet.getString("comentario");
+                    String imagenUrl = resultSet.getString("imagen_url");
+                    String username = resultSet.getString("username");
+                }
+               
+                resultSet.close();
+                statement.close();
+            } catch (SQLException e) {
+                System.err.println("Error al obtener las reseñas por lugar: " + e.getMessage());
+            }
+        } else {
+            System.err.println("No se pudo establecer conexión con la base de datos.");
         }
-        return reseñas;
     }
+
 }
 
 
-/*public class ResenaDB {
-    Connection _cn;
-
-    public ResenaDB() {
-        _cn = new conexion().establecer_conexion();
-    }
-
-    public void adicionar(String username){
-        Resena resena = new Resena;
-        String query = "Inser into reseña(puntuacion,comentario,imagenurl,username,id_lugar) values('"+getpuntuacion()+"','"+getcomentario()+"','"+getimagenurl()+"','"+setusername()+"','"+setid_lugar()+"')";
-    }
-
-
-
-
-    public Resena MostrarResult(String username){
-        try{
-            String query = "Select username,comentario,puntuacion,imagenurl from resena where id_lugar = 3";
-            Statement stmt = _cn.createStatement();
-            ResultSet result = stmt.executeQuery(query);
-
-            if(result.next()){
-                Resena resena = Resena.builder()
-                .username(result.getString("username"))
-                .comentario(result.getString("comentario"))
-                .puntuacion(result.getInt("puntuacion"))
-                .imagenurl(result.getString("imagenurl"))
-                .build();
-
-                result.close();
-                stmt.close();
-                return resena;
-
-            }else{
-                result.close();
-                stmt.close();
-                return null;
-
-            }
-        } catch(Exception e){
-            int x = 1;
-            return null;
-
-        }
-
-          
-
-    }
-}*/
