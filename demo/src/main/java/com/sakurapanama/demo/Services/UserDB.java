@@ -1,4 +1,4 @@
-package com.sakurapanama.demo.Services;
+package com.sakurapanama.demo.services;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

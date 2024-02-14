@@ -25,16 +25,16 @@
 
                     <h3>Filtros</h3>
                    
-                    <div class="seccion">
+                    <div class="seccion"> 
                         <h4>Tipo de Establecimiento</h4>
                         <label class="option">
-                            <input type="checkbox" name="local" value="restaurante"> Restaurante
-                        </label class="option">
-                        <label class="option">
-                            <input type="checkbox" name="local" value="variedad"> Variedades
+                            <input id="checkbox-restaurantes" type="checkbox" name="local" value="restaurante" onchange="filtrarLugares()"> Restaurante
                         </label>
                         <label class="option">
-                            <input type="checkbox" name="local" value="evento"> Eventos
+                            <input id="checkbox-tiendas" type="checkbox" name="local" value="variedad" onchange="filtrarLugares()"> Variedades
+                        </label>
+                        <label class="option">
+                            <input id="checkbox-variedades" type="checkbox" name="local" value="evento" onchange="filtrarLugares()"> Eventos
                         </label>
                     </div>
                     <div class="seccion">
@@ -54,7 +54,7 @@
       
         <section class="local-section" >
             <div class="local-form"  id="locales">
-            
+           
             </div>
         </section>
     </main>

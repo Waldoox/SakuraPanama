@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sakurapanama.demo.Services.ArticulosDB;
 import com.sakurapanama.demo.models.Articulo;
+import com.sakurapanama.demo.services.ArticulosDB;
 
 
 
