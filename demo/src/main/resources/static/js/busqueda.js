@@ -27,12 +27,12 @@ function imprimirLugares(contenedorId) {
 }
 
 function mapearLugar(lugar) {
-  return `<section>
+  return `<section class="detalle-local">
     <div>
     <a href="/detalle_local?id=${lugar.id_lugar}">
       <img src="${lugar.lugar_img}" alt="Imagen del lugar">
-      <h3>${lugar.nombre_lugar}</h3>
-      <p>Dirección: ${lugar.direccion_lugar}</p>
+      <h3 class="no-link">${lugar.nombre_lugar}</h3>
+      <p class="no-link">Dirección: ${lugar.direccion_lugar}</p>
     </a>
     </div>
   </section>`;

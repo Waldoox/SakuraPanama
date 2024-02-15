@@ -51,10 +51,11 @@ public class StaticController {
     }
 
     
-    @GetMapping("/detalle_local/{id_lugar}")
-    public String mostrarDetalleLocal(@PathVariable int id_lugar) {
-        return "detalle_local.html"; 
-    }
+    @GetMapping("/detalle_local")
+public String mostrarDetalleLocal(@RequestParam("id") int id_lugar) {
+    // Tu lógica para mostrar el detalle del lugar
+    return "detalle_local.html"; 
+}
 
     @GetMapping("/aboutUs")
     public String aboutUs() {
