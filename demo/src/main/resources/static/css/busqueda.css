@@ -63,15 +63,6 @@ button:hover {
     flex-basis: 80%;
 }
 
-.local-form {
-    max-width: 600px;
-    margin: 0 auto;
-    border: 1px solid #ccc;
-    padding: 20px;
-    display: block;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
 .info-column {
     padding: 20px;
 }
@@ -95,18 +86,17 @@ button:hover {
 
 .local-section {
     flex-basis: 80%;
-    justify-content: space-between;
     align-items: center;
   
 }
 
 .local-form {
-    max-width: 600px;
-    margin: 0 auto;
     border: 1px solid #ccc;
     padding: 20px;
+    display: block;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0 2rem;
 }
 .local-form img{
     width: 120px;
@@ -115,4 +105,13 @@ button:hover {
 }
 .local-form h3{
     text-align: left;
+}
+
+.detalle-local{
+    margin-bottom: 3rem;
+}
+
+.no-link{
+    color: #333;
+    text-decoration: none;
 }
