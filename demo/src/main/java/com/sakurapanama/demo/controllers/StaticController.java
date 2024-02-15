@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sakurapanama.demo.Services.LugaresDB;
@@ -50,8 +51,8 @@ public class StaticController {
     }
 
     
-    @GetMapping("/detalle_local")
-    public String mostrarDetalleLocal() {
+    @GetMapping("/detalle_local/{id_lugar}")
+    public String mostrarDetalleLocal(@PathVariable int id_lugar) {
         return "detalle_local.html"; 
     }
 
