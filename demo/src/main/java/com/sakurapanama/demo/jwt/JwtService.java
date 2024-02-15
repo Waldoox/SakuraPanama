@@ -20,18 +20,32 @@ public class JwtService {
     private static final String SECRET_KEY = "2F8cL1eRbP9aY0vN3wQ5dU6iG7xJ2zZ1oH4tK6uL7iM0qX9yV5wQ8bP3aU6f";
 
     public String getToken(UserDetails user) {
-        return getToken(new HashMap<>(), user);
+        return getToken(user.getAuthorities().iterator().next().getAuthority(), user);
     }
+    
 
-    private String getToken(Map<String,Object> extraClaims, UserDetails user) {
+    private String getToken(String rol, UserDetails user) {
+        Map<String, Object> extraClaims = new HashMap<>();
+        extraClaims.put("rol", rol);
         return Jwts
             .builder()
             .setClaims(extraClaims)
             .setSubject(user.getUsername())
             .setIssuedAt(new Date(System.currentTimeMillis()))
             .setExpiration(new Date(System.currentTimeMillis()+1000*60*24))
-            .signWith(getKey(),SignatureAlgorithm.HS256)
+            .signWith(getKey(), SignatureAlgorithm.HS256)
             .compact();
+    }
+
+    public String generatePasswordResetToken(String email) {
+        Map<String, Object> claims = new HashMap<>();
+        claims.put("email", email);
+        return Jwts.builder()
+                .setClaims(claims)
+                .setIssuedAt(new Date())
+                .setExpiration(new Date(System.currentTimeMillis()+1000*60*24))
+                .signWith(getKey(), SignatureAlgorithm.HS256) 
+                .compact();
     }
 
     private Key getKey() {

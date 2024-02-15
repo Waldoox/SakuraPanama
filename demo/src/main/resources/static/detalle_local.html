@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/detalle_local.css">
+    <title>Detalle</title>
+</head>
+<body>
+    <header class="header-menu">
+        <nav class="navbar-bg">
+            <div class="navbar contenedor">
+                <a href="/index" class="item-img"><img src="./img/logo.png" alt="" class="head-logo"></a>
+                <a href="/index" class="items">Inicio</a>
+                <a href="/aboutUs" class="items">Sobre Nosotros</a>
+                <a href="#" class="item-img" onclick="redireccionPerfil()" id="perfil-link"><img src="./img/user.png" alt="" class="user"></a>      
+            </div>         
+        </nav>
+    </header>
+
+    <section class="main-content">
+        <main class="border-content contenedor">
+            <div class="local-details" id="local-details">
+            
+            </div>
+
+            <div class="reseña">
+                <h2>¡Calificalo!</h2>
+                <div class="rating">
+                    <input type="radio" id="star5" name="rating" value="5">
+                    <label for="star5">&#9733;</label>
+                    <input type="radio" id="star4" name="rating" value="4">
+                    <label for="star4">&#9733;</label>
+                    <input type="radio" id="star3" name="rating" value="3">
+                    <label for="star3">&#9733;</label>
+                    <input type="radio" id="star2" name="rating" value="2">
+                    <label for="star2">&#9733;</label>
+                    <input type="radio" id="star1" name="rating" value="1">
+                    <label for="star1">&#9733;</label>
+                  </div>
+                  
+                    <div id="comment-section">
+                        <div class="comment-img">
+                            <label for="" class="review-labels">Sube tu foto</label>
+                            <label for="avatar-input" id="image-label">
+                                <div id="local_img" class="image-preview">
+                                    <img id="preview-img" src="" alt="">
+                                </div>
+                            </label>
+                            <input type="file" id="avatar-input" style="display: none;" accept="image/*">
+                        </div>
+                        <div class="comment">
+                            <label for="" class="review-labels">Comentario</label>
+                            <textarea name="" id="commentInput"></textarea>
+                        </div>    
+                    </div>
+                    
+                    <button onclick="addReview()">Añadir Comentario</button>
+        
+                    <div id="reviews">
+                        
+                    </div>
+            </div>
+        </main>
+    </section>
+
+    <footer class="cont-footer">
+        <div class="footer">
+            <div class="cont-info">
+                <p>Campus Victor Levi Sasso, Vía Centenario, Panamá</p>
+                <br>
+                <p>Sakura@gmail.com</p>
+                <br>
+                <p>Tel: 222-2222</p>
+            </div>
+            <div class="cont-redes">
+                <a href="#"><img src="img/facebook.png" class="redes" alt=""></a>
+                <a href=""><img src="img/instagram.png" class="redes" alt=""></a>
+            </div>
+        </div>
+            
+            <p class="copyrigth">&copy; 2023 Sakura Panamá. Todos los derechos reservados.</p>
+    </footer>
+    <script src="./js/index.js"></script>
+    <script src="js/reseña.js"></script>
+</body>
+</html>

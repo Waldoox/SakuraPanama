@@ -39,7 +39,7 @@ public class AuthService {
             .password(passwordEncoder.encode(request.getPassword()))
             .correousr(request.getCorreousr())
             .telefonousr(request.getTelefonousr())
-            .rol(Role.USER)
+            .rol(request.getRol())
             .build();
 
         userRepo.save(user);

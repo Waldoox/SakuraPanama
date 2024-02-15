@@ -16,7 +16,7 @@ public class UserDB {
 
     public Usuario ObtenerPerfil(String username) {
     try {
-        String query = "SELECT username, nombreusr, apellidousr, rol, perfilimg FROM Usuario WHERE username = ?";
+        String query = "SELECT username, correousr,  rol, perfilimg FROM Usuario WHERE username = ?";
         PreparedStatement pstmt = _cn.prepareStatement(query);
         pstmt.setString(1, username);
 
@@ -25,8 +25,7 @@ public class UserDB {
         if (result.next()) {
             Usuario usuario = Usuario.builder()
                 .username(result.getString("username"))
-                .nombreusr(result.getString("nombreusr"))
-                .apellidousr(result.getString("apellidousr"))
+                .correousr(result.getString("correousr"))
                 .rol(Role.valueOf(result.getString("rol")))
                 .perfilimg(result.getString("perfilimg"))
                 .build();

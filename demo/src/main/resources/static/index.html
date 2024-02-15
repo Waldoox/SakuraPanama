@@ -7,45 +7,35 @@
     <title>Inicio</title>
     <link rel="stylesheet" href="css/index.css">
     <!-- En el <head> -->
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 </head>
 
 <body>
 
-    <nav class="menu">
-        <img class="logo" src="img/logo.png" alt="">
-        <a class="item" href="#">Inicio</a>
-        <a class="item" href="#">Menú</a>
-        <a class="item" href="#">Contacto</a>
-        <a href="../inicio y registro/inicio.html"><img class="user" src="img/user.png" alt=""></a>
-    </nav>
+    <header class="header-menu">
+        <nav class="navbar-bg">
+            <div class="navbar contenedor">
+                <a href="/index" class="item-img"><img src="./img/logo.png" alt="" class="head-logo"></a>
+                <a href="/index" class="items">Inicio</a>
+                <a href="/aboutUs" class="items">Sobre Nosotros</a>
+                <a href="#" class="item-img" onclick="redireccionPerfil()" id="perfil-link"><img src="./img/user.png" alt="" class="user"></a>      
+            </div>         
+        </nav>
+    </header>
+    
 
     <section class="fondo">
         <div class="search-section">
 
-            <select id="country" class="country-select">
-                <option>Panamá</option>
-                <option>Dorado</option>
-                <option>Condado del Rey</option>
-                <!-- Agrega más países según sea necesario -->
-            </select>
 
-            <input type="text" id="search" class="search-box" placeholder="Buscar platos...">
-            <button class="search-button">Buscar</button>
+            <input type="text" id="searchInput" class="search-box" placeholder="Buscar platos...">
+            <button onclick="search()" class="search-button">Buscar</button>
         </div>
-    </section>
-
-    <section class="filtro">
-        <button class="b-f"><img class="btn-filter" src="img/ranking.png" alt="">Ranking</button>
-        <button class="b-f"><img class="btn-filter" src="img/ubicacion.png" alt="">Ubicación</button>
-        <button class="b-f"><img class="btn-filter" src="img/comida.png" alt="">Cocina</button>
-        <button class="b-f"><img class="btn-filter" src="img/desayuno.png" alt="">Desayuno</button>
-        <button class="b-f"><img class="btn-filter" src="img/almuerzo.png" alt="">Almuerzo</button>
-        <button class="b-f"><img class="btn-filter" src="img/cena.png" alt="">Cena</button>
     </section>
 
     <section>
@@ -71,7 +61,7 @@
 
             </section>
             <button class="prev" onclick="prevTiendaSlide()">&#10094;</button>
-  <button class="next" onclick="nextTiendaSlide()">&#10095;</button>
+            <button class="next" onclick="nextTiendaSlide()">&#10095;</button>
         </div>
         <!-- Seccion Evento -->
         <div class="menu-item">
@@ -86,8 +76,25 @@
         </div>
 
     </section>
+    <footer class="cont-footer">
+        <div class="footer">
+            <div class="cont-info">
+                <p>Campus Victor Levi Sasso, Vía Centenario, Panamá</p>
+                <br>
+                <p>Sakura@gmail.com</p>
+                <br>
+                <p>Tel: 222-2222</p>
+            </div>
+            <div class="cont-redes">
+                <a href="#"><img src="img/facebook.png" class="redes" alt=""></a>
+                <a href=""><img src="img/instagram.png" class="redes" alt=""></a>
+            </div>
+        </div>
+            
+            <p class="copyrigth">&copy; 2023 Sakura Panamá. Todos los derechos reservados.</p>
+    </footer>
 
-    <script src="./js/upload.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 
 </html>

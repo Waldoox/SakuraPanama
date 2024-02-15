@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="./css/perfilAdmin.css">
 
     <title>Perfil</title>
@@ -12,13 +12,15 @@
 
 <body>
 
-    <header class="headerbg">
-        <div class="contenedor header-dpy">
-            <img src="img/logo.png" alt="" class="h-img">
-
-            <img src="img/user.png" alt="" class="h-img"> <!-- Cambiar por la imagen sacada de la BD -->
-        </div>
-        
+    <header class="header-menu headerbg">
+        <nav class="navbar-bg">
+            <div class="navbar contenedor">
+                <a href="/index" class="item-img"><img src="./img/logo.png" alt="" class="head-logo"></a>
+                <a href="/index" class="items">Inicio</a>
+                <a href="/aboutUs" class="items">Sobre Nosotros</a>
+                <a href="#" class="item-img" onclick="redireccionPerfil()" id="perfil-link"><img src="./img/user.png" alt="" class="user"></a>      
+            </div>         
+        </nav>
     </header>
 
     <main class="contenedor contenedor-dpy">
@@ -29,20 +31,8 @@
         </div>
 
         <div class="perfil-section">
-            <aside >
-                <div class="profile-info">
-                    <form id="profile-form">
-                        <img src="./img/comida.png" alt="Avatar" id="avatar-img">
-                        <br>
-                        <input type="file" id="avatar-input" accept="image/*" style="display: none">
-                        <button type="button" onclick="document.getElementById('avatar-input').click()">Cambiar
-                            Imagen</button>
-                    </form>
-                    <div class="personal">
-                        <h2>Nombre del Rol</h2>
-                        <p>Email: admin@example.com</p>
-                    </div>
-                </div>
+            <aside id="perfil-info">
+                
             </aside>
 
 
@@ -59,31 +49,41 @@
                             <label for="tipo">Tipo de Local:</label>
 
                             <select id="tipo" name="tipo" required>
-                                <option value="restaurante">Restaurante</option>
-                                <option value="tienda">Comercio</option>
-                                <option value="tienda">Evento</option>
+                                <option value="1">Restaurante</option>
+                                <option value="2">Comercio</option>
+                                <option value="3">Evento</option>
                             </select>
 
                             <label for="direccion">Dirección:</label>
 
                             <input type="text" id="direccion" name="direccion" required>
+                            <div class="provincia-section">
+                               <select name="provincia" id="provincia">
+                                    <option value="1">Bocas del Toro</option>
+                                    <option value="2">Coclé</option>
+                                    <option value="3">Colón</option>
+                                    <option value="4">Chiriquí</option>
+                                    <option value="5">Darién</option>
+                                    <option value="6">Herrera</option>
+                                    <option value="7">Los Santos</option>
+                                    <option value="8">Panamá</option>
+                                    <option value="9">Veraguas</option>
+                                    <option value="10">Guna Yala,Madugandí y Wargandí</option>
+                                    <option value="11">Emberá-Wounaan</option>
+                                    <option value="12">Ngäbe-Buglé</option>
+                                    <option value="13">Panamá Oeste</option>
+                               </select>
+                            </div>
                         </form>
                     </div>
 
                     <div class="columna-2">
                         <div class="imagen-section">
-                            <label for="imagen">Imagen del Local:</label>
+                            <label for="avatar-input">Imagen del Local:</label>
                             <div id="local_img">
-                                <img src="" alt="">
+                                <img id="preview-img" src="" alt="">
                             </div>
-                            <button type="button" onclick="document.getElementById('avatar-input').click()">Subir
-                                Imagen</button>
-                        </div>
-
-                        <div class="provincia-section">
-                            <label for="provincia">Provincia:</label>
-
-                            <input type="text" id="provincia" name="provincia" required>
+                            <button type="button" onclick="document.getElementById('avatar-input').click()">Subir Imagen</button>
                         </div>
                     </div>
 
@@ -93,13 +93,34 @@
                         <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
                     </div>
 
-                    <button type="submit">Agregar Local</button>
+                    <button type="submit" onclick="agregarLugar()">Agregar Local</button>
                 </div>
             </section>
         </div>
             
     </main>
 
+    <footer class="cont-footer">
+        <div class="footer">
+            <div class="cont-info">
+                <p>Campus Victor Levi Sasso, Vía Centenario, Panamá</p>
+                <br>
+                <p>Sakura@gmail.com</p>
+                <br>
+                <p>Tel: 222-2222</p>
+            </div>
+            <div class="cont-redes">
+                <a href="#"><img src="img/facebook.png" class="redes" alt=""></a>
+                <a href=""><img src="img/instagram.png" class="redes" alt=""></a>
+            </div>
+        </div>
+            
+            <p class="copyrigth">&copy; 2023 Sakura Panamá. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/obtenerPerfil.js"></script>
+    <script src="./js/perfil.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 
 </html>

@@ -1,11 +1,15 @@
-let baseUrl = "http://localhost:8080";
-let buscar = [];
+
 
 function obtenerLugares(url, callback) {
   fetch(baseUrl + url)
-    .then(res => res.json())
+    .then(res => {
+      if (!res.ok) {
+        throw new Error('Respuesta de red incorrecta');
+      }
+      return res.json();
+    })
     .then(json => {
-      buscar = json;
+      lugares = json;
       callback(); 
     })
     .catch(error => {
@@ -24,15 +28,17 @@ function imprimirLugares(contenedorId) {
 
 function mapearLugar(lugar) {
   return `<section>
-    <div> 
+    <div>
+    <a href="/detalle_local?id=${lugar.id_lugar}">
       <img src="${lugar.lugar_img}" alt="Imagen del lugar">
       <h3>${lugar.nombre_lugar}</h3>
       <p>Dirección: ${lugar.direccion_lugar}</p>
+    </a>
     </div>
   </section>`;
 }
 
 // Llamada inicial para obtener lugares
-obtenerLugares('/lugares', () => {
+obtenerLugares('/all', () => {
   imprimirLugares('locales-container');
 });

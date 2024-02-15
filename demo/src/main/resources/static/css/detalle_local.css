@@ -1,0 +1,186 @@
+.border-content{
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+    width: 100%;
+    height: 100%;
+}
+
+.main-content{
+    margin:4rem;
+}
+
+.local-details{
+    display: flex;
+}
+
+#local-img{
+    width:100%;
+    padding: 2rem;
+}
+
+.col-img{
+    flex: 3;
+    padding: 2rem;
+}
+.col-info{
+    flex: 1;
+    padding: 2rem;
+}
+
+/*calificación*/
+.rating {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+    margin: 2rem;
+  }
+  
+  .rating input {
+    display: none;
+  }
+  
+  .rating label {
+    cursor: pointer;
+    font-size: 6rem;
+    color: #ccc;
+  }
+  
+  .rating input:checked ~ label {
+    color: #f90;
+  }
+
+.comment-section{
+    display: flex;
+}
+
+#local-img-detail {
+  width: 100%;
+  height: 50rem;
+  object-fit: cover;
+  
+}
+
+#local_img {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 100%;
+    height: 25rem;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+  }
+  #local_img img {
+    max-width: 100%;
+    max-height: 100%;
+  
+  }
+
+  #comment-section {
+    display: flex;
+  }
+  
+  .comment-img {
+    flex: 1;
+    margin: 2rem;
+    
+  }
+  
+  .comment {
+    flex: 1;
+    margin: 2rem;
+  }
+
+  #commentInput{
+    width: 100%;
+    height: 25rem;
+    padding: 2rem;
+  }
+
+  .comment-img {
+    position: relative;
+  }
+  
+  .comment-img label {
+    cursor: pointer;
+  }
+  
+  .image-preview{
+    background-image: url(../img/upload-image-icon.svg);
+    background-repeat: no-repeat;
+    background-size: 25%;
+    background-position: center;
+  }
+  
+  button{
+    padding: 2rem;
+    border: 1px solid #ccc;
+    margin: 2rem;
+    border-radius: 2rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  .reseña{
+    margin-top: 2rem;
+  }
+
+  .review-labels{
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .local-info{
+    margin-bottom: 2rem;
+    text-align: left;
+    width: 100%;
+    height: 5rem;
+    font-size: 2rem;
+  }
+
+  .subtitle{
+    font-size: 2rem;
+    font-weight:normal;
+    margin-bottom: 2rem;
+    opacity: 70%;
+  }
+
+
+  .text-comment{
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+
+  .review-cont{
+    margin: 3rem;
+    border: 1px solid #ccc;
+    border-radius: 2rem;
+    padding: 2rem;
+    display: flex;
+  }
+
+  .fecha-coment{
+    opacity: 50%;
+  }
+
+  .star{
+    color: #f90;
+  }
+
+  .comentario-text{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-wrap: pretty;
+  }
+
+  .img-comentario{
+    width: 100%;
+    height: 30rem;
+    object-fit: cover;
+    border-radius: 2rem;
+  }
+
+  .comment{
+    flex: 1;
+    
+  }

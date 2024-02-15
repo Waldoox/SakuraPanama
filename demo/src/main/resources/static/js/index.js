@@ -1,12 +1,18 @@
 //LUGARES
 let baseUrl = "http://localhost:8080";
 let lugares = [];
+let totalCantidad = 0;
 
 function obtenerLugares(url, callback) {
   fetch(baseUrl + url)
     .then(res => res.json())
     .then(json => {
       lugares = json;
+      totalCantidad += lugares.length;
+      localStorage.setItem('totalCantidad', totalCantidad);
+
+      // guardar la cantidad de cada tipo
+      localStorage.setItem(url, lugares.length);
       callback(); 
     });
 }
@@ -23,7 +29,7 @@ function imprimirLugares(contenedorId) {
 function mapearLugar(lugar) {
   return `<section>
     <div>
-      <img src="${lugar.lugar_img}" alt="Imagen del lugar">
+    <a href="/detalle_local?id=${lugar.id_lugar}"><img src="${lugar.lugar_img}" alt="Imagen del lugar"></a>
     </div>
   </section>`;
 }
@@ -131,3 +137,49 @@ function iniciarCarrusel() {
   console.log('Inicializando el carrusel');
   $('.carousel').slick();
 }
+
+function redireccionPerfil() {
+  const perfilLink = document.getElementById("perfil-link");
+  const token = localStorage.getItem("jwtToken");
+
+  if (token) {
+      // Decodificar el token para obtener el rol del usuario
+      const decodedToken = decodeToken(token);
+      const rol = decodedToken.rol;
+
+      // Redireccionar según el rol del usuario
+      if (rol === "ADMIN") {
+          perfilLink.href = "/perfilAdmin";
+      } else if (rol === "USER") {
+          perfilLink.href = "/perfil";
+      }
+      
+  } else {
+      window.location.href = "/inicio";
+  }
+}
+
+function decodeToken(token) {
+  const tokenParts = token.split(".");
+  const payload = JSON.parse(atob(tokenParts[1]));
+  return payload;
+}
+
+function logout() {
+  const logoutLink = document.getElementById("logout-link");
+  
+  logoutLink.addEventListener("click", function() {
+      localStorage.removeItem("jwtToken");
+      window.location.href = "/index";
+  });
+}
+
+//sistema de busqueda
+function search(){
+  const { value } = document.getElementById("searchInput")
+  console.log('searching', value)
+
+  location.replace(baseUrl + '/busqueda?query=' + encodeURIComponent(value))
+
+    
+  }

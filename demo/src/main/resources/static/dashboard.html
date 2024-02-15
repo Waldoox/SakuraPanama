@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>Admin Dashboard</title>
 
     <!-- Montserrat Font -->
@@ -13,19 +14,22 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/perfilAdmin.css">
+    <link rel="stylesheet" href="css/dashboard.css">
   </head>
   <body>
 
 
       <!-- Header -->
-      <header class="headerbg">
-        <div class="contenedor header-dpy">
-            <img src="img/logo.png" alt="" class="h-img">
-
-            <img src="img/user.png" alt="" class="h-img"> <!-- Cambiar por la imagen sacada de la BD -->
-        </div>
-        
-    </header>
+      <header class="headerbg header-menu">
+        <nav class="navbar-bg">
+          <div class="navbar contenedor">
+              <a href="/index" class="item-img"><img src="./img/logo.png" alt="" class="head-logo"></a>
+              <a href="/index" class="items">Inicio</a>
+              <a href="/aboutUs" class="items">Sobre Nosotros</a>
+              <a href="#" class="item-img" onclick="redireccionPerfil()" id="perfil-link"><img src="./img/user.png" alt="" class="user"></a>      
+          </div>         
+      </nav>
+      </header>
       <!-- End Header -->
 
 
@@ -66,31 +70,48 @@
       
                 <div class="card">
                   <div class="card-inner">
-                    <h3>ejemplo3</h3>
-                    <span class="material-icons-outlined">groups</span>
+                    <h3>Restaurantes</h3>
+                    <span class="material-icons-outlined">restaurant</span>
                   </div>
-                  <h1>1500</h1>
+                  <h1 id="restaurantesCantidad"></h1>
                 </div>
       
                 <div class="card">
                   <div class="card-inner">
-                    <h3>ejemplo4</h3>
-                    <span class="material-icons-outlined">notification_important</span>
+                    <h3>Tiendas</h3>
+                    <span class="material-icons-outlined">store</span>
                   </div>
-                  <h1>56</h1>
+                  <h1 id="tiendasCantidad"></h1>
                 </div>
+      
+                <div class="card">
+                  <div class="card-inner">
+                    <h3>Eventos Registrados</h3>
+                    <span class="material-icons-outlined">event</span>
+                  </div>
+                  <h1 id="variedadesCantidad"></h1>
+                </div>
+      
+                <div class="card">
+                  <div class="card-inner">
+                    <h3>Total</h3>
+                    <span class="material-icons-outlined">groups</span>
+                  </div>
+                  <h1 id="totalCantidad"></h1>
+                </div>
+      
       
               </div>
       
               <div class="charts">
-      
+
                 <div class="charts-card">
-                  <h2 class="chart-title">Top 5 Restaurantes</h2>
+                  <h2 class="chart-title">Gráfica de Barra</h2>
                   <div id="bar-chart"></div>
                 </div>
       
                 <div class="charts-card">
-                  <h2 class="chart-title">Purchase and Sales Orders</h2>
+                  <h2 class="chart-title">Gráfica de Área</h2>
                   <div id="area-chart"></div>
                 </div>
       
@@ -100,11 +121,45 @@
             
     </main>
       <!-- End Main -->
-
+      <footer class="cont-footer">
+        <div class="footer">
+            <div class="cont-info">
+                <p>Campus Victor Levi Sasso, Vía Centenario, Panamá</p>
+                <br>
+                <p>Sakura@gmail.com</p>
+                <br>
+                <p>Tel: 222-2222</p>
+            </div>
+            <div class="cont-redes">
+                <a href="#"><img src="img/facebook.png" class="redes" alt=""></a>
+                <a href=""><img src="img/instagram.png" class="redes" alt=""></a>
+            </div>
+        </div>
+            
+            <p class="copyrigth">&copy; 2023 Sakura Panamá. Todos los derechos reservados.</p>
+    </footer>
     <!-- Scripts -->
     <!-- ApexCharts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
     <!-- Custom JS -->
     <script src="js/grafica.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          const totalCantidad = localStorage.getItem('totalCantidad');
+          document.getElementById('totalCantidad').innerText = totalCantidad;
+
+          const restaurantesCantidad = localStorage.getItem('/restaurantes');
+          const tiendasCantidad = localStorage.getItem('/tiendas');
+          const variedadesCantidad = localStorage.getItem('/variedades');
+
+          document.getElementById('restaurantesCantidad').innerText = restaurantesCantidad;
+          document.getElementById('tiendasCantidad').innerText =  tiendasCantidad;
+          document.getElementById('variedadesCantidad').innerText =  variedadesCantidad;
+    });
+
+
+    </script>
+    <script src="./js/index.js"></script>
   </body>
 </html>

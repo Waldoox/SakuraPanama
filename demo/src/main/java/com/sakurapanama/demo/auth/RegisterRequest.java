@@ -1,5 +1,7 @@
 package com.sakurapanama.demo.auth;
 
+import com.sakurapanama.demo.models.Role;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,4 +18,5 @@ public class RegisterRequest {
     private String password;
     private String correousr;
     private String telefonousr;
+    private Role rol;
 }

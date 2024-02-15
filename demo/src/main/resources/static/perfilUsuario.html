@@ -4,61 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil</title>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/perfilAdmin.css">
     <link rel="stylesheet" href="css/perfilUsuario.css">
 </head>
 <body>
-    <nav class="menu">
-        <img class="logo" src="img/logo.png" alt="">
-        <a class="item" href="#">Inicio</a>
-        <a class="item" href="#">Menú</a>
-        <a class="item" href="#">Contacto</a>
-        <a href="../inicio y registro/inicio.html"><img class="user" src="img/user.png" alt=""></a>
-    </nav>
+    <header class="header-menu">
+        <nav class="navbar-bg">
+            <div class="navbar contenedor">
+                <a href="/index" class="item-img"><img src="./img/logo.png" alt="" class="head-logo"></a>
+                <a href="/index" class="items">Inicio</a>
+                <a href="/aboutUs" class="items">Sobre Nosotros</a>
+                <a href="#" class="item-img" onclick="redireccionPerfil()" id="perfil-link"><img src="./img/user.png" alt="" class="user"></a>      
+            </div>         
+        </nav>
+    </header>
 
-    <main>
+    <main class="contenedor contenedor-dpy">
+        <div class="tabs">
+            <a href="/perfil" ><button class="tab-button">Perfil</button></a>
+        </div>
 
-        <section class="perfil-section">
-            <aside>
-                <div class="profile-info">
-                    <form id="profile-form">
-                        <img src="./img/comida.png" alt="Avatar" id="avatar-img">
-                        <br>
-                        <input type="file" id="avatar-input" accept="image/*" style="display: none">
-                        <button type="button" onclick="document.getElementById('avatar-input').click()">Cambiar
-                            Imagen</button>
-                    </form>
-
-                    
-                    <div class="personal">
-                        <h2>Usuario</h2>
-                        <p>Email: user@example.com</p>
-                    </div>
-                    
-
-                    <div class="contador">
-                        <div class="ranking">
-                            <p>Ranking Total: <span id="ranking-total">0</span></p>
-                        </div>
-                        <div class="puntos">
-                            <p>Puntos: <span id="puntos">0</span></p>
-                        </div>
-                    </div>
-                </div>
-            </aside>
-        </section>
-
-
-        <section class="agregar-local-section">
-            <div class="tabs agregar-local-section">
-                <a href="#" ><button class="tab-button">Reseñas</button></a>
-            </div>
-            <div class="local-form">
-                <p>Aun no tiene ninguna reseña</p>
+        <div class="perfil-section">
+            <aside id="perfil-info">
                 
-            </div>
-        </section>
+            </aside>
+
+
+            <section class="agregar-local-section">
+            
+                <div id="reviews" class="local-form">
+                  
+                </div>
+            </section>
+        </div>
     </main>
 
+    <footer class="cont-footer">
+        <div class="footer">
+            <div class="cont-info">
+                <p>Campus Victor Levi Sasso, Vía Centenario, Panamá</p>
+                <br>
+                <p>Sakura@gmail.com</p>
+                <br>
+                <p>Tel: 222-2222</p>
+            </div>
+            <div class="cont-redes">
+                <a href="#"><img src="img/facebook.png" class="redes" alt=""></a>
+                <a href=""><img src="img/instagram.png" class="redes" alt=""></a>
+            </div>
+        </div>
+            
+            <p class="copyrigth">&copy; 2023 Sakura Panamá. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/obtenerPerfil.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 </html>
