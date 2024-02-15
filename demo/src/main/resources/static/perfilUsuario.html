@@ -9,60 +9,35 @@
     <link rel="stylesheet" href="css/perfilUsuario.css">
 </head>
 <body>
-    <header>
+    <header class="header-menu">
         <nav class="navbar-bg">
             <div class="navbar contenedor">
-                <a href="" class="item-img"><img src="./img/logo.png" alt="" class="head-logo"></a>
-                <a href="" class="items">Inicio</a>
-                <a href="" class="items">Sobre Nosotros</a>
-                <a href="" class="item-img"><img src="./img/user.png" alt="" class="user"></a>      
-            </div>
-                 
+                <a href="/index" class="item-img"><img src="./img/logo.png" alt="" class="head-logo"></a>
+                <a href="/index" class="items">Inicio</a>
+                <a href="/aboutUs" class="items">Sobre Nosotros</a>
+                <a href="#" class="item-img" onclick="redireccionPerfil()" id="perfil-link"><img src="./img/user.png" alt="" class="user"></a>      
+            </div>         
         </nav>
     </header>
 
-    <main>
+    <main class="contenedor contenedor-dpy">
+        <div class="tabs">
+            <a href="/perfil" ><button class="tab-button">Perfil</button></a>
+        </div>
 
-        <section class="perfil-section">
-            <aside>
-                <div class="profile-info">
-                    <form id="profile-form">
-                        <img src="./img/comida.png" alt="Avatar" id="avatar-img">
-                        <br>
-                        <input type="file" id="avatar-input" accept="image/*" style="display: none">
-                        <button type="button" onclick="document.getElementById('avatar-input').click()">Cambiar
-                            Imagen</button>
-                    </form>
-
-                    
-                    <div class="personal">
-                        <h2>Usuario</h2>
-                        <p>Email: user@example.com</p>
-                    </div>
-                    
-
-                    <div class="contador">
-                        <div class="ranking">
-                            <p>Ranking Total: <span id="ranking-total">0</span></p>
-                        </div>
-                        <div class="puntos">
-                            <p>Puntos: <span id="puntos">0</span></p>
-                        </div>
-                    </div>
-                </div>
-            </aside>
-        </section>
-
-
-        <section class="agregar-local-section">
-            <div class="tabs agregar-local-section">
-                <a href="#" ><button class="tab-button">Reseñas</button></a>
-            </div>
-            <div class="local-form">
-                <p>Aun no tiene ninguna reseña</p>
+        <div class="perfil-section">
+            <aside id="perfil-info">
                 
-            </div>
-        </section>
+            </aside>
+
+
+            <section class="agregar-local-section">
+            
+                <div id="reviews" class="local-form">
+                  
+                </div>
+            </section>
+        </div>
     </main>
 
     <footer class="cont-footer">
@@ -83,5 +58,7 @@
             <p class="copyrigth">&copy; 2023 Sakura Panamá. Todos los derechos reservados.</p>
     </footer>
 
+    <script src="js/obtenerPerfil.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 </html>

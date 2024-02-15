@@ -1,5 +1,4 @@
-let baseUrl = "http://localhost:8080";
-let lugares = [];
+
 
 function obtenerLugares(url, callback) {
   fetch(baseUrl + url)
@@ -29,10 +28,12 @@ function imprimirLugares(contenedorId) {
 
 function mapearLugar(lugar) {
   return `<section>
-    <div> 
+    <div>
+    <a href="/detalle_local?id=${lugar.id_lugar}">
       <img src="${lugar.lugar_img}" alt="Imagen del lugar">
       <h3>${lugar.nombre_lugar}</h3>
       <p>Dirección: ${lugar.direccion_lugar}</p>
+    </a>
     </div>
   </section>`;
 }

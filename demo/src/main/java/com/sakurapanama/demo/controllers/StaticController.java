@@ -1,8 +1,13 @@
 package com.sakurapanama.demo.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.sakurapanama.demo.Services.LugaresDB;
+import com.sakurapanama.demo.models.Lugar;
 
 
 
@@ -43,4 +48,18 @@ public class StaticController {
     public String perfilUsuario(){
         return "perfilUsuario.html";
     }
-}
+
+    
+    @GetMapping("/detalle_local")
+    public String mostrarDetalleLocal() {
+        return "detalle_local.html"; 
+    }
+
+    @GetMapping("/aboutUs")
+    public String aboutUs() {
+        return "about_us.html"; 
+    }
+    
+    
+    }
+

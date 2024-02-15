@@ -12,17 +12,15 @@
 
 <body>
 
-    <header class="headerbg">
+    <header class="header-menu headerbg">
         <nav class="navbar-bg">
             <div class="navbar contenedor">
-                <a href="" class="item-img"><img src="./img/logo.png" alt="" class="head-logo"></a>
-                <a href="" class="items">Inicio</a>
-                <a href="" class="items">Sobre Nosotros</a>
-                <a href="" class="item-img"><img src="./img/user.png" alt="" class="user"></a>      
-            </div>
-                 
+                <a href="/index" class="item-img"><img src="./img/logo.png" alt="" class="head-logo"></a>
+                <a href="/index" class="items">Inicio</a>
+                <a href="/aboutUs" class="items">Sobre Nosotros</a>
+                <a href="#" class="item-img" onclick="redireccionPerfil()" id="perfil-link"><img src="./img/user.png" alt="" class="user"></a>      
+            </div>         
         </nav>
-        
     </header>
 
     <main class="contenedor contenedor-dpy">
@@ -33,20 +31,8 @@
         </div>
 
         <div class="perfil-section">
-            <aside >
-                <div class="profile-info">
-                    <form id="profile-form">
-                        <img src="./img/comida.png" alt="Avatar" id="avatar-img">
-                        <br>
-                        <input type="file" id="avatar-input" accept="image/*" style="display: none">
-                        <button type="button" onclick="document.getElementById('avatar-input').click()">Cambiar
-                            Imagen</button>
-                    </form>
-                    <div class="personal">
-                        <h2>Nombre del Rol</h2>
-                        <p>Email: admin@example.com</p>
-                    </div>
-                </div>
+            <aside id="perfil-info">
+                
             </aside>
 
 
@@ -95,7 +81,7 @@
                         <div class="imagen-section">
                             <label for="avatar-input">Imagen del Local:</label>
                             <div id="local_img">
-                                <img id="preview-img" src="" alt="Vista previa de la imagen">
+                                <img id="preview-img" src="" alt="">
                             </div>
                             <button type="button" onclick="document.getElementById('avatar-input').click()">Subir Imagen</button>
                         </div>
@@ -131,7 +117,10 @@
             
             <p class="copyrigth">&copy; 2023 Sakura Panamá. Todos los derechos reservados.</p>
     </footer>
+
+    <script src="js/obtenerPerfil.js"></script>
     <script src="./js/perfil.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 
 </html>

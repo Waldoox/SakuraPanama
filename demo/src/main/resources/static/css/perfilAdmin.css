@@ -97,6 +97,7 @@ main {
 .contenedor-dpy{
   display: flex;
   flex-direction: column;
+  margin-bottom: 19rem;
 }
 
 .local-form {

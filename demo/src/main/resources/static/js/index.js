@@ -29,7 +29,7 @@ function imprimirLugares(contenedorId) {
 function mapearLugar(lugar) {
   return `<section>
     <div>
-      <img src="${lugar.lugar_img}" alt="Imagen del lugar">
+    <a href="/detalle_local?id=${lugar.id_lugar}"><img src="${lugar.lugar_img}" alt="Imagen del lugar"></a>
     </div>
   </section>`;
 }
@@ -137,6 +137,7 @@ function iniciarCarrusel() {
   console.log('Inicializando el carrusel');
   $('.carousel').slick();
 }
+
 function redireccionPerfil() {
   const perfilLink = document.getElementById("perfil-link");
   const token = localStorage.getItem("jwtToken");
@@ -172,3 +173,13 @@ function logout() {
       window.location.href = "/index";
   });
 }
+
+//sistema de busqueda
+function search(){
+  const { value } = document.getElementById("searchInput")
+  console.log('searching', value)
+
+  location.replace(baseUrl + '/busqueda?query=' + encodeURIComponent(value))
+
+    
+  }

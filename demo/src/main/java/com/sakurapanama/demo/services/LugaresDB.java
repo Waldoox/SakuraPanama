@@ -161,4 +161,32 @@ public class LugaresDB {
     }
 
 
+    public Lugar obtenerLugaresPorID(int id_lugar) {
+      try {
+          Statement stmt = _cn.createStatement();
+          String query = "SELECT * FROM lugar WHERE id_lugar = " + id_lugar;
+  
+          ResultSet result = stmt.executeQuery(query);
+          if (result.next()) {
+              Lugar lugar = new Lugar(
+                  result.getInt("id_lugar"),
+                  result.getString("nombre_lugar"),
+                  result.getString("direccion_lugar"),
+                  result.getString("descripcion"),
+                  result.getString("lugar_img"),
+                  result.getInt("id_provincia"),
+                  result.getInt("id_tipolocal")
+              );
+              result.close();
+              stmt.close();
+              return lugar;
+          } else {
+              return null;
+          }
+      } catch (Exception e) {
+          e.printStackTrace(); 
+          return null;
+      }
+  }
+  
 }

@@ -34,7 +34,7 @@ public class SecurityConfig {
               authRequest
                 .requestMatchers("/auth/**").permitAll()
                 .requestMatchers("/img/**", "/css/**", "/js/**", "/*.html").permitAll()
-                .requestMatchers("/registro", "/inicio", "/index", "/all","/tiendas","/variedades","/restaurantes", "/busqueda", "/perfilAdmin", "/dashboard").permitAll()
+                .requestMatchers("/registro", "/inicio", "/index", "/all","/tiendas","/variedades","/restaurantes", "/busqueda", "/perfilAdmin", "/dashboard", "/detalle_local", "/lugar/{id}", "/añadirLugar", "/addReview", "/obtenerResenas/**", "/aboutUs","/perfil", "/profile-data/**", "/ResenasPorUsuario/**").permitAll()
                 
                 )
             .sessionManagement(sessionManager->

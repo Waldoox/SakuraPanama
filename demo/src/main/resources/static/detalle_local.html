@@ -8,37 +8,25 @@
     <title>Detalle</title>
 </head>
 <body>
-    <header>
+    <header class="header-menu">
         <nav class="navbar-bg">
             <div class="navbar contenedor">
-                <a href="" class="item-img"><img src="./img/logo.png" alt="" class="head-logo"></a>
-                <a href="" class="items">Inicio</a>
-                <a href="" class="items">Sobre Nosotros</a>
-                <a href="" class="item-img"><img src="./img/user.png" alt="" class="user"></a>      
-            </div>
-                 
+                <a href="/index" class="item-img"><img src="./img/logo.png" alt="" class="head-logo"></a>
+                <a href="/index" class="items">Inicio</a>
+                <a href="/aboutUs" class="items">Sobre Nosotros</a>
+                <a href="#" class="item-img" onclick="redireccionPerfil()" id="perfil-link"><img src="./img/user.png" alt="" class="user"></a>      
+            </div>         
         </nav>
     </header>
 
     <section class="main-content">
         <main class="border-content contenedor">
-            <div class="local-details">
-                <div class="col-img">
-                    <img src="img/ban2.jpg" alt="" id="local-img">
-                </div>
-                <div class="col-info">
-                    <h1>Nombre del local</h1>
-                    <h2 class="subtitle">Tipo de local</h2>
-
-                    <h3 class="local-info">Direccion</h3>
-                    <h3 class="local-info">Provincia</h3>
-
-                    <h3 class="local-info">Descripcion</h3>
-                </div>
+            <div class="local-details" id="local-details">
+            
             </div>
 
             <div class="reseña">
-                <h2>Califica *el Local*</h2>
+                <h2>¡Calificalo!</h2>
                 <div class="rating">
                     <input type="radio" id="star5" name="rating" value="5">
                     <label for="star5">&#9733;</label>
@@ -71,7 +59,7 @@
                     <button onclick="addReview()">Añadir Comentario</button>
         
                     <div id="reviews">
-                        <!-- Aquí mostraríamos las opiniones de los usuarios -->
+                        
                     </div>
             </div>
         </main>
@@ -94,7 +82,7 @@
             
             <p class="copyrigth">&copy; 2023 Sakura Panamá. Todos los derechos reservados.</p>
     </footer>
-
+    <script src="./js/index.js"></script>
     <script src="js/reseña.js"></script>
 </body>
 </html>

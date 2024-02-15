@@ -22,7 +22,7 @@
             <div class="navbar contenedor">
                 <a href="/index" class="item-img"><img src="./img/logo.png" alt="" class="head-logo"></a>
                 <a href="/index" class="items">Inicio</a>
-                <a href="/nosotros" class="items">Sobre Nosotros</a>
+                <a href="/aboutUs" class="items">Sobre Nosotros</a>
                 <a href="#" class="item-img" onclick="redireccionPerfil()" id="perfil-link"><img src="./img/user.png" alt="" class="user"></a>      
             </div>         
         </nav>
@@ -32,24 +32,10 @@
     <section class="fondo">
         <div class="search-section">
 
-            <select id="country" class="country-select">
-                <option>Panamá</option>
-                <option>Dorado</option>
-                <option>Condado del Rey</option>
-                <!-- Agrega más países según sea necesario -->
-            </select>
 
-            <input type="text" id="search" class="search-box" placeholder="Buscar platos...">
-            <button class="search-button">Buscar</button>
+            <input type="text" id="searchInput" class="search-box" placeholder="Buscar platos...">
+            <button onclick="search()" class="search-button">Buscar</button>
         </div>
-    </section>
-
-    <section class="filtro">
-        <button class="b-f"><img class="btn-filter" src="img/ranking.svg" alt="">Ranking</button>
-        <button class="b-f"><img class="btn-filter" src="img/pin.svg" alt="">Ubicación</button>
-        <button class="b-f"><img class="btn-filter" src="img/comida.svg" alt="">Cocina</button>
-        <button class="b-f"><img class="btn-filter" src="img/compras.svg" alt="">Compras</button>
-        <button class="b-f"><img class="btn-filter" src="img/Eventos.svg" alt="">Eventos</button>
     </section>
 
     <section>

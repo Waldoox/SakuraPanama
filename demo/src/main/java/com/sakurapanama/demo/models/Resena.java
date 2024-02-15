@@ -19,7 +19,7 @@ public class Resena {
     @Id
     @GeneratedValue
     private int id_resena;
-    private int puntuacion;
+    private int puntuación;
     private String comentario;
     private Date fecha;
     private String imagenurl;

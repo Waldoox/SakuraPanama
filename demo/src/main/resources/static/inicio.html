@@ -10,15 +10,14 @@
 </head>
 
 <body>
-    <header>
+    <header class="header-menu">
         <nav class="navbar-bg">
             <div class="navbar contenedor">
-                <a href="" class="item-img"><img src="./img/logo.png" alt="" class="head-logo"></a>
-                <a href="" class="items">Inicio</a>
-                <a href="" class="items">Sobre Nosotros</a>
-                <a href="#" class="item-img" id="perfil-link"><img src="./img/user.png" alt="" class="user"></a>      
-            </div>
-                 
+                <a href="/index" class="item-img"><img src="./img/logo.png" alt="" class="head-logo"></a>
+                <a href="/index" class="items">Inicio</a>
+                <a href="/aboutUs" class="items">Sobre Nosotros</a>
+                <a href="#" class="item-img" onclick="redireccionPerfil()" id="perfil-link"><img src="./img/user.png" alt="" class="user"></a>      
+            </div>         
         </nav>
     </header>
     
@@ -101,7 +100,7 @@
             
             <p class="copyrigth">&copy; 2023 Sakura Panamá. Todos los derechos reservados.</p>
     </footer>
-
+    <script src="./js/index.js"></script>
     <script src="js/Auth.js"></script>
 </body>
 

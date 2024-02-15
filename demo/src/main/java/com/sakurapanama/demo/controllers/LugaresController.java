@@ -5,8 +5,10 @@ import java.util.List;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sakurapanama.demo.models.Lugar;
@@ -52,5 +54,17 @@ public class LugaresController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Ha ocurrido un error al añadir el local. Por favor, inténtelo de nuevo más tarde.");
         }
     }
+
+
+      @GetMapping("/lugar/{id}")
+      public ResponseEntity<Lugar> obtenerLugarPorId(@PathVariable int id) {
+          Lugar lugar = lugaresDB.obtenerLugaresPorID(id);
+          if (lugar != null) {
+              return ResponseEntity.ok(lugar);
+          } else {
+              return ResponseEntity.notFound().build();
+          }
+      }
+  
 
 }

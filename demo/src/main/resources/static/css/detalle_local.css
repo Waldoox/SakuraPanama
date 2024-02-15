@@ -20,6 +20,7 @@
 
 .col-img{
     flex: 3;
+    padding: 2rem;
 }
 .col-info{
     flex: 1;
@@ -52,6 +53,12 @@
     display: flex;
 }
 
+#local-img-detail {
+  width: 100%;
+  height: 50rem;
+  object-fit: cover;
+  
+}
 
 #local_img {
     border: 1px solid #ccc;
@@ -138,3 +145,42 @@
     opacity: 70%;
   }
 
+
+  .text-comment{
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+
+  .review-cont{
+    margin: 3rem;
+    border: 1px solid #ccc;
+    border-radius: 2rem;
+    padding: 2rem;
+    display: flex;
+  }
+
+  .fecha-coment{
+    opacity: 50%;
+  }
+
+  .star{
+    color: #f90;
+  }
+
+  .comentario-text{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-wrap: pretty;
+  }
+
+  .img-comentario{
+    width: 100%;
+    height: 30rem;
+    object-fit: cover;
+    border-radius: 2rem;
+  }
+
+  .comment{
+    flex: 1;
+    
+  }

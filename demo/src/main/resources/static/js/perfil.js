@@ -1,4 +1,4 @@
-document.getElementById('preview-img').style.display = 'none'; // Ocultar la imagen inicialmente
+
 
   document.getElementById('avatar-input').addEventListener('change', function() {
     var input = this;
@@ -54,3 +54,4 @@ document.getElementById('preview-img').style.display = 'none'; // Ocultar la ima
       alert('Ha ocurrido un error al agregar el lugar. Por favor, inténtelo de nuevo más tarde.');
     });
   }
+  
