@@ -1,3 +1,40 @@
+/*menu*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/*Menu*/
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ef3620;
+    padding: 1em;
+}
+
+.logo {
+    width: 70px;
+}
+
+.item {
+    color: #fff;
+    text-decoration: none;
+    padding: 1em 1.5em;
+    margin: 0 1em;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.item:hover {
+    background-color: #be1704;
+}
+
+.user {
+    width: 50px;
+    padding: 1em;
+}
 
 /*secciones forma*/
 main {
@@ -58,41 +95,6 @@ button:hover {
 }
 
 /*Local*/
-
-.local-section {
-    flex-basis: 80%;
-}
-
-.local-form {
-    max-width: 600px;
-    margin: 0 auto;
-    border: 1px solid #ccc;
-    padding: 20px;
-    display: block;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-.info-column {
-    padding: 20px;
-}
-
-.locale {
-    display: flex;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-}
-
-.locale img {
-    width: 100px;
-    height: 100px;
-    margin-right: 10px;
-}
-
-.locale-info {
-    flex: 1;
-}
-
 .local-section {
     flex-basis: 80%;
     justify-content: space-between;
