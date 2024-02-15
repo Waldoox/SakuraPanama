@@ -51,7 +51,7 @@
     <section>
         <!-- Seccion Restaurante -->
         <div class="menu-item">
-            <h2 class="titulo">Restaurantes destacados</h2>
+            <button  class ="titulo buton" onclick="updateCarousel()">Restaurantes destacados</button>
             <section class="c-restaurante">
                 <div class="secciones" id="lugar">
 
@@ -63,7 +63,7 @@
         </div>
         <!-- Seccion Articulo -->
         <div class="menu-item">
-            <h2 class="titulo">Deseas comprar algo?</h2>
+            <button class ="titulo buton" onclick="updateCaro()">Deseas comprar algo?</button>
             <section class="c-restaurante">
                 <div class="secciones" id="articulo">
 
@@ -72,10 +72,12 @@
             </section>
             <button id="prev" onclick="prevSlide()">&#10094;</button>
             <button id="next" onclick="nextSlide()">&#10095;</button>
+            
+           
         </div>
         <!-- Seccion Evento -->
         <div class="menu-item">
-            <h2 class="titulo">Más Eventos</h2>
+            <button class ="titulo buton" onclick="updateCarou()">Más Eventos</button>
             <section class="c-restaurante">
                 <div class="secciones" id="evento">
 
@@ -83,6 +85,7 @@
             </section>
             <button id="prev" onclick="prevSlide()">&#10094;</button>
             <button id="next" onclick="nextSlide()">&#10095;</button>
+            <button onclick="updateCarou()">Más Eventos</button>
         </div>
 
     </section>

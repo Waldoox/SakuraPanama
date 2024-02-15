@@ -48,9 +48,14 @@ document.addEventListener("DOMContentLoaded", function () {
 //-----------------------CARROUSEL----------------------------------------------------
 
 let currentIndex = 0;
+let shouldUpdateCarousel = false;
+let shouldUpdateCaro = false;
+let shouldUpdateCarou = false;
 
     function showSlide(index) {
       const carousel = document.getElementById('lugar');
+      const caro = document.getElementById('articulo');
+      const carou = document.getElementById('evento');
       const totalItems = carousel.children.length;
 
       if (index >= totalItems) {
@@ -62,7 +67,18 @@ let currentIndex = 0;
       }
 
       const translateValue = -currentIndex * 100 + '%';
-      carousel.style.transform = 'translateX(' + translateValue + ')';
+      if(shouldUpdateCarousel){
+        carousel.style.transform = 'translateX(' + translateValue + ')';
+      }
+      
+
+      if (shouldUpdateCaro) {
+        caro.style.transform = 'translateX(' + translateValue + ')';
+    }
+
+    if (shouldUpdateCarou) {
+        carou.style.transform = 'translateX(' + translateValue + ')';
+    }
   }
 
   function nextSlide() {
@@ -72,3 +88,28 @@ let currentIndex = 0;
   function prevSlide() {
       showSlide(currentIndex - 1);
   }
+
+  function updateCarousel() {
+    shouldUpdateCarousel = true;
+    shouldUpdateCaro = false;
+    shouldUpdateCarou = false; 
+}
+
+
+  function updateCaro() {
+    shouldUpdateCaro = true;
+    shouldUpdateCarou = false; 
+    shouldUpdateCarousel = false;
+}
+
+function updateCarou() {
+    shouldUpdateCaro = false; 
+    shouldUpdateCarou = true;
+    shouldUpdateCarousel = false;
+}
+
+  
+
+
+
+
