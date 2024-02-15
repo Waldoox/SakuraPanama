@@ -1,7 +1,9 @@
 package com.sakurapanama.demo.controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.boot.autoconfigure.amqp.RabbitProperties.Cache.Connection;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -35,22 +37,24 @@ public class LugaresController {
     return new LugaresDB().ObtenerVariedades();
   }
 
-  /**
-   * @param request
-   * @return
-   */
-  @PostMapping("/filtrar")
-  public List<Lugar> filtrar(
-      @RequestParam(name = "restaurante", required = false, defaultValue = "false") boolean restaurante,
-      @RequestParam(name = "variedad", required = false, defaultValue = "false") boolean variedad,
-      @RequestParam(name = "evento", required = false, defaultValue = "false") boolean evento) {
-
-    if (restaurante) {
-      return new LugaresDB().ObtenerRestaurantes();
-    } else {
-      // Lógica para manejar otros tipos de filtros si es necesario
+  @GetMapping("/filtrar")
+  public List<Lugar> obtenerDatos(String[] tipos) {
+    LugaresDB lugaresdb = new LugaresDB();
+    List<Lugar> lugares = new ArrayList<>();
+    for (String tipo : tipos) {
+      switch (tipo) {
+        case "restaurante":
+          lugares.addAll(lugaresdb.ObtenerRestaurantes());
+          break;
+        case "tienda":
+          lugares.addAll(lugaresdb.ObtenerTiendas());
+          break;
+        case "variedad":
+          lugares.addAll(lugaresdb.ObtenerVariedades());
+          break;
+      }
     }
-    return null;
+    return lugares;
   }
 
 }

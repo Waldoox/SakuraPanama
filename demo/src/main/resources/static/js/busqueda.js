@@ -32,37 +32,50 @@ function mapearLugar(lugar) {
 }
 
 function filtrarLugares() {
+    console.log('Se ha hecho clic en el botón "Aplicar Filtros"');
     const restaurantesCheckbox = document.getElementById('checkbox-restaurantes');
     const tiendasCheckbox = document.getElementById('checkbox-tiendas');
     const variedadesCheckbox = document.getElementById('checkbox-variedades');
 
-    if (restaurantesCheckbox.checked) {
-        // Hacer la solicitud AJAX para obtener restaurantes
-        fetch('/filtrar') // Esta ruta debe coincidir con la ruta definida en tu controlador de Spring Boot
+    const tiposSeleccionados = [];
+    if (restaurantesCheckbox.checked) tiposSeleccionados.push('Restaurante');
+    if (tiendasCheckbox.checked) tiposSeleccionados.push('Tiendas');
+    if (variedadesCheckbox.checked) tiposSeleccionados.push('Variedad');
+
+    if (tiposSeleccionados.length > 0) {
+        fetch('/filtrar' + tiposSeleccionados.join(','))
             .then(response => response.json())
             .then(data => {
-                let lugaresFiltrados = data;
-                if (restaurantesCheckbox.checked) {
-                    // Filtrar por tiendas si está marcado el checkbox
-                    lugaresFiltrados = lugaresFiltrados.filter(lugar => lugar.tipo === 'restaurante');
-                }
-                if (tiendasCheckbox.checked) {
-                    // Filtrar por tiendas si está marcado el checkbox
-                    lugaresFiltrados = lugaresFiltrados.filter(lugar => lugar.tipo === 'tienda');
-                }
-                if (variedadesCheckbox.checked) {
-                    // Filtrar por variedades si está marcado el checkbox
-                    lugaresFiltrados = lugaresFiltrados.filter(lugar => lugar.tipo === 'variedad');
-                }
-
-                imprimirLugares('lugar', lugaresFiltrados);
+                imprimirLugares('lugar', data);
             })
-            .catch(error => console.error('Error al obtener restaurantes:', error));
+            .catch(error => console.error('Error al obtener lugares:', error));
     } else {
         // Si no se ha seleccionado ningún filtro, mostrar todos los lugares
         imprimirLugares('lugar', buscar);
     }
 }
+
+function imprimirLugar(contenedorId, lugares) {
+    const contenedor = document.getElementById(contenedorId);
+    // Primero, vaciamos el contenedor
+    contenedor.innerHTML = '';
+
+    // Luego, agregamos cada lugar al contenedor
+    lugares.forEach(lugar => {
+        const lugarElemento = document.createElement('div');
+        lugarElemento.innerHTML = `
+            <h3>${lugar.nombre}</h3>
+            <p>Dirección: ${lugar.direccion}</p>
+            <p>Descripción: ${lugar.descripcion}</p>
+            <img src="${lugar.imagen}" alt="${lugar.nombre}">
+        `;
+        contenedor.appendChild(lugarElemento);
+    });
+
+    // Finalmente, mostramos el contenedor en la interfaz de usuario
+    contenedor.style.display = 'block';
+}
+
 
 document.addEventListener("DOMContentLoaded", function () {
     obtenerLugares('/restaurantes', function () {

@@ -25,3 +25,4 @@ public class Lugar {
    private int id_tipolocal;
 
 }
+
