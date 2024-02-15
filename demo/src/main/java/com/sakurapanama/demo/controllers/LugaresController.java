@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sakurapanama.demo.models.Lugar;
@@ -39,55 +40,17 @@ public class LugaresController {
    * @return
    */
   @PostMapping("/filtrar")
-  public List<String> filtrar(@RequestBody FiltroRequest request) {
+  public List<Lugar> filtrar(
+      @RequestParam(name = "restaurante", required = false, defaultValue = "false") boolean restaurante,
+      @RequestParam(name = "variedad", required = false, defaultValue = "false") boolean variedad,
+      @RequestParam(name = "evento", required = false, defaultValue = "false") boolean evento) {
 
-    return FiltroRestuarante.filtrarLugares(request.restaurante(), request.variedad(), request.evento());
-  }
-
-  static class FiltroRequest {
-    private boolean restaurante;
-    private boolean variedad;
-    private boolean evento;
-
-    public boolean Restaurante() {
-      return restaurante;
+    if (restaurante) {
+      return new LugaresDB().ObtenerRestaurantes();
+    } else {
+      // Lógica para manejar otros tipos de filtros si es necesario
     }
-
-    public boolean evento() {
-      // TODO Auto-generated method stub
-      throw new UnsupportedOperationException("Unimplemented method 'evento'");
-    }
-
-    public boolean variedad() {
-      // TODO Auto-generated method stub
-      throw new UnsupportedOperationException("Unimplemented method 'variedad'");
-    }
-
-    public boolean restaurante() {
-      // TODO Auto-generated method stub
-      throw new UnsupportedOperationException("Unimplemented method 'restaurante'");
-    }
-
-    public void setRestaurante(boolean restaurante) {
-      this.restaurante = restaurante;
-    }
-
-    public boolean Variedad() {
-      return variedad;
-    }
-
-    public void setVariedad(boolean variedad) {
-      this.variedad = variedad;
-    }
-
-    public boolean Evento() {
-      return evento;
-    }
-
-    public void setEvento(boolean evento) {
-      this.evento = evento;
-    }
-
+    return null;
   }
 
 }
