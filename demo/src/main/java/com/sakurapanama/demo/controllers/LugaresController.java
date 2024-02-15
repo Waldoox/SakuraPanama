@@ -1,5 +1,6 @@
 package com.sakurapanama.demo.controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
@@ -65,6 +66,27 @@ public class LugaresController {
               return ResponseEntity.notFound().build();
           }
       }
+
+      
+  @GetMapping("/filtrar")
+  public List<Lugar> obtenerDatos(String[] tipos) {
+    LugaresDB lugaresdb = new LugaresDB();
+    List<Lugar> lugares = new ArrayList<>();
+    for (String tipo : tipos) {
+      switch (tipo) {
+        case "restaurante":
+          lugares.addAll(lugaresdb.ObtenerRestaurantes());
+          break;
+        case "tienda":
+          lugares.addAll(lugaresdb.ObtenerTiendas());
+          break;
+        case "variedad":
+          lugares.addAll(lugaresdb.ObtenerVariedades());
+          break;
+      }
+    }
+    return lugares;
+  }
   
 
 }
